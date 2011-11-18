@@ -1,0 +1,11 @@
+Config { font = "-*-bitstream vera sans-medium-r-*-*-10-*-*-*-*-*-*-*"
+       , bgColor = "black"
+       , fgColor = "grey"
+       , position = Bottom
+       , lowerOnStart = False
+       , commands = [ Run StdinReader
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader%" 
+       }

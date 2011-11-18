@@ -1,0 +1,12 @@
+
+
+nitrogen --restore &
+xmodmap .Xmodmap &
+conky -c ~/.conky/conkyrc &
+conky -c ~/.conky/conky-cal &
+conky -c ~/.conky/conky-due &
+urxvtd -q -o -f &
+synclient MaxSpeed=1.25
+
+
+xmonad

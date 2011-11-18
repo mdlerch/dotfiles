@@ -1,0 +1,36 @@
+<+	+>	!comp!	!exe!
+%        File: !comp!expand("%:p:t")!comp!
+%     Created: !comp!strftime("%a %b %d %I:00 %p %Y ").substitute(strftime('%Z'), '\<\(\w\)\(\w*\)\>\(\W\|$\)', '\1', 'g')!comp!
+% Last Change: !comp!strftime("%a %b %d %I:00 %p %Y ").substitute(strftime('%Z'), '\<\(\w\)\(\w*\)\>\(\W\|$\)', '\1', 'g')!comp!
+%
+\documentclass[10pt,letterpaper]{article}
+\usepackage{fullpage}
+\usepackage[]{amsmath}
+\usepackage{amssymb}
+\usepackage[]{graphicx}
+\usepackage{float}
+\usepackage{setspace}
+
+\pagestyle{empty}
+\newcommand{\Sum}{\displaystyle\sum}
+\newcommand{\Int}{\displaystyle\int}
+\newcommand{\Frac}{\displaystyle\frac}
+\newcommand{\Not}[1]{\overline{#1}}
+
+\setstretch{1.2}
+
+\begin{document}
+\hspace{\fill} Michael Lerch
+
+\hspace{\fill} <++>
+
+\hspace{\fill}HW \# <++>
+
+\hspace{\fill} Due <++>
+
+\vspace{1cm}
+
+<++>
+
+
+\end{document}

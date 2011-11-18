@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/mike/bin'
+let g:netrw_dirhist_2='/home/mike/work/school/stat505/hw/hw4'
+let g:netrw_dirhist_3='/home/mike/.vim/ftplugin/latex-suite/templates'
+let g:netrw_dirhist_4='/home/mike/.vim/ftdetect'
+let g:netrw_dirhist_5='/home/mike/work/text-books/ARM/Book_Codes'
+let g:netrw_dirhist_6='/home/mike'
+let g:netrw_dirhist_7='/home/mike/bin'
+let g:netrw_dirhist_8='/home/mike/.config/nitrogen'
