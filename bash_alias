@@ -1,2 +1,3 @@
 alias vi='vim'
 alias vir='vim -R'
+alias n='urxvtc &'

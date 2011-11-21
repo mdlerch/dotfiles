@@ -121,8 +121,9 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   ,  ((0, xK_F10), spawn "mpc prev > /dev/null")
   ,  ((controlMask .|. mod4Mask, xK_k), spawn "amixer set Master 2dB- > /dev/null")
   ,  ((controlMask .|. mod4Mask, xK_l), spawn "amixer set Master 2dB+ > /dev/null")
-  ,  ((controlMask .|. mod4Mask .|. shiftMask, xK_k),  spawn "amixer set PCM 2dB- > /dev/null")
-  ,  ((controlMask .|. mod4Mask .|. shiftMask, xK_l),  spawn "amixer set PCM 2dB+ > /dev/null")
+  ,  ((0, 0x1008ff13), spawn "amixer set Master 2dB+ > /dev/null")
+  ,  ((0, 0x1008ff11), spawn "amixer set Master 2dB- > /dev/null")
+  ,  ((0, 0x1008ff12), spawn "amixer set Master toggle > /dev/null")
      -- Client 
   ,  ((mod1Mask, xK_Tab), windows W.focusDown)
   ,  ((mod1Mask .|. shiftMask, xK_Tab), windows W.focusUp)
