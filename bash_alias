@@ -7,3 +7,4 @@ alias rsyncpictures='rsync -av --size-only /data/pictures /media/storage/rsync.d
 alias rsyncpodcasts='rsync -av --size-only /data/podcasts /media/storage/rsync.d'
 alias rsyncmusic='rsync -av --size-only /data/music /media/storage/rsync.d'
 alias rsyncdotfiles='rsync -av --size-only /home/mike/dotfiles /media/storage/rsync.d'
+alias R='R --no-save --no-restore-data'

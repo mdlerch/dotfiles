@@ -25,7 +25,7 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 set ignorecase
-set mouse=nv
+set mouse=nvi
 set spell
 
 " STUFF for vim-r-plugin
@@ -46,6 +46,7 @@ let vimrplugin_routmorecolors = 1
 let vimrplugin_underscore = 0
 let vimrplugin_rnowebchunk = 0
 let vimrplugin_nosingler = 1
+let vimrplugin_r_args = "--no-save --no-restore-data"
 
 colorscheme koehler
 
