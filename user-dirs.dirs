@@ -1,0 +1,5 @@
+# ~/.config/user-dirs.dirs
+
+XDG_DOWNLOAD_DIR="$HOME/in"
+XDG_DOCUMENTS_DIR="$HOME/work/docs"
+
