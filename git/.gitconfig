@@ -1,8 +1,8 @@
 [user]
-  name = Michael Lerch
-  email = mdlerch@gmail.com
+	name = Michael Lerch
+	email = mdlerch@gmail.com
 [core]
-  editor = vim
+	editor = vim
 [color]
   ui = auto
 [color "branch"]
