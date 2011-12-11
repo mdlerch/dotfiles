@@ -19,3 +19,7 @@ fi
 if [ -f ~/.bash_prompt ]; then
   . ~/.bash_prompt
 fi
+
+# Add Sweave to texpath
+TEXINPUTS=${TEXINPUTS}:/usr/share/R/texmf//
+export TEXINPUTS
