@@ -6,4 +6,5 @@ color list=12
 color title=6
 color status=1
 color status-song=6
+list-format=%artist% - %album% - %title%
 
