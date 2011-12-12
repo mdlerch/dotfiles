@@ -118,7 +118,7 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   ,  ((controlMask .|. mod4Mask, xK_b), spawn "mpcback-prev > /dev/null")
   ,  ((0,xK_F11), spawn "mpc toggle > /dev/null")
   ,  ((0, xK_F12), spawn "mpc next > /dev/null")
-  ,  ((0, xK_F10), spawn "mpc prev > /dev/null")
+  ,  ((0, xK_F10), spawn "mpcback-prev > /dev/null")
   ,  ((controlMask .|. mod4Mask, xK_k), spawn "amixer set Master 2dB- > /dev/null")
   ,  ((controlMask .|. mod4Mask, xK_l), spawn "amixer set Master 2dB+ > /dev/null")
   ,  ((0, 0x1008ff13), spawn "amixer set Master 2dB+ > /dev/null")
