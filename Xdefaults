@@ -187,7 +187,7 @@ urxvt*foreground:       white
 urxvt*geometry:         80x28
 !urxvt_small.geometry:   95x13+50+80
 ! V
-urxvt*fading:         50 
+urxvt*fading:         25
 urxvt*inheritPixmap:   true
 urxvt*internalBorder:   0
 urxvt*loginShell:       true
