@@ -23,3 +23,6 @@ fi
 # Add Sweave to texpath
 TEXINPUTS=${TEXINPUTS}:/usr/share/R/texmf//
 export TEXINPUTS
+
+# set some defaults
+export BROWSER=chromium
