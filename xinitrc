@@ -3,8 +3,8 @@
 sh .fehbg
 xmodmap .Xmodmap &
 conky -c ~/.conky/conkyrc &
-conky -c ~/.conky/conky-cal &
-conky -c ~/.conky/conky-due &
+conky -c ~/.conky/conky-sched &
+conky -c ~/.conky/conky-event &
 urxvtd -q -o -f &
 synclient MaxSpeed=1.25
 synclient VertEdgeScroll=1

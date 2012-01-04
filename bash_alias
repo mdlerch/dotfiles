@@ -1,4 +1,5 @@
 alias vi='vim'
+alias ls='ls --color=auto --group-directories-first'
 alias vir='vim -R'
 alias n='urxvtc &'
 alias rsyncwork='rsync -av --size-only /data/work /media/storage/rsync.d'
