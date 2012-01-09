@@ -8,6 +8,7 @@ set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 set iskeyword+=:
 set sw=2
+set expandtab
 
 " buffer menu
 :nnoremap <F4> :buffers!<CR>:buffer<space>
@@ -29,6 +30,10 @@ set mouse=nvi
 set spell
 
 " STUFF for vim-r-plugin
+au BufNewFile,BufRead *.R set filetype=r
+au BufNewFile,BufRead *.R set expandtab
+au BufNewFile,BufRead *.R set shiftwidth=2
+au BufNewFile,BufRead *.R set softtabstop=2
 au BufNewFile,BufRead *.r set filetype=r
 au BufNewFile,BufRead *.r set expandtab
 au BufNewFile,BufRead *.r set shiftwidth=2
