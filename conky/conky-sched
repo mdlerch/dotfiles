@@ -47,4 +47,4 @@ color0 cccccc
 default_color cccccc
 
 TEXT
-$color0 ${execi 300 gcalcli --user=mdlerch --pw=mykno212901$ --cal=repeat --cal='mdlerch@gmail.com'  --nc agenda}
+$color0 ${execi 300 gcalcli --user=mdlerch --pw=mykno212901$ --cal='schedule' --cal='mdlerch@gmail.com'  --nc agenda}
