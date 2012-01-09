@@ -4,7 +4,7 @@ Config { font = "-*-bitstream vera sans-medium-r-*-*-10-*-*-*-*-*-*-*"
        , position = Bottom
        , lowerOnStart = False
        , commands = [ Run StdinReader
-                    , Run Date "%d %B %I:%M" "date" 10
+                    , Run Date "%a %d %B %I:%M" "date" 10
                     , Run BatteryP ["BAT0"] 
                         ["-t", "<acstatus> <left>% -- <timeleft>hrs ",
                          "-L", "10", "-H", "80", "-p", "3",
