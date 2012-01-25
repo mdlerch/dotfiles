@@ -11,3 +11,5 @@ alias rsyncdotfiles='rsync -av --size-only /home/mike/dotfiles /media/storage/rs
 alias R='R --no-save --no-restore-data'
 alias gauss='ssh gauss.math.montana.edu -l lerch'
 alias gaussx='ssh -X gauss.math.montana.edu -l lerch'
+alias newton='ssh 153.90.244.122 -p 22122 -l lerch'
+alias newtonx='ssh -X 153.90.244.122 -p 22122 -l lerch'
