@@ -182,7 +182,7 @@ XFontsel*MenuButton*MenuButtonStyle: select
 urxvt*background:       #242424
 urxvt*cursorBlink:      true
 urxvt*font:             xft:terminus:pixelsize=12 
-urxvt*boldFont:         xft:terminus:pixelsize=12
+!urxvt*boldFont:         xft:terminus-bold:pixelsize=12
 urxvt*foreground:       white
 urxvt*geometry:         80x28
 !urxvt_small.geometry:   95x13+50+80

@@ -2,9 +2,8 @@ auto-center=yes
 enable-colors=yes
 color background=none
 color list-bold=1
-color list=12
+color list=6
 color title=6
-color status=1
 color status-song=6
 list-format=%artist% - %album% - %title%
 

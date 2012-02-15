@@ -41,6 +41,7 @@ main = do
 
 terminal' :: String
 terminal' = "urxvtc"
+--terminal' = "roxterm"
 
 xmobar1 = "xmobar"
 
@@ -107,7 +108,7 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   [
      -- Launchers/Prompts
      ((mod1Mask .|. controlMask, xK_t), spawn "urxvtc")
-  ,  ((mod1Mask .|. controlMask, xK_a), spawn "gnome-terminal --hide-menubar --title=gnome-terminal_small --geometry=90x8+980+750")
+--  ,  ((mod1Mask .|. controlMask, xK_a), spawn "gnome-terminal --hide-menubar --title=gnome-terminal_small --geometry=90x8+980+750")
   ,  ((mod1Mask .|. controlMask, xK_f), spawn "chromium > /dev/null")
   ,  ((mod1Mask .|. controlMask, xK_c), spawn "xcalc > /dev/null")
   ,  ((mod1Mask, xK_F2), spawn "gmrun")

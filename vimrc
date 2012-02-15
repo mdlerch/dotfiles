@@ -48,7 +48,7 @@ au BufNewFile,BufRead *.bugs.txt set ft=r
 
 let maplocalleader="\\\\"
 
-let vimrplugin_term = "urxvtc"
+let vimrplugin_term = "urxvt"
 let vimrplugin_term_cmd = "urxvtc -e"
 let vimrplugin_routmorecolors = 1
 let vimrplugin_underscore = 0

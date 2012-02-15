@@ -5,6 +5,7 @@ xmodmap .Xmodmap &
 urxvtd -q -o -f &
 synclient MaxSpeed=1.25
 synclient VertEdgeScroll=1
+synclient FingerHigh=40
  
 xsetroot -cursor_name left_ptr
 
