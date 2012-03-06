@@ -29,7 +29,7 @@ main = do
   xmonad $ defaultConfig 
     {  focusFollowsMouse = True
     ,  terminal = terminal'
-    ,  borderWidth = 2
+    ,  borderWidth = 3
     ,  focusedBorderColor = "#3299cd"
     ,  normalBorderColor = "#060000"
     ,  keys = keys'
@@ -107,7 +107,8 @@ keys' :: XConfig Layout -> M.Map (KeyMask, KeySym) (X ())
 keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   [
      -- Launchers/Prompts
-     ((mod1Mask .|. controlMask, xK_t), spawn "urxvtc")
+--     ((mod1Mask .|. controlMask, xK_t), spawn "urxvtc")
+     ((mod1Mask .|. controlMask, xK_t), spawn "gnome-terminal --hide-menubar")
 --  ,  ((mod1Mask .|. controlMask, xK_a), spawn "gnome-terminal --hide-menubar --title=gnome-terminal_small --geometry=90x8+980+750")
   ,  ((mod1Mask .|. controlMask, xK_f), spawn "chromium > /dev/null")
   ,  ((mod1Mask .|. controlMask, xK_c), spawn "xcalc > /dev/null")
