@@ -1,2 +1,3 @@
 [Default Applications]
 application/pdf=evince.desktop
+application/jpg=gqview.desktop
