@@ -9,6 +9,7 @@ let g:tex_flavor='latex'
 set iskeyword+=:
 set sw=2
 set expandtab
+set pastetoggle=<F2>
 
 " buffer menu
 :nnoremap <F4> :buffers!<CR>:buffer<space>
@@ -41,16 +42,17 @@ au BufNewFile,BufRead *.r set softtabstop=2
 au BufNewFile,BufRead *.Rnw set expandtab
 au BufNewFile,BufRead *.Rnw set shiftwidth=2
 au BufNewFile,BufRead *.Rnw set softtabstop=2
-au BufNewFile,BufRead *.Rnw set textwidth=100
-au BufNewFile,BufRead *.tex set textwidth=120
+au BufNewFile,BufRead *.Rnw set textwidth=80
+au BufNewFile,BufRead *.tex set textwidth=80
 au BufNewFile,BufRead *.jags.txt set ft=r
 au BufNewFile,BufRead *.bugs.txt set ft=r
 
 let maplocalleader="\\\\"
 
-"let vimrplugin_term = "urxvt"
-let vimrplugin_term = "gnome-terminal"
-let vimrplugin_term_cmd = "gnome-terminal --hide-menubar -e"
+let vimrplugin_term = "urxvt"
+"let vimrplugin_term = "gnome-terminal"
+"let vimrplugin_term_cmd = "gnome-terminal --hide-menubar -e"
+let vimrplugin_term_cmd = "urxvtc -e"
 let vimrplugin_routmorecolors = 1
 let vimrplugin_underscore = 0
 let vimrplugin_rnowebchunk = 0
