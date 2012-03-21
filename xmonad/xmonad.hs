@@ -9,7 +9,7 @@ import XMonad.Util.EZConfig(additionalKeys)
 import XMonad.Util.Loggers
 import System.IO
 import System.Exit
-import IO (Handle, hPutStrLn)
+--import IO (Handle, hPutStrLn)
 import XMonad.Layout.NoBorders
 import XMonad.Layout.ResizableTile
 import XMonad.Layout.SimpleFloat
@@ -72,8 +72,8 @@ layoutHook' = avoidStruts $ smartBorders  $ magnifierOff $ layoutHints $ spacing
  onWorkspace "2:t" (tile ||| Mirror tile ||| Grid) $
  onWorkspace "3:t" (tile ||| Mirror tile ||| Grid) $
  onWorkspace "4:t" (tile ||| Mirror tile ||| Grid) $
- onWorkspace "5:2" (t2 ||| Mirror t2  ||| Full) $
- onWorkspace "6:2" (t2 ||| Mirror t2 ||| Full) $
+ onWorkspace "5:t" (tile ||| Mirror tile ||| Grid) $
+ onWorkspace "6:t" (tile ||| Mirror tile ||| Grid) $
  onWorkspace "7:f" (Full ||| simpleFloat) $
  onWorkspace "8:f" (Full ||| simpleFloat) $
  (tile ||| Grid ||| Full)
@@ -85,7 +85,7 @@ layoutHook' = avoidStruts $ smartBorders  $ magnifierOff $ layoutHints $ spacing
       delta = 3/100
       ratio = 1/2
 
-workspaces' = ["1:t","2:t","3:t","4:t","5:2","6:2","7:f","8:f","9:d"]
+workspaces' = ["1:t","2:t","3:t","4:t","5:t","6:t","7:f","8:f","9:d"]
 	
 manageHook' :: ManageHook
 manageHook' =  composeAll
