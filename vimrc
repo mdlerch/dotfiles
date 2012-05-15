@@ -1,3 +1,7 @@
+call pathogen#infect()
+
+set nocompatible
+syntax enable
 filetype plugin on
 syntax on
 filetype indent on
@@ -47,17 +51,25 @@ au BufNewFile,BufRead *.tex set textwidth=80
 au BufNewFile,BufRead *.jags.txt set ft=r
 au BufNewFile,BufRead *.bugs.txt set ft=r
 
+
+
+au BufNewFile,BufRead *.txt set textwidth=80
 let maplocalleader="\\\\"
 
+let vimrplugin_screenplugin = 0
+let vimrplugin_tmux = 0
 let vimrplugin_term = "urxvt"
-"let vimrplugin_term = "gnome-terminal"
-"let vimrplugin_term_cmd = "gnome-terminal --hide-menubar -e"
 let vimrplugin_term_cmd = "urxvtc -e"
-let vimrplugin_routmorecolors = 1
 let vimrplugin_underscore = 0
 let vimrplugin_rnowebchunk = 0
 let vimrplugin_nosingler = 1
+let vimrplugin_specialplot = 0
 let vimrplugin_r_args = "--no-save --no-restore-data"
+"let vimrplugin_term = "gnome-terminal"
+"let vimrplugin_term_cmd = "gnome-terminal --hide-menubar -e"
+"let vimrplugin_term_cmd = "urxvtc -e"
+"let vimrplugin_routmorecolors = 1
+"let vimrplugin_nosingler = 1
 
 colorscheme koehler
 

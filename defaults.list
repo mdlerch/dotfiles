@@ -1,3 +1,4 @@
 [Default Applications]
 application/pdf=evince.desktop
 application/jpg=gqview.desktop
+text/plain=gedit

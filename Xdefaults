@@ -212,7 +212,7 @@ urxvt*color0:		#2e3436
 urxvt*color8:		#555753
 !red
 urxvt*color1:		#cc0000
-urxvt*color9:		#ef2929
+urxvt*color9:		#f25353
 !green
 urxvt*color2:		#4e9a06
 urxvt*color10:		#8ae234

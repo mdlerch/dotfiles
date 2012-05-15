@@ -22,11 +22,12 @@ import XMonad.Hooks.ManageHelpers
 import qualified XMonad.StackSet as W
 import qualified Data.Map as M
 import XMonad.Actions.CycleWS
+import XMonad.Config.Gnome
 
 
 main = do
   xmbar1 <- spawnPipe xmobar1
-  xmonad $ defaultConfig 
+  xmonad $ gnomeConfig 
     {  focusFollowsMouse = True
     ,  terminal = terminal'
     ,  borderWidth = 3
@@ -115,17 +116,17 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   ,  ((mod1Mask, xK_F2), spawn "gmrun")
   ,  ((mod1Mask .|. controlMask, xK_r), shellPrompt defaultXPConfig)
      -- MPD/Audio
-  ,  ((controlMask .|. mod4Mask, xK_p), spawn "mpc toggle > /dev/null")
-  ,  ((controlMask .|. mod4Mask, xK_n), spawn "mpc next > /dev/null")
-  ,  ((controlMask .|. mod4Mask, xK_b), spawn "mpcback-prev > /dev/null")
-  ,  ((0,xK_F11), spawn "mpc toggle > /dev/null")
-  ,  ((0, xK_F12), spawn "mpc next > /dev/null")
-  ,  ((0, xK_F10), spawn "mpcback-prev > /dev/null")
-  ,  ((controlMask .|. mod4Mask, xK_k), spawn "amixer set Master 2dB- > /dev/null")
-  ,  ((controlMask .|. mod4Mask, xK_l), spawn "amixer set Master 2dB+ > /dev/null")
+  ,  ((controlMask .|. mod4Mask, xK_p), spawn "rhythmbox-client --play-pause > /dev/null")
+  ,  ((controlMask .|. mod4Mask, xK_n), spawn "rhythmbox-client --next > /dev/null")
+  ,  ((controlMask .|. mod4Mask, xK_b), spawn "rhythmbox-client --previous > /dev/null")
+  ,  ((0,xK_F11), spawn "rhythmbox-client --play-pause > /dev/null")
+  ,  ((0, xK_F12), spawn "rhythmbox-client --next > /dev/null")
+  ,  ((0, xK_F10), spawn "rhythmbox-client --previous > /dev/null")
+  ,  ((controlMask .|. mod4Mask, xK_k), spawn "amixer set Master 2%- > /dev/null")
+  ,  ((controlMask .|. mod4Mask, xK_l), spawn "amixer set Master 2%+ > /dev/null")
   ,  ((controlMask .|. mod4Mask, xK_m), spawn "amixer set Master toggle > /dev/null")
-  ,  ((0, 0x1008ff13), spawn "amixer set Master 2dB+ > /dev/null")
-  ,  ((0, 0x1008ff11), spawn "amixer set Master 2dB- > /dev/null")
+  ,  ((0, 0x1008ff13), spawn "amixer set Master 2%+ > /dev/null")
+  ,  ((0, 0x1008ff11), spawn "amixer set Master 2%- > /dev/null")
   ,  ((0, 0x1008ff12), spawn "amixer set Master toggle > /dev/null")
      -- Client 
   ,  ((mod1Mask, xK_Tab), windows W.focusDown)
