@@ -21,3 +21,9 @@
 [github]
 	user = mdlerch
 	token = 7035c51d364e417dc09ec3150883e32b
+[giggle]
+	main-window-maximized = false
+	main-window-geometry = 1588x848+6+30
+	history-view-vpane-position = 706
+	file-view-vpane-position = 323
+	main-window-view = FileView
