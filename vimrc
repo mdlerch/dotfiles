@@ -71,7 +71,9 @@ let vimrplugin_r_args = "--no-save --no-restore-data"
 "let vimrplugin_routmorecolors = 1
 "let vimrplugin_nosingler = 1
 
-colorscheme koehler
+"colorscheme pablo
+colorscheme zenburn
+highlight Comment cterm=italic
 
 au BufNewFile,BufRead *.muttrc setl ft=muttrc
 
