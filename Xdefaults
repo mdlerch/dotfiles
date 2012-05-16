@@ -181,8 +181,10 @@ XFontsel*MenuButton*MenuButtonStyle: select
 !urxvt*termName:         rxvt-256color
 urxvt*background:       #242424
 urxvt*cursorBlink:      true
-urxvt*font:             xft:terminus:pixelsize=12 
+urxvt*font:             xft:Consolas:antialias=true:autohinting=true:size=9
+!urxvt*letterSpace:      -1
 !urxvt*boldFont:         xft:terminus-bold:pixelsize=12
+!urxvt*font:             xft:Consolas:pixelsize=12:antialias=true:autohinting=true
 urxvt*foreground:       white
 urxvt*geometry:         80x28
 !urxvt_small.geometry:   95x13+50+80
