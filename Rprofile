@@ -1,0 +1,3 @@
+if ( interactive() ) {
+  library(vimcom)
+}
