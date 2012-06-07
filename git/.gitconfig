@@ -21,9 +21,6 @@
 [github]
 	user = mdlerch
 	token = 7035c51d364e417dc09ec3150883e32b
-[giggle]
-	main-window-maximized = false
-	main-window-geometry = 1588x848+6+30
-	history-view-vpane-position = 706
-	file-view-vpane-position = 323
-	main-window-view = FileView
+[alias]
+	lol = "log --graph --decorate --pretty=oneline --abbrev-commit --all"
+	lg = "log --graph --decorate --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all"
