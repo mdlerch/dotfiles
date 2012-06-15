@@ -45,6 +45,8 @@ map <leader>lp <ESC>:w<ESC>:!texi2pdf % <CR>
 map <leader>ld <ESC>:w<ESC>:!texi2dvi % <CR>
 map <leader>lb <ESC>:w<ESC>:!bibtex %:r <CR>
 
+map <leader>gp <ESC>:!gnuplot % <CR>
+
 " buffer menu
 :nnoremap <F4> :buffers!<CR>:buffer<space>
 
