@@ -69,10 +69,10 @@ logHook' h = dynamicLogWithPP $ xmobarPP {
   }
 
 layoutHook' = avoidStruts $ smartBorders  $ magnifierOff $ layoutHints $ spacing 6 $
- onWorkspace "1:t" (tile ||| Mirror tile ||| Grid) $
- onWorkspace "2:t" (tile ||| Mirror tile ||| Grid) $
- onWorkspace "3:t" (tile ||| Mirror tile ||| Grid) $
- onWorkspace "4:t" (tile ||| Mirror tile ||| Grid) $
+ onWorkspace "1:t" (tile ||| Grid) $
+ onWorkspace "2:t" (tile ||| Grid) $
+ onWorkspace "3:t" (tile ||| Grid) $
+ onWorkspace "4:t" (tile ||| Grid) $
  onWorkspace "5:t" (tile ||| Mirror tile ||| Grid) $
  onWorkspace "6:t" (tile ||| Mirror tile ||| Grid) $
  onWorkspace "7:f" (Full ||| simpleFloat) $
