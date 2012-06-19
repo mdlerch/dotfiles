@@ -25,4 +25,5 @@
 #xmonad
 
 #exec ck-launch-session gnome-session
-exec ck-launch-session gnome-session --session xmonad "$@"
+#exec ck-launch-session gnome-session --session xmonad "$@"
+exec ck-launch-session startkde
