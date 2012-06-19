@@ -22,12 +22,13 @@ import XMonad.Hooks.ManageHelpers
 import qualified XMonad.StackSet as W
 import qualified Data.Map as M
 import XMonad.Actions.CycleWS
-import XMonad.Config.Gnome
+import XMonad.Config.Kde
+import XMonad.Util.WindowProperties (getProp32s)
 
 
 main = do
   xmbar1 <- spawnPipe xmobar1
-  xmonad $ gnomeConfig 
+  xmonad $ kde4Config 
     {  focusFollowsMouse = True
     ,  terminal = terminal'
     ,  borderWidth = 3
@@ -93,6 +94,8 @@ manageHook' =  composeAll
   [ className =? "XTerm" --> doFloat
   , className =? "MPlayer" --> doFloat  
   , title =? "gnome-terminal_small" --> doFloat 
+  , ((className =? "krunner") >>=return . not --> manageHook kde4Config) 
+  <+> (kdeOverride --> doFloat)
   ]
   <+>
   composeOne
@@ -103,6 +106,12 @@ manageHook' =  composeAll
   manageDocks
   -- <+>
   -- doF W.swapDown
+  --
+kdeOverride :: Query Bool
+kdeOverride = ask >>= \w -> liftX $ do
+    override <- getAtom "_KDE_NET_WM_WINDOW_TYPE_OVERRIDE"
+    wt <- getProp32s "_NET_WM_WINDOW_TYPE" w
+    return $ maybe False (elem $ fromIntegral override) wt
 
 keys' :: XConfig Layout -> M.Map (KeyMask, KeySym) (X ())
 keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
@@ -116,9 +125,9 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   ,  ((mod1Mask, xK_F2), spawn "gmrun")
   ,  ((mod1Mask .|. controlMask, xK_r), shellPrompt defaultXPConfig)
      -- MPD/Audio
-  ,  ((controlMask .|. mod4Mask, xK_p), spawn "rhythmbox-client --play-pause > /dev/null")
-  ,  ((controlMask .|. mod4Mask, xK_n), spawn "rhythmbox-client --next > /dev/null")
-  ,  ((controlMask .|. mod4Mask, xK_b), spawn "rhythmbox-client --previous > /dev/null")
+  ,  ((controlMask .|. mod4Mask, xK_p), spawn "playertoggle")
+  ,  ((controlMask .|. mod4Mask, xK_n), spawn "playernext")
+  ,  ((controlMask .|. mod4Mask, xK_b), spawn "playerprev")
   ,  ((0,xK_F11), spawn "rhythmbox-client --play-pause > /dev/null")
   ,  ((0, xK_F12), spawn "rhythmbox-client --next > /dev/null")
   ,  ((0, xK_F10), spawn "rhythmbox-client --previous > /dev/null")
