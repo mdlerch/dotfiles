@@ -14,6 +14,8 @@ set grepprg=grep\ -nH\ $*
 "let g:tex_flavor='latex'
 set iskeyword+=:
 set ts=2 sts=2 sw=2 noexpandtab
+autocmd FileType html setlocal ts=4 sts=4 sw=4 noexpandtab
+autocmd FileType css setlocal ts=4 sts=4 sw=4 noexpandtab
 
 set statusline=%f%m\ 
 set statusline+=[Line\ %l\ of\ %L]
