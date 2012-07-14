@@ -94,6 +94,7 @@ manageHook' =  composeAll
   [ className =? "XTerm" --> doFloat
   , className =? "MPlayer" --> doFloat  
   , title =? "gnome-terminal_small" --> doFloat 
+  , className =? "Kcalc" --> doFloat
   , ((className =? "krunner") >>=return . not --> manageHook kde4Config) 
   <+> (kdeOverride --> doFloat)
   ]
@@ -121,16 +122,16 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 --     ((mod1Mask .|. controlMask, xK_t), spawn "gnome-terminal --hide-menubar")
 --  ,  ((mod1Mask .|. controlMask, xK_a), spawn "gnome-terminal --hide-menubar --title=gnome-terminal_small --geometry=90x8+980+750")
   ,  ((mod1Mask .|. controlMask, xK_f), spawn "chromium > /dev/null")
-  ,  ((mod1Mask .|. controlMask, xK_c), spawn "xcalc > /dev/null")
+  ,  ((mod1Mask .|. controlMask, xK_c), spawn "kcalc > /dev/null")
   ,  ((mod1Mask, xK_F2), spawn "gmrun")
   ,  ((mod1Mask .|. controlMask, xK_r), shellPrompt defaultXPConfig)
      -- MPD/Audio
   ,  ((controlMask .|. mod4Mask, xK_p), spawn "playertoggle")
   ,  ((controlMask .|. mod4Mask, xK_n), spawn "playernext")
   ,  ((controlMask .|. mod4Mask, xK_b), spawn "playerprev")
-  ,  ((0,xK_F11), spawn "rhythmbox-client --play-pause > /dev/null")
-  ,  ((0, xK_F12), spawn "rhythmbox-client --next > /dev/null")
-  ,  ((0, xK_F10), spawn "rhythmbox-client --previous > /dev/null")
+  ,  ((0,xK_F11), spawn "playertoggle")
+  ,  ((0, xK_F12), spawn "playernext")
+  ,  ((0, xK_F10), spawn "playerprev")
   ,  ((controlMask .|. mod4Mask, xK_k), spawn "amixer set Master 2%- > /dev/null")
   ,  ((controlMask .|. mod4Mask, xK_l), spawn "amixer set Master 2%+ > /dev/null")
   ,  ((controlMask .|. mod4Mask, xK_m), spawn "amixer set Master toggle > /dev/null")
