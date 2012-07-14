@@ -27,6 +27,7 @@ export TEXINPUTS
 # set some defaults
 export BROWSER=chromium
 
-export PATH=$PATH:~/opt/mendeleydesktop-1.5.1-linux-x86_64/bin
+export PATH=$PATH:~/.cabal/bin/:~/opt/mendeleydesktop-1.5.1-linux-x86_64/bin
+export MANPATH=$MANPATH:~/.cabal/share/man
 
 export WINEDLLOVERRIDES='winemenubuilder.exe=d'
