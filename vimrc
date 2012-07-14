@@ -26,6 +26,9 @@ let g:tex_flavor = "latex"
 
 set nu
 
+" paste on newline
+nnoremap p :pu<CR>`[
+
 set list
 nmap <leader>l :set list!<CR>
 set listchars=eol:¬,tab:▸\ 
@@ -53,6 +56,9 @@ map <leader>gp <ESC>:!gnuplot % <CR>
 :nnoremap <F4> :buffers!<CR>:buffer<space>
 
 :nnoremap <F2> :NERDTreeToggle<CR>
+
+" set working directory
+:cabbr swd :cd %:p:h<CR>:pwd<CR>
 
 set scrolloff=6
 
