@@ -57,7 +57,8 @@ function smile_prompt
 
 	RL="${RELEASE}"
 
-	PS1="[${UC}\u${RC}@${HC}\h ${RC}\W${RL}] ${SC}${RL} "
+	PS1=" ${UC}\W${RL} ${SC}${RL} "
+	PS1="\[\033[G\]$PS1" 
 	PS2="\ "
 
 }
