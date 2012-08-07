@@ -1,193 +1,33 @@
 Xcursor.theme: Bluecurve
 Xcursor.size: 16
 
-Xft.dpi: 96 
+!Xft.dpi: 96 
 !Xft.antialias: true 
 !Xft*hinting: full
 !Xft.hinting: true
 !Xft.rgba: rgb
 !Xft.hintstyle: hintfull
-ttf.antialias: true
-
-
-xcalendar*firstDay:		1
-xcalendar*markHoliday:		false
-
-!-------------------------------------------------------------------------------
-!
-!	X T E R M - Setting
-!
-!
-!XTerm*underLine:		on
-XTerm*colorMode:		on
-XTerm*colorBD:			lightyellow
-!XTerm*colorBDMode:		off
-XTerm*colorUL:			yellow
-XTerm*colorULMode:		on
-XTerm*dynamicColors:		off
-XTerm*highlightSelection:	true
-XTerm*background:		#000000
-XTerm*foreground:		#7f7f7f
-xterm*faceName:		xft:monospace:pixelsize=12
-!colors
-!black
-XTerm*color0:		#000000
-XTerm*color8:		#666666
-!red
-XTerm*color1:		#9e1828
-XTerm*color9:		#cf6171
-!green
-XTerm*color2:		#aece92
-XTerm*color10:		#c5f779
-!yellow
-XTerm*color3:		#968a38
-XTerm*color11:		#fff796
-!blue
-XTerm*color4:		#414171
-XTerm*color12:		#4186be
-!magenta
-XTerm*color5:		#96c359
-XTerm*color13:		#96c359
-!cyan
-XTerm*color6:		#418179
-XTerm*color14:		#71bebe
-!white
-XTerm*color7:		#bebebe
-XTerm*color15:		#ffffff 
-
-!-------------------------------------------------------------------------------
-!
-!	X C A L C - Setting
-!
-!
-xcalc*geometry: 200x275
-xcalc.ti.bevel.background: #111111
-xcalc.ti.bevel.screen.background: #000000
-xcalc.ti.bevel.screen.DEG.background: #000000
-xcalc.ti.bevel.screen.DEG.foreground: LightSeaGreen
-xcalc.ti.bevel.screen.GRAD.background: #000000
-xcalc.ti.bevel.screen.GRAD.foreground: LightSeaGreen
-xcalc.ti.bevel.screen.RAD.background: #000000
-xcalc.ti.bevel.screen.RAD.foreground: LightSeaGreen
-xcalc.ti.bevel.screen.INV.background: #000000
-xcalc.ti.bevel.screen.INV.foreground: Red
-xcalc.ti.bevel.screen.LCD.background: #000000
-xcalc.ti.bevel.screen.LCD.foreground: LightSeaGreen
-xcalc.ti.bevel.screen.LCD.shadowWidth: 0
-xcalc.ti.bevel.screen.M.background: #000000
-xcalc.ti.bevel.screen.M.foreground: LightSeaGreen
-xcalc.ti.bevel.screen.P.background: #000000
-xcalc.ti.bevel.screen.P.foreground: Yellow
-xcalc.ti.Command.foreground: White
-xcalc.ti.Command.background: #777777
-xcalc.ti.button5.background: Orange3
-xcalc.ti.button19.background: #611161
-xcalc.ti.button18.background: #611161
-xcalc.ti.button20.background: #611111
-xcalc.ti.button25.background: #722222
-xcalc.ti.button30.background: #833333
-xcalc.ti.button35.background: #944444
-xcalc.ti.button40.background: #a55555
-xcalc.ti.button22.background: #222262
-xcalc.ti.button23.background: #222262
-xcalc.ti.button24.background: #222272
-xcalc.ti.button27.background: #333373
-xcalc.ti.button28.background: #333373
-xcalc.ti.button29.background: #333373
-xcalc.ti.button32.background: #444484
-xcalc.ti.button33.background: #444484
-xcalc.ti.button34.background: #444484
-xcalc.ti.button37.background: #555595
-xcalc.ti.button38.background: #555595
-xcalc.ti.button39.background: #555595
-XCalc*Cursor:                 hand2
-XCalc*ShapeStyle:             rectangle
-
-!-------------------------------------------------------------------------------
-!
-!	X M E S S A G E - Setting
-!
-!
-.xmessage.form.okay.shapeStyle: rectangle
-.xmessage.form.okay.background: #777777
-.xmessage.form.okay.foreground: snow
-!xmessage*message*background: snow
-xmessage*defaultButton: okay
-Xmessage.form.message.Scroll:  WhenNeeded
-
-!-------------------------------------------------------------------------------
-!
-!	X F O N T S E L - Setting
-!
-!
-!XFontSel*sampleText.background: TEXTBG
-XFontSel*menu*showUnselectable: false
-XFontSel*MenuButton.shadowWidth: 0
-XFontsel*Toggle*ToggleStyle: check
-XFontsel*MenuButton*Justify:    left
-XFontsel*MenuButton*MenuButtonStyle: select
-.xfontsel.pane.commandBox.quitButton.background: #777777
-.xfontsel.pane.commandBox.quitButton.foreground: snow
-.xfontsel.pane.commandBox.ownButton.background: orange3
-.xfontsel.pane.commandBox.ownButton.foreground: snow
-.xfontsel.pane.commandBox.countLabel.background: snow
-.xfontsel.pane.viewPort.sampleText.background: #777777
-.xfontsel.pane.viewPort.sampleText.foreground: snow
-.xfontsel.pane.fieldBox.field0.background: #777777
-.xfontsel.pane.fieldBox.field0.foreground: snow
-.xfontsel.pane.fieldBox.field1.background: #777777
-.xfontsel.pane.fieldBox.field1.foreground: snow
-.xfontsel.pane.fieldBox.field2.background: #777777
-.xfontsel.pane.fieldBox.field2.foreground: snow
-.xfontsel.pane.fieldBox.field3.background: #777777
-.xfontsel.pane.fieldBox.field3.foreground: snow
-.xfontsel.pane.fieldBox.field4.background: #777777
-.xfontsel.pane.fieldBox.field4.foreground: snow
-.xfontsel.pane.fieldBox.field5.background: #777777
-.xfontsel.pane.fieldBox.field5.foreground: snow
-.xfontsel.pane.fieldBox.field6.background: #777777
-.xfontsel.pane.fieldBox.field6.foreground: snow
-.xfontsel.pane.fieldBox.field7.background: #777777
-.xfontsel.pane.fieldBox.field7.foreground: snow
-.xfontsel.pane.fieldBox.field8.background: #777777
-.xfontsel.pane.fieldBox.field8.foreground: snow
-.xfontsel.pane.fieldBox.field9.background: #777777
-.xfontsel.pane.fieldBox.field9.foreground: snow
-.xfontsel.pane.fieldBox.field10.background: #777777
-.xfontsel.pane.fieldBox.field10.foreground: snow
-.xfontsel.pane.fieldBox.field11.background: #777777
-.xfontsel.pane.fieldBox.field11.foreground: snow
-.xfontsel.pane.fieldBox.field12.background: #777777
-.xfontsel.pane.fieldBox.field12.foreground: snow
-.xfontsel.pane.fieldBox.field13.background: #777777
-.xfontsel.pane.fieldBox.field13.foreground: snow
-.xfontsel.pane.fieldBox*foreground: #000000
-.xfontsel.pane.fieldBox.MenuButton.borderWidth: 1
-.xfontsel.pane.fieldBox.MenuButton.internalHeight: 1
-.xfontsel.pane.fieldBox.MenuButton.internalWidth: 2
-.xfontsel.pane.fieldBox.MenuButton.shapeStyle: rectangle! urxvt settings & colors
-
-
-
+!ttf.antialias: true
 
 !-------------------------------------------------------
-!
-!
-!           URXVT
-!
-!
-!
-!
+! UUU   UUU RRR RRR   XXX    XXX VVV     VVV TTTTTTTTT
+! UUU   UUU RRR   RRR  XXX  XXX  VVV     VVV    TTT
+! UUU   UUU RRR   RRR   XX  XX    VV     VV     TTT
+! UUU   UUU RRR  RRR      XX       VV   VV      TTT
+! UUU   UUU RRRRRR      XX  XX      VV VV       TTT
+! UUU   UUU RRR RRR    XXX  XXX      VVV        TTT
+!   UUUUU   RRR  RRR  XXX    XXX      V         TTT
+!          
 !urxvt*termName:           string
 !urxvt*geometry:           geometry
 !urxvt*chdir:              string
 !urxvt*reverseVideo:       boolean
-!urxvt*loginShell:         boolean
+!urxvt*loginShell:         true
 !urxvt*jumpScroll:         boolean
 !urxvt*skipScroll:         boolean
 !urxvt*pastableTabs:       boolean
 !urxvt*scrollstyle:        mode
-!urxvt*scrollBar:          boolean
+urxvt*scrollBar:          false
 !urxvt*scrollBar_right:    boolean
 !urxvt*scrollBar_floating: boolean
 !urxvt*scrollBar_align:    mode
@@ -200,7 +40,7 @@ urxvt*transparent:  false
 !urxvt*tintColor:          color
 !urxvt*shading:            number
 !urxvt*blurRadius:         HxV
-!urxvt*fading:             number
+urxvt*fading:             25
 !urxvt*fadeColor:          color
 !urxvt*utmpInhibit:        boolean
 !urxvt*urgentOnBell:       boolean
@@ -210,12 +50,12 @@ urxvt*transparent:  false
 !urxvt*mouseWheelScrollPage:   boolean
 !urxvt*tripleclickwords:   boolean
 !urxvt*insecure:           boolean
-!urxvt*cursorUnderline:    boolean
-!urxvt*cursorBlink:        boolean
+!urxvt*cursorUnderline:    false
+urxvt*cursorBlink:        true
 !urxvt*pointerBlank:       boolean
 !urxvt*background:           color
 urxvt*background: rgba:0000/0000/0200/c800
-!urxvt*foreground:         color
+urxvt*foreground:       white
 !urxvt*color0:             color
 !urxvt*color1:             color
 !urxvt*color2:             color
@@ -249,7 +89,7 @@ urxvt*background: rgba:0000/0000/0200/c800
 !urxvt*path:               search path
 !urxvt*backgroundPixmap:   file[;geom]
 !urxvt*iconFile:           file
-!urxvt*font:               fontname
+urxvt*font:             xft:Consolas:antialias=true:autohinting=true:size=9
 !urxvt*boldFont:           fontname
 !urxvt*italicFont:         fontname
 !urxvt*boldItalicFont:     fontname
@@ -258,16 +98,16 @@ urxvt*background: rgba:0000/0000/0200/c800
 !urxvt*preeditType:        style
 !urxvt*imLocale:           string
 !urxvt*imFont:             fontname
-!urxvt*title:              string
+urxvt*title:              urxvt
 !urxvt*iconName:           string
-!urxvt*saveLines:          number
+urxvt*saveLines:          4000
 urxvt*depth:  32
 !urxvt*buffered:           boolean
 !urxvt*transient-for:      windowid
 !urxvt*override-redirect:  boolean
 !urxvt*hold:               boolean
 !urxvt*externalBorder:     number
-!urxvt*internalBorder:     number
+urxvt*internalBorder:     0
 !urxvt*borderLess:         boolean
 !urxvt*lineSpace:          number
 !urxvt*letterSpace:        number
@@ -290,34 +130,6 @@ urxvt*depth:  32
 !urxvt*xrm:                string
 !urxvt*keysym.sym:         keysym
 !
-!urxvt*background:       #3a3a3a
-urxvt*cursorBlink:      true
-urxvt*font:             xft:Consolas:antialias=true:autohinting=true:size=9
-!urxvt*letterSpace:      -1
-!urxvt*boldFont:         xft:terminus-bold:pixelsize=12
-!urxvt*font:             xft:Consolas:pixelsize=12:antialias=true:autohinting=true
-urxvt*foreground:       white
-!urxvt_small.geometry:   95x13+50+80
-! V
-urxvt*fading:        0
-!urxvt*inheritPixmap:   true
-urxvt*internalBorder:   0
-urxvt*loginShell:       true
-urxvt*saveLines:        4000
-urxvt*scrollBar:        false
-! V
-!urxvt*shading:         100
-!urxvt*transparent: 0
-!urxvt*termName:         rxvt-unicode
-! V
-!urxvt*tintColor:       #ffffff
-urxvt*underlineColor:   #86a2be
-urxvt*perl-ext-common:      default,matcher
-urxvt*matcher.button:       1
-urxvt*matcher.pattern.1:    \bwww\.[\w-]\.[\w./?&@#-]*[\w/-]
-urxvt*urlLauncher:        /usr/bin/chromium
-!urxvt*perl-ext-common:      matcher
-urxvt*title:		urxvt
 
 !colors reg bright? 
 !black
@@ -408,5 +220,95 @@ urxvt_small*color14:		#3fa7a7
 !white
 urxvt_small*color7:		#dedede
 urxvt_small*color15:		white
+
+!-------------------------------------------------------------------------------
+!
+!	X T E R M - Setting
+!
+!
+!XTerm*underLine:		on
+XTerm*colorMode:		on
+XTerm*colorBD:			lightyellow
+!XTerm*colorBDMode:		off
+XTerm*colorUL:			yellow
+XTerm*colorULMode:		on
+XTerm*dynamicColors:		off
+XTerm*highlightSelection:	true
+XTerm*background:		#000000
+XTerm*foreground:		#7f7f7f
+xterm*faceName:		xft:monospace:pixelsize=12
+!colors
+!black
+XTerm*color0:		#000000
+XTerm*color8:		#666666
+!red
+XTerm*color1:		#9e1828
+XTerm*color9:		#cf6171
+!green
+XTerm*color2:		#aece92
+XTerm*color10:		#c5f779
+!yellow
+XTerm*color3:		#968a38
+XTerm*color11:		#fff796
+!blue
+XTerm*color4:		#414171
+XTerm*color12:		#4186be
+!magenta
+XTerm*color5:		#96c359
+XTerm*color13:		#96c359
+!cyan
+XTerm*color6:		#418179
+XTerm*color14:		#71bebe
+!white
+XTerm*color7:		#bebebe
+XTerm*color15:		#ffffff 
+
+!-------------------------------------------------------------------------------
+!
+!	X C A L C - Setting
+!
+!
+xcalc*geometry: 200x275
+xcalc.ti.bevel.background: #111111
+xcalc.ti.bevel.screen.background: #000000
+xcalc.ti.bevel.screen.DEG.background: #000000
+xcalc.ti.bevel.screen.DEG.foreground: LightSeaGreen
+xcalc.ti.bevel.screen.GRAD.background: #000000
+xcalc.ti.bevel.screen.GRAD.foreground: LightSeaGreen
+xcalc.ti.bevel.screen.RAD.background: #000000
+xcalc.ti.bevel.screen.RAD.foreground: LightSeaGreen
+xcalc.ti.bevel.screen.INV.background: #000000
+xcalc.ti.bevel.screen.INV.foreground: Red
+xcalc.ti.bevel.screen.LCD.background: #000000
+xcalc.ti.bevel.screen.LCD.foreground: LightSeaGreen
+xcalc.ti.bevel.screen.LCD.shadowWidth: 0
+xcalc.ti.bevel.screen.M.background: #000000
+xcalc.ti.bevel.screen.M.foreground: LightSeaGreen
+xcalc.ti.bevel.screen.P.background: #000000
+xcalc.ti.bevel.screen.P.foreground: Yellow
+xcalc.ti.Command.foreground: White
+xcalc.ti.Command.background: #777777
+xcalc.ti.button5.background: Orange3
+xcalc.ti.button19.background: #611161
+xcalc.ti.button18.background: #611161
+xcalc.ti.button20.background: #611111
+xcalc.ti.button25.background: #722222
+xcalc.ti.button30.background: #833333
+xcalc.ti.button35.background: #944444
+xcalc.ti.button40.background: #a55555
+xcalc.ti.button22.background: #222262
+xcalc.ti.button23.background: #222262
+xcalc.ti.button24.background: #222272
+xcalc.ti.button27.background: #333373
+xcalc.ti.button28.background: #333373
+xcalc.ti.button29.background: #333373
+xcalc.ti.button32.background: #444484
+xcalc.ti.button33.background: #444484
+xcalc.ti.button34.background: #444484
+xcalc.ti.button37.background: #555595
+xcalc.ti.button38.background: #555595
+xcalc.ti.button39.background: #555595
+XCalc*Cursor:                 hand2
+XCalc*ShapeStyle:             rectangle
 
 
