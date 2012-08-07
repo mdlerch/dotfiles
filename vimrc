@@ -1,18 +1,15 @@
 call pathogen#infect()
 Helptags
-
+" don't forget about gg=G
 " I don't know what this does
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
 set nocompatible
-"set t_Co=256
 syntax enable
 filetype plugin on
 filetype indent on
-" Make grep always show file name even if searching a single file name
-set grepprg=grep\ -nH\ $*
 
 set iskeyword+=:
 set ts=4 sts=4 sw=4 noexpandtab
@@ -30,7 +27,7 @@ let g:tex_flavor = "latex"
 set nu
 
 " paste on newline
-nnoremap p :pu<CR>`[
+nnoremap P :pu<CR>
 
 set list
 nmap <leader>l :set list!<CR>
@@ -60,12 +57,11 @@ map <leader>lb <ESC>:w<ESC>:!bibtex %:r <CR>
 :nnoremap <F2> :NERDTreeToggle<CR>
 
 " set working directory
-:cabbr swd :cd %:p:h<CR>:pwd<CR>
+:cabbr setwd :cd %:p:h<CR>:pwd<CR>
 
 set scrolloff=6
 
 :cabbr mytemp !echo -e mytemp: & ls ~/.vim/templates/ 
-
 :cabbr mytemphw 0r ~/.vim/templates/hw.tex
 :cabbr mytemphwknitr 0r ~/.vim/templates/hwknitr.tex
 :cabbr mytemphwreport 0r ~/.vim/templates/hwreport.tex
@@ -82,6 +78,7 @@ au BufNewFile,BufRead *.txt set textwidth=80
 colorscheme zenburn
 highlight Comment cterm=italic
 
+vnoremap . :normal . <CR>
 
 
 " jumplist
