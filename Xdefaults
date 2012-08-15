@@ -130,6 +130,9 @@ urxvt*internalBorder:     0
 !urxvt*xrm:                string
 !urxvt*keysym.sym:         keysym
 !
+URxvt.perl-ext-common:  default,matcher
+URxvt.urlLauncher:      /usr/bin/chromium
+URxvt.matcher.button:   1
 
 !colors reg bright? 
 !black
