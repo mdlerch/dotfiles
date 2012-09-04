@@ -3,6 +3,7 @@
 	email = mdlerch@gmail.com
 [core]
 	editor = vim
+	excludesfile = /home/mike/.gitignore_global
 [color]
   ui = auto
 [color "branch"]
