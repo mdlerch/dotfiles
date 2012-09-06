@@ -1,6 +1,6 @@
 # Conky settings #
 background no
-update_interval 1
+update_interval 20
 
 
 override_utf8_locale yes
