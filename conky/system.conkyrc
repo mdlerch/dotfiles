@@ -1,5 +1,5 @@
 # Conky settings #
-background no
+background yes
 update_interval 1
 
 cpu_avg_samples 2
@@ -13,7 +13,7 @@ no_buffers yes
 text_buffer_size 2048
 #imlib_cache_size 0
 
-temperature_unit fahrenheit
+#temperature_unit fahrenheit
 
 # Window specifications #
 
@@ -33,10 +33,10 @@ gap_x 35
 gap_y 55
 
 # Graphics settings #
-draw_shades no
-draw_outline no
-draw_borders no
-draw_graph_borders no
+#draw_shades no
+#draw_outline no
+#draw_borders no
+#draw_graph_borders no
 
 # Text settings #
 use_xft yes
