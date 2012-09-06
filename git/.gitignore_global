@@ -1,6 +1,7 @@
 # temp files #
 ##############
 *.swp
+*.aux
 
 # output files #
 *.pdf
