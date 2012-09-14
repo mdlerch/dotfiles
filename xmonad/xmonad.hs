@@ -31,9 +31,9 @@ main = do
   xmonad $ kde4Config 
     {  focusFollowsMouse = True
     ,  terminal = terminal'
-    ,  borderWidth = 3
+    ,  borderWidth = 2
     ,  focusedBorderColor = "#3299cd"
-    ,  normalBorderColor = "#060000"
+    ,  normalBorderColor = "#2b2b2b"
     ,  keys = keys'
     ,  manageHook = manageHook'
     ,  layoutHook = layoutHook'
@@ -55,21 +55,21 @@ logHook' h = dynamicLogWithPP $ xmobarPP {
   ,  ppUrgent = xmobarColor "red" "yellow" . xmobarStrip
   , ppLayout = (
                \x -> case x of
-                "Magnifier (off) Hinted Spacing 6 Tall" -> " tile "
-                "Magnifier Hinted Spacing 6 Tall" -> " tile "
-                "Magnifier (off) Hinted Spacing 6 Mirror Tall" -> " horizontal "
-                "Magnifier Hinted Spacing 6 Mirror Tall" -> " horizontal "
-                "Magnifier (off) Hinted Spacing 6 Grid" -> " grid "
-                "Magnifier Hinted Spacing 6 Grid" -> " grid "
-                "Magnifier (off) Hinted Spacing 6 Full" -> " full "
-                "Magnifier Hinted Spacing 6 Full" -> " full "
-                "Magnifier (off) Hinted Spacing 6 Simple Float" -> " float "
-                "Magnifier Hinted Spacing 6 Simple Float" -> " float "
+                "Magnifier (off) Hinted Spacing 0 Tall" -> " tile "
+                "Magnifier Hinted Spacing 0 Tall" -> " tile "
+                "Magnifier (off) Hinted Spacing 0 Mirror Tall" -> " horizontal "
+                "Magnifier Hinted Spacing 0 Mirror Tall" -> " horizontal "
+                "Magnifier (off) Hinted Spacing 0 Grid" -> " grid "
+                "Magnifier Hinted Spacing 0 Grid" -> " grid "
+                "Magnifier (off) Hinted Spacing 0 Full" -> " full "
+                "Magnifier Hinted Spacing 0 Full" -> " full "
+                "Magnifier (off) Hinted Spacing 0 Simple Float" -> " float "
+                "Magnifier Hinted Spacing 0 Simple Float" -> " float "
                 )
 
   }
 
-layoutHook' = avoidStruts $ smartBorders  $ magnifierOff $ layoutHints $ spacing 6 $
+layoutHook' = avoidStruts $ smartBorders  $ magnifierOff $ layoutHints $ spacing 0 $
  onWorkspace "1:t" (tile ||| Grid) $
  onWorkspace "2:t" (tile ||| Grid) $
  onWorkspace "3:t" (tile ||| Grid) $
