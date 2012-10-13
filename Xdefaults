@@ -129,6 +129,8 @@ urxvt*internalBorder:     0
 !urxvt*iso14755_52:        boolean
 !urxvt*xrm:                string
 !urxvt*keysym.sym:         keysym
+urxvt*keysym.Home:         \033[1~
+urxvt*keysym.End:         \033[4~
 !
 URxvt.perl-ext-common:  default,matcher
 URxvt.urlLauncher:      /usr/bin/chromium
