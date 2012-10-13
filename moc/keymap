@@ -40,8 +40,8 @@
 
 quit_client =		q
 go =			ENTER
-menu_down =		DOWN
-menu_up =		UP
+menu_down =		j
+menu_up =		k
 menu_page_down =	PAGE_DOWN
 menu_page_up =		PAGE_UP
 menu_first_item = 	HOME
@@ -119,8 +119,8 @@ history_up =		UP
 history_down =		DOWN
 delete_to_start =	^u
 delete_to_end =		^k
-plist_move_up =		k
-plist_move_down =	j
+plist_move_up =		W
+plist_move_down =	O
 theme_menu =		T
 
 toggle_equalizer =	E
