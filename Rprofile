@@ -1,3 +1,2 @@
-if ( interactive() ) {
-  library(vimcom)
-}
+options(vimcom.verbose = 1)
+library(vimcom)

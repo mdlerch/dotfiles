@@ -89,7 +89,7 @@ urxvt*foreground:       white
 !urxvt*path:               search path
 !urxvt*backgroundPixmap:   file[;geom]
 !urxvt*iconFile:           file
-urxvt*font:             xft:Consolas:antialias=true:autohinting=true:size=9
+urxvt*font:             xft:inconsolata:antialias=true:autohinting=true:size=9
 !urxvt*boldFont:           fontname
 !urxvt*italicFont:         fontname
 !urxvt*boldItalicFont:     fontname
