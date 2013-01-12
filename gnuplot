@@ -86,7 +86,7 @@ set label textcolor rgb text_color font my_font
 set border 31 lw @my_axis_width lc rgb text_color
 
 # set key options
-set key outside box width 2 height 2 enhanced spacing 2
+set key inside width 2 height 2 enhanced spacing 2
 
 # set grid color
 set grid lc rgb grid_color
