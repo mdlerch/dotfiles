@@ -35,6 +35,20 @@ do
 	end)
 end
 -- }}}
+--
+local isplasma = function(c)
+	return awful.rules.match(c,{class="Plasma"})
+end
+
+local killnoplasma = function(c)
+	if isplasma(c) then
+		c.minimized=false
+	else 
+		c.kill(c)
+	end
+	return true
+end
+
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
@@ -259,7 +273,7 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
 							  awful.key({ modkey,           }, "u", awful.client.urgent.jumpto),
 							  awful.key({ "Mod1",           }, "Tab",
 							  function ()
-								  awful.client.focus.byidx(-1)
+								  awful.client.focus.byidx(1)
 								  if client.focus then
 									  client.focus:raise()
 								  end
@@ -268,13 +282,14 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
 							  -- Standard program
 							  awful.key({ "Control", "Mod1"          }, "t", function () awful.util.spawn(terminal) end),
 							  awful.key({ "Control", "Mod1"          }, "f", function () awful.util.spawn("chromium") end),
+							  awful.key({ "Control", "Mod1"          }, "c", function () awful.util.spawn("chromium") end),
 							  awful.key({ modkey, "Control"          }, "p", function () awful.util.spawn_with_shell("/home/mike/bin/playertoggle") end),
 							  awful.key({ "Control", modkey          }, "n", function () awful.util.spawn_with_shell("/home/mike/bin/playernext") end),
 							  awful.key({ "Control", modkey          }, "b", function () awful.util.spawn_with_shell("/home/mike/bin/playerprev") end),
 							  awful.key({ "Control", modkey          }, "l", function () awful.util.spawn_with_shell("amixer set Master 2%+ > /dev/null") end),
 							  awful.key({ "Control", modkey          }, "k", function () awful.util.spawn_with_shell("amixer set Master 2%- > /dev/null") end),
-							  awful.key({ modkey, "Control" }, "r", awesome.restart),
-							  awful.key({ modkey, "Shift"   }, "q", awesome.quit),
+							  awful.key({ modkey, "Control", "Mod1" }, "r", awesome.restart),
+							  awful.key({ modkey, "Control", "Mod1"   }, "q", awesome.quit),
 
 							  awful.key({ modkey, "Mod1"          }, "l",     function () awful.tag.incmwfact( 0.05)    end),
 							  awful.key({ modkey, "Mod1"          }, "h",     function () awful.tag.incmwfact(-0.05)    end),
@@ -298,12 +313,12 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
 								  awful.util.getdir("cache") .. "/history_eval")
 							  end),
 							  -- Menubar
-							  awful.key({ modkey }, "p", function() menubar.show() end)
+							  awful.key({ "Control", "Mod1" }, "r", function() menubar.show() end)
 							  )
 
 							  clientkeys = awful.util.table.join(
 							  awful.key({ modkey,           }, "f",      function (c) c.fullscreen = not c.fullscreen  end),
-							  awful.key({ modkey, "Mod1"   }, "c",      function (c) c:kill()                         end),
+							  awful.key({ modkey, "Mod1"   }, "c",      killnoplasma ),
 							  awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ),
 							  awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end),
 							  awful.key({ modkey,           }, "o",      awful.client.movetoscreen                        ),
@@ -386,6 +401,8 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
 								  { rule = { class = "MPlayer" },
 								  properties = { floating = true } },
 								  { rule = { name = "CRAN mirror" },
+								  properties = { floating = true } },
+								  { rule = { name = "kcalc" },
 								  properties = { floating = true } },
 								  { rule = { class = "gimp" },
 								  properties = { floating = true } },
