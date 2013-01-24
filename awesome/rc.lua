@@ -35,11 +35,11 @@ do
 	end)
 end
 -- }}}
---
+
+-- {{{ Smoother operations with KDE (don't kill plasma objects)
 local isplasma = function(c)
 	return awful.rules.match(c,{class="Plasma"})
 end
-
 local killnoplasma = function(c)
 	if isplasma(c) then
 		c.minimized=false
@@ -48,15 +48,16 @@ local killnoplasma = function(c)
 	end
 	return true
 end
+--- }}}
 
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init("/usr/share/awesome/themes/default/theme.lua")
+beautiful.init("/home/mike/.config/awesome/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvtc"
-editor = os.getenv("EDITOR") or "nano"
+editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -115,69 +116,72 @@ myawesomemenu = {
 	{ "quit", awesome.quit }
 }
 
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-{ "open terminal", terminal }
-								  }
-							  })
+--mymainmenu = awful.menu({ 
+--	items = { 
+--		{ "awesome", myawesomemenu, beautiful.awesome_icon },
+--		{ "open terminal", terminal } 
+--})
 
-							  mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
-							  menu = mymainmenu })
+--mylauncher = awful.widget.launcher({ 
+--	image = beautiful.awesome_icon
+--	menu = mymainmenu 
+--})
 
-							  -- Menubar configuration
-							  menubar.utils.terminal = terminal -- Set the terminal for applications that require it
-							  -- }}}
+-- Menubar configuration
+menubar.utils.terminal = terminal -- Set the terminal for applications that require it
+-- }}}
 
-							  -- {{{ Wibox
-							  -- Create a textclock widget
-							  mytextclock = awful.widget.textclock()
+  -- {{{ Wibox
+  -- Create a textclock widget
+  mytextclock = awful.widget.textclock()
 
-							  -- Create a wibox for each screen and add it
-							  mywibox = {}
-							  mypromptbox = {}
-							  mylayoutbox = {}
-							  mytaglist = {}
-							  mytaglist.buttons = awful.util.table.join(
-							  awful.button({ }, 1, awful.tag.viewonly),
-							  awful.button({ modkey }, 1, awful.client.movetotag),
-							  awful.button({ }, 3, awful.tag.viewtoggle),
-							  awful.button({ modkey }, 3, awful.client.toggletag),
-							  awful.button({ }, 4, function(t) awful.tag.viewnext(awful.tag.getscreen(t)) end),
-							  awful.button({ }, 5, function(t) awful.tag.viewprev(awful.tag.getscreen(t)) end)
-							  )
-							  mytasklist = {}
-							  mytasklist.buttons = awful.util.table.join(
-							  awful.button({ }, 1, function (c)
-								  if c == client.focus then
-									  c.minimized = true
-								  else
-									  -- Without this, the following
-									  -- :isvisible() makes no sense
-									  c.minimized = false
-									  if not c:isvisible() then
-										  awful.tag.viewonly(c:tags()[1])
-									  end
-									  -- This will also un-minimize
-									  -- the client, if needed
-									  client.focus = c
-									  c:raise()
-								  end
-							  end),
-							  awful.button({ }, 3, function ()
-								  if instance then
-									  instance:hide()
-									  instance = nil
-								  else
-									  instance = awful.menu.clients({ width=250 })
-								  end
-							  end),
-							  awful.button({ }, 4, function ()
-								  awful.client.focus.byidx(1)
-								  if client.focus then client.focus:raise() end
-							  end),
-							  awful.button({ }, 5, function ()
-								  awful.client.focus.byidx(-1)
-								  if client.focus then client.focus:raise() end
-							  end))
+  -- Create a wibox for each screen and add it
+  mywibox = {}
+  mypromptbox = {}
+  mylayoutbox = {}
+  mytaglist = {}
+  mytaglist.buttons = awful.util.table.join(
+  awful.button({ }, 1, awful.tag.viewonly),
+  awful.button({ modkey }, 1, awful.client.movetotag),
+  awful.button({ }, 3, awful.tag.viewtoggle),
+  awful.button({ modkey }, 3, awful.client.toggletag),
+  awful.button({ }, 4, function(t) awful.tag.viewnext(awful.tag.getscreen(t)) end),
+  awful.button({ }, 5, function(t) awful.tag.viewprev(awful.tag.getscreen(t)) end)
+  )
+  mytasklist = {}
+  mytasklist.buttons = awful.util.table.join(
+  awful.button({ }, 1, function (c)
+	  if c == client.focus then
+		  c.minimized = true
+	  else
+		  -- Without this, the following
+		  -- :isvisible() makes no sense
+		  c.minimized = false
+		  if not c:isvisible() then
+			  awful.tag.viewonly(c:tags()[1])
+		  end
+		  -- This will also un-minimize
+		  -- the client, if needed
+		  client.focus = c
+		  c:raise()
+	  end
+  end),
+  awful.button({ }, 3, function ()
+	  if instance then
+		  instance:hide()
+		  instance = nil
+	  else
+		  instance = awful.menu.clients({ width=250 })
+	  end
+  end),
+  awful.button({ }, 4, function ()
+	  awful.client.focus.byidx(1)
+	  if client.focus then client.focus:raise() end
+  end),
+  awful.button({ }, 5, function ()
+	  awful.client.focus.byidx(-1)
+	  if client.focus then client.focus:raise() end
+  end))
 
 							  for s = 1, screen.count() do
 								  -- Create a promptbox for each screen
@@ -201,7 +205,7 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
 
 								  -- Widgets that are aligned to the left
 								  local left_layout = wibox.layout.fixed.horizontal()
-								  left_layout:add(mylauncher)
+								  --left_layout:add(mylauncher)
 								  left_layout:add(mytaglist[s])
 								  left_layout:add(mypromptbox[s])
 
@@ -223,7 +227,7 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
 
 							  -- {{{ Mouse bindings
 							  root.buttons(awful.util.table.join(
-							  awful.button({ }, 3, function () mymainmenu:toggle() end),
+							  --awful.button({ }, 3, function () mymainmenu:toggle() end),
 							  awful.button({ }, 4, awful.tag.viewnext),
 							  awful.button({ }, 5, awful.tag.viewprev)
 							  ))
@@ -263,7 +267,7 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
 								  awful.client.focus.byidx(-1)
 								  if client.focus then client.focus:raise() end
 							  end),
-							  awful.key({ modkey,           }, "w", function () mymainmenu:show() end),
+							  --awful.key({ modkey,           }, "w", function () mymainmenu:show() end),
 
 							  -- Layout manipulation
 							  awful.key({ modkey, "Mod1"   }, "j", function () awful.client.swap.byidx(  1)    end),
@@ -282,12 +286,14 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
 							  -- Standard program
 							  awful.key({ "Control", "Mod1"          }, "t", function () awful.util.spawn(terminal) end),
 							  awful.key({ "Control", "Mod1"          }, "f", function () awful.util.spawn("chromium") end),
-							  awful.key({ "Control", "Mod1"          }, "c", function () awful.util.spawn("chromium") end),
+							  awful.key({ "Control", "Mod1"          }, "c", function () awful.util.spawn("kcalc") end),
 							  awful.key({ modkey, "Control"          }, "p", function () awful.util.spawn_with_shell("/home/mike/bin/playertoggle") end),
 							  awful.key({ "Control", modkey          }, "n", function () awful.util.spawn_with_shell("/home/mike/bin/playernext") end),
 							  awful.key({ "Control", modkey          }, "b", function () awful.util.spawn_with_shell("/home/mike/bin/playerprev") end),
 							  awful.key({ "Control", modkey          }, "l", function () awful.util.spawn_with_shell("amixer set Master 2%+ > /dev/null") end),
+							  awful.key({}, "XF86AudioRaiseVolume", function () awful.util.spawn_with_shell("amixer set Master 2%+ > /dev/null") end),
 							  awful.key({ "Control", modkey          }, "k", function () awful.util.spawn_with_shell("amixer set Master 2%- > /dev/null") end),
+							  awful.key({}, "XF86AudioLowerVolume", function () awful.util.spawn_with_shell("amixer set Master 2%- > /dev/null") end),
 							  awful.key({ modkey, "Control", "Mod1" }, "r", awesome.restart),
 							  awful.key({ modkey, "Control", "Mod1"   }, "q", awesome.quit),
 
@@ -297,8 +303,8 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
 							  awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1)      end),
 							  --awful.key({ modkey, "Control" }, "h",     function () awful.tag.incncol( 1)         end),
 							  --awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1)         end),
-							  awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end),
-							  awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
+							  awful.key({ modkey, "Mod1" , "Control" }, "space", function () awful.layout.inc(layouts,  1) end),
+							  awful.key({ modkey, "Mod1", "Control", "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
 
 							  awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
@@ -382,8 +388,8 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
 
 							  clientbuttons = awful.util.table.join(
 							  awful.button({ }, 1, function (c) client.focus = c; c:raise() end),
-							  awful.button({ modkey }, 1, awful.mouse.client.move),
-							  awful.button({ modkey }, 3, awful.mouse.client.resize))
+							  awful.button({ "Mod1" }, 1, awful.mouse.client.move),
+							  awful.button({ "Mod1" }, 3, awful.mouse.client.resize))
 
 							  -- Set keys
 							  root.keys(globalkeys)
@@ -402,7 +408,7 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
 								  properties = { floating = true } },
 								  { rule = { name = "CRAN mirror" },
 								  properties = { floating = true } },
-								  { rule = { name = "kcalc" },
+								  { rule = { name = "KCalc" },
 								  properties = { floating = true } },
 								  { rule = { class = "gimp" },
 								  properties = { floating = true } },
