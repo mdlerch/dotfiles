@@ -27,7 +27,8 @@ brown_050 = "#E69F17"
 brown_075 = "#8F743F"
 brown_100 = "#6D4903"
 
-grid_color = "#d5e0c9"
+grid_color = "#b6bbaf"
+grid_width = "1.2"
 text_color = "#6a6a6a"
 
 
@@ -86,7 +87,7 @@ set label textcolor rgb text_color font my_font
 set border 31 lw @my_axis_width lc rgb text_color
 
 # set key options
-set key inside width 2 height 2 enhanced spacing 2
+set key inside width 2 height 2 enhanced spacing 2 font my_font textcolor rgb text_color
 
 # set grid color
-set grid lc rgb grid_color
+set grid lc rgb grid_color lw grid_width
