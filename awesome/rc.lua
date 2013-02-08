@@ -294,6 +294,7 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 							  awful.key({}, "XF86AudioRaiseVolume", function () awful.util.spawn_with_shell("amixer set Master 2%+ > /dev/null") end),
 							  awful.key({ "Control", modkey          }, "k", function () awful.util.spawn_with_shell("amixer set Master 2%- > /dev/null") end),
 							  awful.key({}, "XF86AudioLowerVolume", function () awful.util.spawn_with_shell("amixer set Master 2%- > /dev/null") end),
+							  awful.key({}, "XF86AudioMute", function () awful.util.spawn_with_shell("amixer set Master toggle > /dev/null") end),
 							  awful.key({ modkey, "Control", "Mod1" }, "r", awesome.restart),
 							  awful.key({ modkey, "Control", "Mod1"   }, "q", awesome.quit),
 
