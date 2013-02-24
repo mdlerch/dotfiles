@@ -41,3 +41,5 @@ bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
 
 source ~/.zsh/zsh_alias
+
+stty stop undef
