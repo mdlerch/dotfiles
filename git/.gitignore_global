@@ -1,7 +1,9 @@
 # temp files #
-##############
-*.swp
 *.aux
+
+# vim files
+*.swp
+*.un~
 
 # output files #
 *.pdf
@@ -9,7 +11,6 @@
 *.dvi
 
 # Compiled source #
-###################
 *.com
 *.class
 *.dll
