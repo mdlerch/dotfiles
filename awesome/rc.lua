@@ -286,6 +286,7 @@ end),
 -- Standard program
 awful.key({ "Control", "Mod1"          }, "t", function () awful.util.spawn(terminal) end),
 awful.key({ "Control", "Mod1"          }, "f", function () awful.util.spawn("chromium") end),
+awful.key({ "Control", "Mod1"          }, "g", function () awful.util.spawn("google-chrome") end),
 awful.key({ "Control", "Mod1"          }, "c", function () awful.util.spawn("kcalc") end),
 awful.key({ modkey, "Control"          }, "p", function () awful.util.spawn_with_shell("/home/mike/bin/playertoggle") end),
 awful.key({ "Control", modkey          }, "n", function () awful.util.spawn_with_shell("/home/mike/bin/playernext") end),
@@ -484,3 +485,5 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+--
+os.execute("nm-applet --sm-disable &")
