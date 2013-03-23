@@ -49,7 +49,7 @@ temperature_unit celsius
 default_color cccccc
 
 # Lua Load  #
-lua_load ~/.config/conky/clock_rings.lua
+lua_load ~/.config/conky/rings.lua
 lua_draw_hook_pre clock_rings
 
 TEXT
