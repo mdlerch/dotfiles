@@ -40,7 +40,7 @@ gap_y 55
 
 # Text settings #
 use_xft yes
-xftfont Inconsolata LGC:style=Bold:size=10
+XFTFONT DejaVu Sans:size=9
 xftalpha 0.1
 
 temperature_unit celsius
@@ -55,14 +55,14 @@ lua_draw_hook_pre clock_rings
 TEXT
 ${voffset 87}${goto 45}${cpu cpu1}%@${goto 185}${cpu cpu2}%@
 ${goto 40}${freq 1}MHz${goto 180}${freq 2}MHz
-${voffset 100}${goto 45}${cpu cpu3}%@${goto 185}${cpu cpu4}%@
+${voffset 110}${goto 45}${cpu cpu3}%@${goto 185}${cpu cpu4}%@
 ${goto 40}${freq 3}MHz${goto 180}${freq 4}MHz
-${voffset 140}${goto 55}Mem:
+${voffset 147}${goto 55}Mem:
 ${goto 55}${mem}
-${voffset 10}${goto 155}Swap:
+${voffset 12}${goto 155}Swap:
 ${goto 155}${swap}
-${voffset 30}${goto 40}\:${fs_used /}/${fs_size /}
+${voffset 32}${goto 40}\:${fs_used /}/${fs_size /}
 ${goto 40}~:${fs_used /home/mike}/${fs_size /home/mike}
-${voffset 10}${goto 155}Temp:
+${voffset 12}${goto 155}Temp:
 ${goto 155}${acpitemp}C
 
