@@ -72,9 +72,9 @@ local layouts =
 {
 	awful.layout.suit.tile,
 	awful.layout.suit.fair.horizontal,
-	awful.layout.suit.spiral.dwindle,
 	awful.layout.suit.max,
-	awful.layout.suit.floating
+	awful.layout.suit.floating,
+	awful.layout.suit.magnifier
 }
 -- }}}
 
@@ -91,8 +91,8 @@ end
 tags = {
 	names= {1,2,3,4,5,6,7,8,9},
 	layout={layouts[1], layouts[1], layouts[1], layouts[1],
-	layouts[2], layouts[2], layouts[4], layouts[4],
-	layouts[3]}
+	layouts[1], layouts[1], layouts[3], layouts[3],
+	layouts[1]}
 }
 for s = 1, screen.count() do
 	-- Each screen has its own tag table.
