@@ -52,4 +52,6 @@ color0 cccccc
 default_color cccccc
 
 TEXT
-$color0 ${execi 300 gcalcli --config ~/.config/gcalclirc --cal='work' --cal='play' --nc agenda `date +%D` `date --date='1 week' +%D`}
+$color0 ${execi 300 gcalcli --config ~/.config/gcalclirc \
+--cal='work' --cal='play' --cal='birthdays' \
+--nc agenda `date +%D` `date --date='1 week' +%D`}
