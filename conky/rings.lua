@@ -191,6 +191,20 @@ settings_table = {
         end_angle=180
     },
         {
+        name='battery_percent',
+        arg='',
+        max=100,
+        bg_colour=freecolor,
+        bg_alpha=freealpha,
+        fg_colour=usedcolor,
+        fg_alpha=usedalpha,
+        x=100, y=600,
+        radius=40,
+        thickness=10,
+        start_angle=-90,
+        end_angle=180
+    },
+        {
         name='acpitemp',
         arg='',
         max=100,
@@ -202,8 +216,8 @@ settings_table = {
         radius=40,
         thickness=10,
         start_angle=-90,
-        end_angle=180
-    },
+        end_angle=181
+	}
 }
 
 -- Use these settings to define the origin and extent of your clock.

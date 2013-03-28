@@ -65,4 +65,4 @@ ${voffset 32}${goto 40}\:${fs_used /}/${fs_size /}
 ${goto 40}~:${fs_used /home/mike}/${fs_size /home/mike}
 ${voffset 12}${goto 155}Temp:
 ${goto 155}${acpitemp}C
-
+${voffset 32}${goto 40}Batt: ${battery_time}
