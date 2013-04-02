@@ -57,6 +57,7 @@ beautiful.init("/home/mike/.config/awesome/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "/home/mike/bin/myterm"
+notmuxterm = "urxvtc"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -285,6 +286,7 @@ end),
 
 -- Standard program
 awful.key({ "Control", "Mod1"          }, "t", function () awful.util.spawn(terminal) end),
+awful.key({ "Control", "Mod1"          }, "e", function () awful.util.spawn(notmuxterm) end),
 awful.key({ "Control", "Mod1"          }, "f", function () awful.util.spawn("chromium") end),
 awful.key({ "Control", "Mod1"          }, "g", function () awful.util.spawn("google-chrome") end),
 awful.key({ "Control", "Mod1"          }, "c", function () awful.util.spawn("kcalc") end),
