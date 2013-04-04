@@ -22,9 +22,9 @@ precmd () {
 	vcs_info
 }
 
-local smiley="%(?,%{$fg[green]%}:%)%{$reset_color%},%{$fg[red]%}:(%{$reset_color%})"
+local smiley="%(?,%{$fg_bold[green]%}:%)%{$reset_color%},%{$fg_bold[red]%}:(%{$reset_color%})"
 
-PROMPT='%{$fg_bold[yellow]%}> %{$reset_color%}%c${vcs_info_msg_0_} ${smiley} '
+PROMPT='[%{$fg_bold[green]%}%m%{$reset_color%}] %{$fg_bold[yellow]%}> %{$reset_color%}%c${vcs_info_msg_0_} ${smiley} '
 
 export HISTSIZE=2000
 export HISTFILE="$HOME/.zsh/history"
