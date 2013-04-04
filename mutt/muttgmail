@@ -3,7 +3,7 @@ set realname = "Michael Lerch"
 set imap_user = "mdlerch@gmail.com"
 source ~/.mutt/gmailpass.muttrc
 set reverse_name = yes
-alternates lerch@math.montana.edu michael.lerch@montana.edu
+alternates lerch@math.montana.edu michael.lerch@msu.montana.edu
 set edit_headers=yes
 set folder = imaps://imap.gmail.com:993/
 set spoolfile = +INBOX
@@ -20,9 +20,9 @@ set mark_old = no
 set pager_context = 10
 set editor = "vim"
 
-macro generic "1" ":set from=mdlerch@gmail.com"
-macro generic "2" ":set from=lerch@math.montana.edu"
-macro generic "3" ":set from=michael.lerch@montana.edu"
+macro generic ,1 ":set from=mdlerch@gmail.com"
+macro generic ,2 ":set from=lerch@math.montana.edu"
+macro generic ,3 ":set from=michael.lerch@montana.edu"
 
 
 
