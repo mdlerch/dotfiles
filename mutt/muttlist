@@ -1,24 +1,12 @@
+source ~/.mutt/muttdefault
 set from =  "miggy.list@gmail.com"
-set realname = "Michael Lerch"
 set imap_user = "miggy.list@gmail.com"
 source ~/.mutt/listpass.muttrc
-set reverse_name = yes
 set folder = imaps://imap.gmail.com:993/
-set spoolfile = +INBOX
-set imap_check_subscribed
 set smtp_url = "smtp://miggy.list@smtp.gmail.com:587/"
 set header_cache = ~/.mail/cache/headers
 set message_cachedir = ~/.mail/cache/bodies
 set certificate_file = ~/.mail/certificates
-set postponed = +[Gmail]/Drafts
-set move = no
-set sort = 'threads'
-set sort_aux = 'reverse-last-date-received'
-set mark_old = no
-set pager_context = 10
-set editor = "vim"
-unset record
-
-source ~/.mutt/muttcolors
+set spoolfile = +INBOX
 
 # vim:set ft=muttrc:

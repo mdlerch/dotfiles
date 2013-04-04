@@ -1,0 +1,22 @@
+set realname = "Michael Lerch"
+set reverse_name = yes
+set edit_headers=yes
+set imap_check_subscribed
+set move = no
+set sort = 'threads'
+set sort_aux = 'reverse-last-date-received'
+set mark_old = no
+set pager_context = 10
+set editor = "vim"
+unset record
+auto_view text/html
+alternative_order text/plain text/html
+set postponed = +[Gmail]/Drafts
+set pager_stop
+
+set mailcap_path = "~/.mutt/mailcap"
+
+
+source ~/.mutt/muttcolors
+
+# vim:set ft=muttrc:
