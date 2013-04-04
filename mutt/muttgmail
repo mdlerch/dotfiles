@@ -19,6 +19,7 @@ set sort_aux = 'reverse-last-date-received'
 set mark_old = no
 set pager_context = 10
 set editor = "vim"
+unset record
 
 macro generic ,1 ":set from=mdlerch@gmail.com"
 macro generic ,2 ":set from=lerch@math.montana.edu"

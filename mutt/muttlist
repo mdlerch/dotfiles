@@ -17,6 +17,7 @@ set sort_aux = 'reverse-last-date-received'
 set mark_old = no
 set pager_context = 10
 set editor = "vim"
+unset record
 
 source ~/.mutt/muttcolors
 
