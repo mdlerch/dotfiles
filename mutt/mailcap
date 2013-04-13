@@ -1,3 +1,3 @@
 text/html; w3m -I %{charset} -T text/html; copiousoutput;
-application/pdf; okular %s
-application/x-forcedownload; okular %s
+application/pdf; okular %s & sleep 2
+application/x-forcedownload; okular %s & sleep 2

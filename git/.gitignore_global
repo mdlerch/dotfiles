@@ -1,6 +1,10 @@
 # temp files #
 *.aux
 
+# tex files #
+*.toc
+*.bm
+
 # vim files
 *.swp
 *.un~
