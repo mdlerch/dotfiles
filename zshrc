@@ -43,6 +43,6 @@ bindkey "^[[4~" end-of-line
 bindkey    "^[[3~"          delete-char
 bindkey    "^[3;5~"         delete-char
 
-source ~/.zsh/zsh_alias
+source ~/.zsh/alias.zsh
 
 stty stop undef
