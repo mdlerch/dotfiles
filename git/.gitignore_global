@@ -13,6 +13,7 @@
 *.pdf
 *.ps
 *.dvi
+*.eps
 
 # Compiled source #
 *.com
