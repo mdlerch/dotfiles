@@ -43,7 +43,7 @@ end
 local killnoplasma = function(c)
 	if isplasma(c) then
 		c.minimized=false
-	else 
+	else
 		c.kill(c)
 	end
 	return true
