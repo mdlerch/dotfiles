@@ -27,7 +27,7 @@ local smiley="%(?,%{$fg_bold[green]%}:%)%{$reset_color%},%{$fg_bold[red]%}:(%{$r
 PROMPT='[%(#~%{$fg_bold[red]%}>root< %{$reset_color%}~)%{$fg_bold[green]%}%m%{$reset_color%}] %{$fg_bold[yellow]%}> %{$reset_color%}%c${vcs_info_msg_0_} ${smiley} '
 
 export HISTSIZE=2000
-export HISTFILE="$HOME/.zsh/history"
+export HISTFILE="$HOME/.zsh_history"
 
 export SAVEHIST=$HISTSIZE
 setopt hist_ignore_all_dups
