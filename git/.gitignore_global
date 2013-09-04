@@ -4,6 +4,9 @@
 # tex files #
 *.toc
 *.bm
+*.bbl
+*.bib
+*.blg
 
 # vim files
 *.swp
