@@ -51,4 +51,7 @@ color0 cccccc
 default_color cccccc
 
 TEXT
-$color0 ${execi 300 gcalcli --config ~/.config/gcalclirc --cal='schedule' --cal='mdlerch@gmail.com'  --nc agenda `date +%D` `date --date='4 days' +%D`}
+$color0 ${execi 300 gcalcli --config ~/.config/gcalclirc \
+--cal='schedule' --cal='work' --cal='play' --cal='birthdays' \
+--cal='mdlerch@gmail.com' \
+--nc agenda `date --date='tomorrow' +%D` `date --date='4 days' +%D`}
