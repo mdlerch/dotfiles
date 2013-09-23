@@ -8,4 +8,5 @@ keycode 112 = XF86Back
 keycode 117 = XF86Forward
 keycode 166 = Prior
 keycode 167 = Next
+keycode 66 = Control_L
 
