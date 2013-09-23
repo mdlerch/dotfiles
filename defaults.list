@@ -1,4 +1,4 @@
 [Default Applications]
-application/pdf=okular.desktop
+application/pdf=okular-miggy.desktop
 text/plain=gvim.desktop
 text/html=chromium.desktop
