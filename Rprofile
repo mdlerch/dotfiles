@@ -1,4 +1,5 @@
 library(vimcom)
+library(colorout)
 
 # library(grDevices)
 # X11.options(type="nbcairo")
