@@ -1,4 +1,4 @@
-library(vimcom)
+library(vimcom.plus)
 library(colorout)
 
 # library(grDevices)
