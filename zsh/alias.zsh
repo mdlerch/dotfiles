@@ -1,6 +1,7 @@
 alias vi='vim'
 alias ls='ls --color=auto --group-directories-first'
 alias vir='vim -R'
+alias grep='grep --color'
 alias n='urxvtc &'
 alias rsyncwork='rsync -av --size-only /data/work /var/run/media/mike/storage/rsync.d'
 alias rsyncwallpapers='rsync -av --size-only /data/wallpapers /var/run/media/mike/storage/rsync.d'
