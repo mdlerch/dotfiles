@@ -1,3 +1,5 @@
+require("revelation")
+
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
@@ -309,6 +311,7 @@ awful.key({}, "XF86AudioMute", function () awful.util.spawn_with_shell("amixer s
 awful.key({}, "XF86AudioPlay", function () awful.util.spawn_with_shell("/home/mike/bin/playertoggle > /dev/null") end),
 awful.key({ modkey, "Control", "Mod1" }, "r", awesome.restart),
 awful.key({ modkey, "Control", "Mod1"   }, "q", awesome.quit),
+awful.key({modkey}, "e", revelation),
 
 awful.key({ modkey, "Mod1"          }, "l",     function () awful.tag.incmwfact( 0.05)    end),
 awful.key({ modkey, "Mod1"          }, "h",     function () awful.tag.incmwfact(-0.05)    end),

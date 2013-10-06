@@ -1,5 +1,7 @@
-library(vimcom.plus)
-library(colorout)
+if (interactive() & Sys.getenv("TERM")!="") {
+	library(vimcom.plus)
+	library(colorout)
+}
 
 # library(grDevices)
 # X11.options(type="nbcairo")
