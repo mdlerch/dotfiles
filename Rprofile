@@ -13,3 +13,5 @@ pwd <- getwd
 h <- utils::head
 man <- utils::help
 
+logit <- function(x) log(x / (1 - x))
+ilogit <- function(x) exp(x) / (1 + exp(x))
