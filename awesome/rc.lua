@@ -341,7 +341,7 @@ awful.key({ "Control", "Mod1" }, "r", function() menubar.show() end)
 clientkeys = awful.util.table.join(
 awful.key({ modkey,           }, "f",      function (c) c.fullscreen = not c.fullscreen  end),
 awful.key({ modkey, "Mod1"   }, "c",      killnoplasma ),
-awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ),
+awful.key({ modkey, "Mod1"    }, "space",  awful.client.floating.toggle                     ),
 awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end),
 awful.key({ modkey,           }, "o",      awful.client.movetoscreen                        ),
 awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end),
@@ -419,6 +419,8 @@ awful.rules.rules = {
 	border_color = beautiful.border_normal,
 	focus = awful.client.focus.filter,
 	keys = clientkeys,
+	maximized_vertical = false,
+	maximized_horizontal = false,
 	buttons = clientbuttons } },
 	{ rule = { class = "MPlayer" },
 	properties = { floating = true } },
@@ -428,6 +430,9 @@ awful.rules.rules = {
 	properties = { floating = true } },
 	{ rule = { class = "gimp" },
 	properties = { floating = true } },
+	{ rule = { class = "R_x11" },
+	properties = {floating = true },
+	callback = function(c) c:geometry({x=950, y=30, width=600, height=400}) end},
 	-- Set Firefox to always map on tags number 2 of screen 1.
 	-- { rule = { class = "Firefox" },
 	--   properties = { tag = tags[1][2] } },
