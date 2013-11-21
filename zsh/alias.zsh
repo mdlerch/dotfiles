@@ -1,4 +1,4 @@
-alias vi='vim'
+alias vi='vim --servername VIM'
 alias ls='ls --color=auto --group-directories-first'
 alias vir='vim -R'
 alias grep='grep --color'

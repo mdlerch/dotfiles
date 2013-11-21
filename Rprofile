@@ -1,6 +1,11 @@
 if (interactive() & Sys.getenv("TERM")!="") {
 	library(vimcom.plus)
 	library(colorout)
+	# options(pager = "vimrpager")
+	if (Sys.getenv("VIM_PANE") != "")
+	{
+		options(help_type = "text", pager = vim.pager)
+	}
 }
 
 # library(grDevices)
