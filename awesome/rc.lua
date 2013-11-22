@@ -52,6 +52,65 @@ local killnoplasma = function(c)
 end
 --- }}}
 
+--- {{{ Vicious
+
+vicious = require("vicious")
+-- Initialize widget
+memwidget = awful.widget.progressbar()
+-- Progressbar properties
+memwidget:set_width(10)
+memwidget:set_height(10)
+memwidget:set_vertical(true)
+memwidget:set_background_color("#494B4F")
+memwidget:set_border_color(nil)
+memwidget:set_color({ type = "linear", from = { 0, 0 }, to = { 10,0 }, stops = { {0, "#AECF96"}, {0.5, "#88A175"}, 
+                    {1, "#FF5656"}}})
+-- Register widget
+vicious.register(memwidget, vicious.widgets.mem, "$1", 13)
+
+memintro = wibox.widget.textbox()
+memintro:set_text("  Mem:")
+
+
+-- Initialize widget
+-- cpuwidget = wibox.widget.textbox()
+-- Register widget
+-- vicious.register(cpuwidget, vicious.widgets.cpu, "$1%")
+
+-- Initialize widget
+cpuwidgetg = awful.widget.graph()
+-- Graph properties
+cpuwidgetg:set_width(50)
+cpuwidgetg:set_background_color("#494B4F")
+cpuwidgetg:set_color({ type = "linear", from = { 0, 0 }, to = { 10,0 }, stops = { {0, "#FF5656"}, {0.5, "#88A175"}, 
+                    {1, "#AECF96" }}})
+-- Register widget
+vicious.register(cpuwidgetg, vicious.widgets.cpu, "$1")
+
+cpuintro = wibox.widget.textbox()
+cpuintro:set_text("  Cpu:")
+
+-- {{{ Battery state
+-- Initialize widget
+batwidget = awful.widget.progressbar()
+batwidget:set_width(10)
+batwidget:set_height(14)
+batwidget:set_vertical(true)
+batwidget:set_background_color("#000000")
+batwidget:set_border_color(nil)
+batwidget:set_color("#00bfff")
+
+-- {{{ Battery state
+-- Initialize widget
+vicious.register(batwidget, vicious.widgets.bat, "$2", 120, "BAT0")
+
+batintro = wibox.widget.textbox()
+batintro:set_text("  Bat:")
+
+
+
+--- }}}
+
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
@@ -218,6 +277,12 @@ for s = 1, screen.count() do
 	-- Widgets that are aligned to the right
 	local right_layout = wibox.layout.fixed.horizontal()
 	if s == 1 then right_layout:add(wibox.widget.systray()) end
+	right_layout:add(memintro)
+	right_layout:add(memwidget)
+	right_layout:add(batintro)
+	right_layout:add(batwidget)
+	right_layout:add(cpuintro)
+	right_layout:add(cpuwidgetg)
 	right_layout:add(mytextclock)
 	right_layout:add(mylayoutbox[s])
 
