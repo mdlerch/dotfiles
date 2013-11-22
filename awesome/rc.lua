@@ -63,32 +63,28 @@ memwidget:set_height(10)
 memwidget:set_vertical(true)
 memwidget:set_background_color("#494B4F")
 memwidget:set_border_color(nil)
-memwidget:set_color({ type = "linear", from = { 0, 0 }, to = { 10,0 }, stops = { {0, "#AECF96"}, {0.5, "#88A175"}, 
-                    {1, "#FF5656"}}})
+memwidget:set_color({ type = "linear", from = { 0, 0 }, to = { 10,0 }, stops = { {0, "#00FF4A"}, {0.5, "#31B758"}, 
+                    {.9, "#D5F7DF"}}})
 -- Register widget
 vicious.register(memwidget, vicious.widgets.mem, "$1", 13)
 
 memintro = wibox.widget.textbox()
-memintro:set_text("  Mem:")
-
-
--- Initialize widget
--- cpuwidget = wibox.widget.textbox()
--- Register widget
--- vicious.register(cpuwidget, vicious.widgets.cpu, "$1%")
+memintro:set_text("   Mem:")
 
 -- Initialize widget
 cpuwidgetg = awful.widget.graph()
 -- Graph properties
 cpuwidgetg:set_width(50)
 cpuwidgetg:set_background_color("#494B4F")
-cpuwidgetg:set_color({ type = "linear", from = { 0, 0 }, to = { 10,0 }, stops = { {0, "#FF5656"}, {0.5, "#88A175"}, 
-                    {1, "#AECF96" }}})
+-- cpuwidgetg:set_color({ type = "linear", from = { 0, 0 }, to = { 10,0 }, stops = { {0, "#E0E0E0"}, {0.8, "#543231"}, 
+                    -- {1, "#E0E0E0" }}})
+cpuwidgetg:set_color("E0E0E0")
 -- Register widget
 vicious.register(cpuwidgetg, vicious.widgets.cpu, "$1")
 
+
 cpuintro = wibox.widget.textbox()
-cpuintro:set_text("  Cpu:")
+cpuintro:set_text("   Cpu:")
 
 -- {{{ Battery state
 -- Initialize widget
@@ -96,16 +92,21 @@ batwidget = awful.widget.progressbar()
 batwidget:set_width(10)
 batwidget:set_height(14)
 batwidget:set_vertical(true)
-batwidget:set_background_color("#000000")
+batwidget:set_background_color("#494B4F")
 batwidget:set_border_color(nil)
-batwidget:set_color("#00bfff")
+-- batwidget:set_color("#00bfff")
+batwidget:set_color({ type = "linear", from = { 0, 0 }, to = { 10,0 }, stops = { {0, "#00BFFF"}, {0.5, "#1DA1CD"}, 
+                    {.9, "#E1F7FF"}}})
 
 -- {{{ Battery state
 -- Initialize widget
 vicious.register(batwidget, vicious.widgets.bat, "$2", 120, "BAT0")
 
 batintro = wibox.widget.textbox()
-batintro:set_text("  Bat:")
+vicious.register(batintro, vicious.widgets.bat, "$3", 120, "BAT0")
+
+batspace = wibox.widget.textbox()
+batspace:set_text("   ")
 
 
 
@@ -279,6 +280,7 @@ for s = 1, screen.count() do
 	if s == 1 then right_layout:add(wibox.widget.systray()) end
 	right_layout:add(memintro)
 	right_layout:add(memwidget)
+	right_layout:add(batspace)
 	right_layout:add(batintro)
 	right_layout:add(batwidget)
 	right_layout:add(cpuintro)
