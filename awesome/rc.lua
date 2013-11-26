@@ -574,7 +574,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 --
 -- os.execute("nm-applet --sm-disable &")
 -- os.execute("wicd &")
-os.execute("/home/mike/bin/myconky")
+-- os.execute("/home/mike/bin/myconky")
 
 
 -- vim: fdm=marker
