@@ -2,10 +2,10 @@ if (interactive() & Sys.getenv("TERM")!="") {
 	library(vimcom.plus)
 	library(colorout)
 	# options(pager = "vimrpager")
-	if (Sys.getenv("VIM_PANE") != "")
-	{
-		options(help_type = "text", pager = vim.pager)
-	}
+	#if (Sys.getenv("VIM_PANE") != "")
+	#{
+	#	options(help_type = "text", pager = vim.pager)
+	#}
 }
 
 # library(grDevices)
@@ -17,6 +17,9 @@ cd <- setwd
 pwd <- getwd
 h <- utils::head
 man <- utils::help
+l <- base::list
+
+less <- function() options(pager = "less")
 
 logit <- function(x) log(x / (1 - x))
 ilogit <- function(x) exp(x) / (1 + exp(x))
