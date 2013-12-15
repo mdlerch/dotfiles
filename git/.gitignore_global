@@ -17,6 +17,7 @@
 *.ps
 *.dvi
 *.eps
+*.tif
 
 # Compiled source #
 *.com
