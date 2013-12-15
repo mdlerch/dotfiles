@@ -1,5 +1,3 @@
-require("revelation")
-
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
@@ -64,7 +62,7 @@ memwidget:set_vertical(true)
 memwidget:set_background_color("#494B4F")
 memwidget:set_border_color(nil)
 memwidget:set_color({ type = "linear", from = { 0, 0 }, to = { 10,0 }, stops = { {0, "#00FF4A"}, {0.5, "#31B758"}, 
-                    {.9, "#D5F7DF"}}})
+{.9, "#D5F7DF"}}})
 -- Register widget
 vicious.register(memwidget, vicious.widgets.mem, "$1", 13)
 
@@ -77,7 +75,7 @@ cpuwidgetg = awful.widget.graph()
 cpuwidgetg:set_width(50)
 cpuwidgetg:set_background_color("#494B4F")
 -- cpuwidgetg:set_color({ type = "linear", from = { 0, 0 }, to = { 10,0 }, stops = { {0, "#E0E0E0"}, {0.8, "#543231"}, 
-                    -- {1, "#E0E0E0" }}})
+-- {1, "#E0E0E0" }}})
 cpuwidgetg:set_color("E0E0E0")
 -- Register widget
 vicious.register(cpuwidgetg, vicious.widgets.cpu, "$1")
@@ -96,7 +94,7 @@ batwidget:set_background_color("#494B4F")
 batwidget:set_border_color(nil)
 -- batwidget:set_color("#00bfff")
 batwidget:set_color({ type = "linear", from = { 0, 0 }, to = { 10,0 }, stops = { {0, "#00BFFF"}, {0.5, "#1DA1CD"}, 
-                    {.9, "#E1F7FF"}}})
+{.9, "#E1F7FF"}}})
 
 -- {{{ Battery state
 -- Initialize widget
@@ -174,12 +172,12 @@ end
 
 -- {{{ Menu
 -- Create a laucher widget and a main menu
-myawesomemenu = {
-	{ "manual", terminal .. " -e man awesome" },
-	{ "edit config", editor_cmd .. " " .. awesome.conffile },
-	{ "restart", awesome.restart },
-	{ "quit", awesome.quit }
-}
+-- myawesomemenu = {
+	-- { "manual", terminal .. " -e man awesome" },
+	-- { "edit config", editor_cmd .. " " .. awesome.conffile },
+	-- { "restart", awesome.restart },
+	-- { "quit", awesome.quit }
+-- }
 
 --mymainmenu = awful.menu({ 
 --	items = { 
@@ -479,27 +477,35 @@ root.keys(globalkeys)
 -- }}}
 
 -- {{{ Rules
-awful.rules.rules = {
-	-- All clients will match this rule.
-	{ rule = { },
-	properties = { border_width = beautiful.border_width,
-	border_color = beautiful.border_normal,
-	focus = awful.client.focus.filter,
-	keys = clientkeys,
-	maximized_vertical = false,
-	maximized_horizontal = false,
-	buttons = clientbuttons } },
-	{ rule = { class = "MPlayer" },
-	properties = { floating = true } },
-	{ rule = { name = "CRAN mirror" },
-	properties = { floating = true } },
-	{ rule = { name = "KCalc" },
-	properties = { floating = true } },
-	{ rule = { class = "gimp" },
-	properties = { floating = true } },
-	{ rule = { class = "R_x11" },
-	properties = {floating = true },
-	callback = function(c) c:geometry({x=950, y=30, width=600, height=400}) end},
+awful.rules.rules =
+{
+	{
+		rule = { },
+		properties = { border_width = beautiful.border_width,
+		               border_color = beautiful.border_normal,
+		               focus = awful.client.focus.filter,
+		               keys = clientkeys,
+		               maximized_vertical = false,
+		               maximized_horizontal = false,
+		               buttons = clientbuttons }
+	},
+	{
+		rule = { class = "MPlayer" },
+		properties = { floating = true }
+	},
+	{
+		rule = { name = "CRAN mirror" },
+		properties = { floating = true }
+	},
+	{
+		rule = { name = "KCalc" },
+		properties = { floating = true }
+	},
+	{
+		rule = { class = "R_x11" },
+		properties = {floating = true },
+		callback = function(c) c:geometry({x=950, y=30, width=600, height=400}) end
+	},
 	-- Set Firefox to always map on tags number 2 of screen 1.
 	-- { rule = { class = "Firefox" },
 	--   properties = { tag = tags[1][2] } },
