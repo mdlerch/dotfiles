@@ -355,10 +355,10 @@ function ()
 end),
 
 -- Standard program
-awful.key({ "Control", "Mod1"          }, "t", function () awful.util.spawn(terminal) end),
+awful.key({ "Control", "Mod1"          }, "s", function () awful.util.spawn(terminal) end),
 awful.key({ "Control", "Mod1"          }, "e", function () awful.util.spawn(notmuxterm) end),
 awful.key({ "Control", "Mod1"          }, "a", function () awful.util.spawn(termattach) end),
-awful.key({ "Control", "Mod1"          }, "s", function () awful.util.spawn(termsess) end),
+awful.key({ "Control", "Mod1"          }, "t", function () awful.util.spawn(termsess) end),
 awful.key({ "Control", "Mod1"          }, "f", function () awful.util.spawn("chromium") end),
 awful.key({ "Control", "Mod1"          }, "g", function () awful.util.spawn("google-chrome") end),
 awful.key({ "Control", "Mod1"          }, "c", function () awful.util.spawn("kcalc") end),
