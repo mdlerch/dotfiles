@@ -343,7 +343,7 @@ end),
 -- Layout manipulation
 awful.key({ modkey, "Mod1"   }, "j", function () awful.client.swap.byidx(  1)    end),
 awful.key({ modkey, "Mod1"   }, "k", function () awful.client.swap.byidx( -1)    end),
-awful.key({ modkey, "Shift" }, "j", function () awful.screen.focus_relative( 1) end),
+awful.key({"Control", "Mod1"}, "space", function () awful.screen.focus_relative( 1) end),
 awful.key({ modkey, "Shift" }, "k", function () awful.screen.focus_relative(-1) end),
 awful.key({ modkey,           }, "u", awful.client.urgent.jumpto),
 awful.key({ "Mod1",           }, "Tab",
@@ -374,6 +374,8 @@ awful.key({ "Control", modkey          }, "k", function () awful.util.spawn_with
 awful.key({}, "XF86AudioLowerVolume", function () awful.util.spawn_with_shell("amixer set Master 2%- > /dev/null") end),
 awful.key({}, "XF86AudioMute", function () awful.util.spawn_with_shell("amixer set Master toggle > /dev/null") end),
 awful.key({}, "XF86AudioPlay", function () awful.util.spawn_with_shell("/home/mike/bin/playertoggle > /dev/null") end),
+awful.key({modkey}, "Return", function () awful.util.spawn_with_shell("/home/mike/bin/pgup") end),
+awful.key({modkey, "Shift"}, "Return", function () awful.util.spawn_with_shell("/home/mike/bin/pgdown") end),
 awful.key({ modkey, "Control", "Mod1" }, "r", awesome.restart),
 awful.key({ modkey, "Control", "Mod1"   }, "q", awesome.quit),
 awful.key({modkey}, "e", revelation),
@@ -446,9 +448,39 @@ for i = 1, keynumber do
 			end
 		end
 	end),
+	awful.key({ "Control", "Mod1"  }, "#" .. i + 9,
+	function ()
+		local screen = mouse.screen
+		if screen == 1 then
+			screen = 2
+		else
+			screen = 1
+		end
+		if tags[screen][i] then
+			awful.screen.focus(screen)
+			awful.tag.viewonly(tags[screen][i])
+			c = awful.client.getmaster()
+			if c then
+				client.focus = c
+				c:raise()
+			end
+		end
+	end),
 	awful.key({ modkey, "Control" }, "#" .. i + 9,
 	function ()
 		local screen = mouse.screen
+		if tags[screen][i] then
+			awful.tag.viewtoggle(tags[screen][i])
+		end
+	end),
+	awful.key({ "Mod1", modkey, "Control" }, "#" .. i + 9,
+	function ()
+		local screen = mouse.screen
+		if screen == 1 then
+			screen = 2
+		else
+			screen = 1
+		end
 		if tags[screen][i] then
 			awful.tag.viewtoggle(tags[screen][i])
 		end
@@ -459,10 +491,34 @@ for i = 1, keynumber do
 			awful.client.movetotag(tags[client.focus.screen][i])
 		end
 	end),
+	awful.key({ "Control", "Shift", "Mod1" }, "#" .. i + 9,
+	function ()
+		local screen = mouse.screen
+		if screen == 1 then
+			screen = 2
+		else
+			screen = 1
+		end
+		if client.focus and tags[screen][i] then
+			awful.client.movetotag(tags[screen][i])
+		end
+	end),
 	awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
 	function ()
 		if client.focus and tags[client.focus.screen][i] then
 			awful.client.toggletag(tags[client.focus.screen][i])
+		end
+	end),
+	awful.key({"Mod1",  modkey, "Control", "Shift" }, "#" .. i + 9,
+	function ()
+		local screen = mouse.screen
+		if screen == 1 then
+			screen = 2
+		else
+			screen = 1
+		end
+		if client.focus and tags[screen][i] then
+			awful.client.toggletag(tags[screen][i])
 		end
 	end))
 end
