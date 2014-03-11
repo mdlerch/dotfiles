@@ -34,3 +34,5 @@
 	tool = vimdiff
 [push]
 	default = simple
+[gist]
+	home = /home/mike/work/gists/
