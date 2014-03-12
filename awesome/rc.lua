@@ -62,7 +62,7 @@ memwidget:set_vertical(true)
 memwidget:set_background_color("#494B4F")
 memwidget:set_border_color(nil)
 memwidget:set_color({ type = "linear", from = { 0, 0 }, to = { 10,0 }, stops = { {0, "#00FF4A"}, {0.5, "#31B758"}, 
-{.9, "#D5F7DF"}}})
+{.9, "#D5F7DF"} }})
 -- Register widget
 vicious.register(memwidget, vicious.widgets.mem, "$1", 13)
 
@@ -106,8 +106,10 @@ vicious.register(batintro, vicious.widgets.bat, "$3", 120, "BAT0")
 batspace = wibox.widget.textbox()
 batspace:set_text("   ")
 
+-- Temperature
 
-
+tempwidget = wibox.widget.textbox()
+vicious.register(tempwidget, vicious.widgets.thermal, " $1C  ", 20, {"coretemp.0", "core"} )
 --- }}}
 
 
@@ -283,6 +285,7 @@ for s = 1, screen.count() do
 	right_layout:add(batwidget)
 	right_layout:add(cpuintro)
 	right_layout:add(cpuwidgetg)
+	right_layout:add(tempwidget)
 	right_layout:add(mytextclock)
 	right_layout:add(mylayoutbox[s])
 
