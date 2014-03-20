@@ -381,6 +381,7 @@ awful.key({ "Control", modkey          }, "k", function () awful.util.spawn_with
 awful.key({}, "XF86AudioLowerVolume", function () awful.util.spawn_with_shell("amixer set Master 2%- > /dev/null") end),
 awful.key({"Control"}, "KP_Down", function () awful.util.spawn_with_shell("amixer set Master 2%- > /dev/null") end),
 awful.key({}, "XF86AudioMute", function () awful.util.spawn_with_shell("amixer set Master toggle > /dev/null") end),
+awful.key({"Control", modkey}, "m", function () awful.util.spawn_with_shell("amixer set Master toggle > /dev/null") end),
 awful.key({}, "XF86AudioPlay", function () awful.util.spawn_with_shell("/home/mike/bin/playertoggle > /dev/null") end),
 awful.key({"Control"}, "KP_Begin", function () awful.util.spawn_with_shell("/home/mike/bin/playertoggle > /dev/null") end),
 awful.key({modkey}, "Return", function () awful.util.spawn_with_shell("/home/mike/bin/pgup") end),
