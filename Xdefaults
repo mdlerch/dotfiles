@@ -89,7 +89,7 @@ urxvt*foreground:       white
 !urxvt*path:               search path
 !urxvt*backgroundPixmap:   file[;geom]
 !urxvt*iconFile:           file
-urxvt.font:             xft:Inconsolata Lgc:style=Bold:size=10
+urxvt.font:             xft:Inconsolata Lgc:style=Bold:size=11
 ! urxvt.font:             xft:Inconsolata for Powerline:style=Bold:size=10
 !urxvt.font:             xft:DejaVu Sans Mono:style=Bold:size=9
 !urxvt*boldFont:           fontname
