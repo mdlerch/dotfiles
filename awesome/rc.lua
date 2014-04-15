@@ -118,10 +118,9 @@ vicious.register(tempwidget, vicious.widgets.thermal, " $1C  ", 20, {"coretemp.0
 beautiful.init("/home/mike/.config/awesome/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "/home/mike/bin/myterm"
-notmuxterm = "urxvtc"
-termattach = "/home/mike/bin/termattach"
-termsess = "/home/mike/bin/termsess"
+terminal = "/home/mike/bin/termattach"
+terminalnotmux = "urxvtc"
+terminaljoin = "/home/mike/bin/termjoin"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -358,10 +357,9 @@ function ()
 end),
 
 -- Standard program
-awful.key({ "Control", "Mod1"          }, "t", function () awful.util.spawn(termsess) end),
-awful.key({ "Control", "Mod1"          }, "e", function () awful.util.spawn(notmuxterm) end),
-awful.key({ "Control", "Mod1"          }, "a", function () awful.util.spawn(termattach) end),
-awful.key({ "Control", "Mod1"          }, "s", function () awful.util.spawn(terminal) end),
+awful.key({ "Control", "Mod1"          }, "t", function () awful.util.spawn(terminal) end),
+awful.key({ "Control", "Mod1"          }, "e", function () awful.util.spawn(terminalnotmux) end),
+awful.key({ "Control", "Mod1"          }, "a", function () awful.util.spawn(terminaljoin) end),
 awful.key({ "Control", "Mod1"          }, "f", function () awful.util.spawn("chromium") end),
 awful.key({ "Control", "Mod1"          }, "g", function () awful.util.spawn("google-chrome") end),
 awful.key({ "Control", "Mod1"          }, "m", function () awful.util.spawn("mendeleydesktop") end),
