@@ -117,6 +117,41 @@ vicious.register(tempwidget, vicious.widgets.thermal, " $1C  ", 20, {"coretemp.0
 -- Themes define colours, icons, and wallpapers
 beautiful.init("/home/mike/.config/awesome/theme.lua")
 
+-- {{{ Random Wallpapers
+
+-- Get the list of files from a directory. Must be all images or folders and non-empty. 
+	-- function scanDir(directory)
+	-- local i, fileList, popen = 0, {}, io.popen
+	-- for filename in popen([[find "]] ..directory.. [[" -type f):lines() do
+		-- i = i + 1
+		-- fileList[i] = filename
+	-- end
+	-- return fileList
+	-- end
+	-- wallpaperList = scanDir("/data/wallpapers/mypics/")
+
+-- Apply a random wallpaper on startup.
+	-- gears.wallpaper.maximized(wallpaperList[math.random(1, #wallpaperList)], s, true)
+
+-- Apply a random wallpaper every changeTime seconds.
+	-- changeTime = 60
+	-- wallpaperTimer = timer { timeout = changeTime }
+	-- wallpaperTimer:connect_signal("timeout", function()
+	-- gears.wallpaper.maximized(wallpaperList[math.random(1, #wallpaperList)], s, true)
+
+	-- stop the timer (we don't need multiple instances running at the same time)
+		-- wallpaperTimer:stop()
+
+	-- restart the timer
+		-- wallpaperTimer.timeout = changeTime
+		-- wallpaperTimer:start()
+	-- end)
+
+	-- initial start when rc.lua is first run
+	-- wallpaperTimer:start()
+-- }}}
+
+
 -- This is used later as the default terminal and editor to run.
 terminal = "/home/mike/bin/termattach"
 terminalnotmux = "urxvtc"
