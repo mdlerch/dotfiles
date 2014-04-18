@@ -32,7 +32,11 @@
 	tool = vimdiff
 [merge]
 	tool = vimdiff
+	ff = false
 [push]
 	default = simple
 [gist]
 	home = /home/mike/work/gists/
+
+
+# vim:ft=gitconfig
