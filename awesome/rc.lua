@@ -459,9 +459,9 @@ awful.key({ "Control", "Mod1" }, "r", function() menubar.show() end)
 )
 
 clientkeys = awful.util.table.join(
-awful.key({ modkey,           }, "f",      function (c) c.fullscreen = not c.fullscreen  end),
+awful.key({ modkey,           }, "g",      function (c) c.fullscreen = not c.fullscreen  end),
 awful.key({ modkey, "Mod1"   }, "c",      killnoplasma ),
-awful.key({ modkey, "Mod1"    }, "space",  awful.client.floating.toggle                     ),
+awful.key({ modkey,     }, "f",  awful.client.floating.toggle                     ),
 awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end),
 awful.key({ modkey,           }, "o",      awful.client.movetoscreen                        ),
 awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end),
