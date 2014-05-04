@@ -32,7 +32,6 @@
 	tool = vimdiff
 [merge]
 	tool = vimdiff
-	ff = false
 [push]
 	default = simple
 [gist]
