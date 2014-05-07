@@ -28,6 +28,8 @@
 	tracked = "ls-files --error-unmatch"
 	unadd = "reset HEAD"
 	pushall = "push -u origin --all"
+	dt = difftool
+	vd = difftool
 [diff]
 	tool = vimdiff
 [merge]
@@ -37,5 +39,7 @@
 [gist]
 	home = /home/mike/work/gists/
 
+[difftool]
+	prompt = false
 
 # vim:ft=gitconfig
