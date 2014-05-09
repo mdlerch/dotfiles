@@ -11,13 +11,13 @@ PS1='[\u@\h \W]\$ '
 
 export PATH=$PATH:~/bin/:~/work/bin/
 
-if [ -f ~/.bash_alias ]; then
-  . ~/.bash_alias
+if [ -f ~/.bash/bash_alias ]; then
+  . ~/.bash/bash_alias
 fi
 
 # My bash prompt
-if [ -f ~/.bash_prompt ]; then
-  . ~/.bash_prompt
+if [ -f ~/.bash/bash_prompt ]; then
+  . ~/.bash/bash_prompt
 fi
 
 # Add Sweave to texpath
