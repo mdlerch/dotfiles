@@ -23,8 +23,8 @@
 	user = mdlerch
 	token = 7035c51d364e417dc09ec3150883e32b
 [alias]
-	lol = "log --graph --decorate --pretty=oneline --abbrev-commit --all"
-	lg = "log --graph --decorate --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all"
+	lg = "log --graph --decorate --pretty=oneline --abbrev-commit --all"
+	lol = "log --graph --decorate --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all"
 	tracked = "ls-files --error-unmatch"
 	unadd = "reset HEAD"
 	pushall = "push -u origin --all"
