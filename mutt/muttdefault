@@ -7,7 +7,7 @@ set sort = 'threads'
 set sort_aux = 'reverse-last-date-received'
 set mark_old = no
 set pager_context = 10
-set editor = "vim"
+set editor = "vim +:silent+/^$"
 unset record
 auto_view text/html
 alternative_order text/plain text/html
