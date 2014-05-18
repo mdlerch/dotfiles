@@ -25,5 +25,5 @@ alias knoxcareer='cadaver https://knox.montana.edu/CareerServices'
 alias combinepdf='gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=combinedpdf.pdf -dBATCH '
 alias unix2dos='dos2unix -D'
 alias skype='xhost +local: && sudo -u skype /usr/bin/skype'
-alias mocp="if [ "$TMUX" ]; then tmux setw monitor-activity off; tmux move-window -t 10; tmux rename-window 'mocp'; fi; mocp -A"
+alias mocp="if [ "$TMUX" ]; then tmux setw monitor-activity off; tmux move-window -t 9; tmux rename-window 'mocp'; fi; mocp -A"
 #alias ipython="python /usr/bin/ipython"
