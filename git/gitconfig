@@ -30,6 +30,7 @@
 	pushall = "push -u origin --all"
 	dt = difftool
 	vd = difftool
+	diff = "diff --check"
 [diff]
 	tool = vimdiff
 [merge]
