@@ -23,3 +23,5 @@ less <- function() options(pager = "less")
 
 logit <- function(x) log(x / (1 - x))
 ilogit <- function(x) exp(x) / (1 + exp(x))
+
+create <- function(...) devtools::create(..., rstudio = F)
