@@ -14,12 +14,12 @@ zstyle ':vcs_info:*' stagedstr '%F{3} ...'
 zstyle ':vcs_info:*' unstagedstr '%F{9} +++'
 zstyle ':vcs_info:*' enable git svn
 precmd () {
-	if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]] {
-		zstyle ':vcs_info:*' formats ' [%F{10}%b%c%u%%F{7}]'
-	} else {
-		zstyle ':vcs_info:*' formats ' [%F{10}%b%F{6} !!!%c%u%F{7}]'
-	}
-	vcs_info
+    if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]] {
+        zstyle ':vcs_info:*' formats ' [%F{10}%b%c%u%%F{7}]'
+    } else {
+        zstyle ':vcs_info:*' formats ' [%F{10}%b%F{6} !!!%c%u%F{7}]'
+    }
+    vcs_info
 }
 
 local smiley="%(?,%{$fg_bold[green]%}:%)%{$reset_color%},%{$fg_bold[red]%}:(%{$reset_color%})"
@@ -34,7 +34,7 @@ setopt hist_ignore_all_dups
 autoload compinit
 compinit
 
-PATH="$PATH:/home/mike/bin:/home/mike/opt/mendeleydesktop-1.5.1-linux-x86_64/bin:/home/mike/.cabal/bin:/home/mike/.gem/ruby/2.1.0/bin"
+PATH="$PATH:/home/mike/bin:/home/mike/.cabal/bin:/home/mike/.gem/ruby/2.1.0/bin"
 export PATH
 
 bindkey "^[[1~" beginning-of-line
