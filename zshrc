@@ -34,9 +34,6 @@ setopt hist_ignore_all_dups
 autoload compinit
 compinit
 
-PATH="$PATH:/home/mike/bin:/home/mike/.cabal/bin:/home/mike/.gem/ruby/2.1.0/bin"
-export PATH
-
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
 

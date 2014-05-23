@@ -1,4 +1,5 @@
 DOTDIR = ~/dotfiles
+LINK = ln -f -s
 
 essentials: git_ zsh_ gnuplot_ R_ inputrc_ tmux_
 
@@ -7,44 +8,45 @@ all: essentials awesome_ moc_ mutt_ bash_ inputrc_
 reallyall: all user_dirs_ mutt_ awesome_ xdefaults_ xmodmap_
 
 git_: git/gitconfig git/gitignore_global
-	ln -s ${DOTDIR}/git/gitconfig ~/.gitconfig
-	ln -s ${DOTDIR}/git/gitignore_global ~/.gitignore_global
+	${LINK} ${DOTDIR}/git/gitconfig ~/.gitconfig
+	${LINK} ${DOTDIR}/git/gitignore_global ~/.gitignore_global
 
 zsh_: zshrc zsh
-	ln -s ${DOTDIR}/zshrc ~/.zshrc
-	ln -s ${DOTDIR}/zsh/ ~/.zsh
+	${LINK} ${DOTDIR}/zshrc ~/.zshrc
+	${LINK} ${DOTDIR}/zprofile ~/.zprofile
+	${LINK} ${DOTDIR}/zsh/ ~/.zsh
 
 awesome_: awesome/rc.lua awesome/theme.lua
-	ln -s ${DOTDIR}/awesome/ ~/.config/awesome
+	${LINK} ${DOTDIR}/awesome/ ~/.config/awesome
 
 moc_: moc/
-	ln -s ${DOTDIR}/moc/ ~/.moc
+	${LINK} ${DOTDIR}/moc/ ~/.moc
 
 mutt_: mutt/
-	ln -s ${DOTDIR}/mutt/ ~/.mutt
+	${LINK} ${DOTDIR}/mutt/ ~/.mutt
 
 bash_: bash/ bashrc
-	ln -s ${DOTDIR}/bash ~/.bash
-	ln -s ${DOTDIR}/bashrc ~/.bashrc
+	${LINK} ${DOTDIR}/bash ~/.bash
+	${LINK} ${DOTDIR}/bashrc ~/.bashrc
 
 gnuplot_: gnuplot
-	ln -s ${DOTDIR}/gnuplot ~/.gnuplot
+	${LINK} ${DOTDIR}/gnuplot ~/.gnuplot
 
 inputrc_: inputrc
-	ln -s ${DOTDIR}/inputrc ~/.inputrc
+	${LINK} ${DOTDIR}/inputrc ~/.inputrc
 
 R_: Renviron Rprofile
-	ln -s ${DOTDIR}/Rprofile ~/.Rprofile
-	ln -s ${DOTDIR}/Renviron ~/.Renviron
+	${LINK} ${DOTDIR}/Rprofile ~/.Rprofile
+	${LINK} ${DOTDIR}/Renviron ~/.Renviron
 
 tmux_: tmux.conf
-	ln -s ${DOTDIR}/tmux.conf ~/.tmux.conf
+	${LINK} ${DOTDIR}/tmux.conf ~/.tmux.conf
 
 user_dirs_: user-dirs.dirs
-	ln -s ${DOTDIR}/user-dirs.dirs ~/.config/user-dirs.dirs
+	${LINK} ${DOTDIR}/user-dirs.dirs ~/.config/user-dirs.dirs
 
 xdefaults_: Xdefaults
-	ln -s ${DOTDIR}/Xdefaults ~/.Xdefaults
+	${LINK} ${DOTDIR}/Xdefaults ~/.Xdefaults
 
 xmodmap_: Xmodmap
-	ln -s ${DOTDIR}/Xmodmap ~/.Xmodmap
+	${LINK} ${DOTDIR}/Xmodmap ~/.Xmodmap
