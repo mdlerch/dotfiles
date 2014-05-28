@@ -11,6 +11,7 @@
 # vim files
 *.swp
 *.un~
+tags
 
 # output files #
 *.pdf
