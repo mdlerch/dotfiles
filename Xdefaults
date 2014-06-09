@@ -55,6 +55,7 @@ urxvt*cursorBlink:        true
 !urxvt*pointerBlank:       boolean
 !urxvt*background:           color
 urxvt*background: rgba:0000/0000/0200/c800
+! urxvt*background: rgba:0000/0000/0200/ffff
 urxvt*foreground:       white
 !urxvt*color0:             color
 !urxvt*color1:             color
