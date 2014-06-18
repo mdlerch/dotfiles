@@ -1,4 +1,4 @@
-export WORKON_HOME=$HOME/.virtualenvs
+export WORKON_HOME=$HOME/virtualenvs
 export PROJECT_HOME=$HOME/work/devel
 source /usr/bin/virtualenvwrapper.sh
 
