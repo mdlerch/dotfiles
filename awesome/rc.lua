@@ -822,7 +822,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 --
--- os.execute("nm-applet --sm-disable &")
+os.execute("/home/mike/bin/run_nmapp &")
 -- os.execute("wicd &")
 -- os.execute("/home/mike/bin/myconky")
 
