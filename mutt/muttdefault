@@ -17,6 +17,10 @@ set pager_stop
 set mailcap_path = "~/.mutt/mailcap"
 
 bind pager b previous-page
+bind index j next-entry
+bind index k previous-entry
+bind pager j next-line
+bind pager k previous-line
 
 source ~/.mutt/muttcolors
 
