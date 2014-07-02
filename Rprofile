@@ -1,5 +1,5 @@
 if (interactive() & Sys.getenv("TERM")!="") {
-	library(vimcom.plus)
+	library(vimcom)
 	library(colorout)
 	# options(pager = "vimrpager")
 	#if (Sys.getenv("VIM_PANE") != "")
