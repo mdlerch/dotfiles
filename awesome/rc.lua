@@ -1,5 +1,5 @@
 -- Standard awesome library
--- local gears = require("gears")
+local gears = require("gears")
 local awful = require("awful")
 awful.rules = require("awful.rules")
 require("awful.autofocus")
@@ -98,10 +98,10 @@ batwidget:set_color({ type = "linear", from = { 0, 0 }, to = { 10,0 }, stops = {
 
 -- {{{ Battery state
 -- Initialize widget
-vicious.register(batwidget, vicious.widgets.bat, "$2", 120, "BAT0")
+vicious.register(batwidget, vicious.widgets.bat, "$2", 30, "BAT0")
 
 batintro = wibox.widget.textbox()
-vicious.register(batintro, vicious.widgets.bat, "$3", 120, "BAT0")
+vicious.register(batintro, vicious.widgets.bat, "$3", 30, "BAT0")
 
 batspace = wibox.widget.textbox()
 batspace:set_text("   ")
@@ -109,7 +109,7 @@ batspace:set_text("   ")
 -- Temperature
 
 tempwidget = wibox.widget.textbox()
-vicious.register(tempwidget, vicious.widgets.thermal, " $1C  ", 20, {"coretemp.0", "core"} )
+vicious.register(tempwidget, vicious.widgets.thermal, " $1C  ", 20, {"thermal_zone0", "sys"} )
 --- }}}
 
 
@@ -179,7 +179,7 @@ local layouts =
 -- {{{ Wallpaper
 if beautiful.wallpaper then
 	for s = 1, screen.count() do
-		-- gears.wallpaper.maximized(beautiful.wallpaper, s, true)
+        gears.wallpaper.maximized(beautiful.wallpaper, s, true)
 	end
 end
 -- }}}
