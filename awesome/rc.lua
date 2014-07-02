@@ -1,5 +1,5 @@
 -- Standard awesome library
-local gears = require("gears")
+-- local gears = require("gears")
 local awful = require("awful")
 awful.rules = require("awful.rules")
 require("awful.autofocus")
@@ -172,15 +172,14 @@ local layouts =
 	awful.layout.suit.tile,
 	awful.layout.suit.fair.horizontal,
 	awful.layout.suit.max,
-	awful.layout.suit.floating,
-	awful.layout.suit.magnifier
+	awful.layout.suit.floating
 }
 -- }}}
 
 -- {{{ Wallpaper
 if beautiful.wallpaper then
 	for s = 1, screen.count() do
-		gears.wallpaper.maximized(beautiful.wallpaper, s, true)
+		-- gears.wallpaper.maximized(beautiful.wallpaper, s, true)
 	end
 end
 -- }}}
