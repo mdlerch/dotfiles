@@ -219,12 +219,12 @@ end
 -- Menubar configuration
 -- menubar.utils.terminal = terminal -- Set the terminal for applications that require it
 -- }}}
--- {{{ Wibox
+-- {{{ Top bar
 
 -- Create a wibox for each screen and add it
 mywibox = {}
-mylayoutbox = {}
 mytaglist = {}
+mylayoutbox = {}
 mytasklist = {}
 mytaglist.buttons = awful.util.table.join(
     awful.button({ }, 1, awful.tag.viewonly),
@@ -270,7 +270,6 @@ end))
 
 for s = 1, screen.count() do
     -- Create an imagebox widget which will contains an icon indicating which layout we're using.
-    -- We need one layoutbox per screen.
     mylayoutbox[s] = awful.widget.layoutbox(s)
     mylayoutbox[s]:buttons(awful.util.table.join(
     awful.button({ }, 1, function () awful.layout.inc(layouts, 1) end),
