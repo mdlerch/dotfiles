@@ -72,7 +72,7 @@ vicious.register(memwidget, vicious.widgets.mem, "$1", 13)
 
 -- Memory text box
 memintro = wibox.widget.textbox()
-memintro:set_text("   Mem:")
+memintro:set_text(" Mem:")
 
 -- CPU graph
 cpuwidgetg = awful.widget.graph()
