@@ -5,7 +5,7 @@ essentials: git_ zsh_ gnuplot_ R_ inputrc_ tmux_
 
 all: essentials awesome_ moc_ mutt_ bash_ inputrc_
 
-reallyall: all user_dirs_ mutt_ awesome_ xdefaults_ xmodmap_
+reallyall: all user_dirs_ mutt_ awesome_ xdefaults_ xmodmap_ screen_it_
 
 git_: git/gitconfig git/gitignore_global
 	${LINK} ${DOTDIR}/git/gitconfig ~/.gitconfig
@@ -50,3 +50,6 @@ xdefaults_: Xdefaults
 
 xmodmap_: Xmodmap
 	${LINK} ${DOTDIR}/Xmodmap ~/.Xmodmap
+
+screen_it_: screen-it.txt
+	tic screen-it.txt
