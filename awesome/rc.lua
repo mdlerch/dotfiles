@@ -426,7 +426,7 @@ awful.key({ CK, AK }, "r", function() menubar.show() end)
 
 clientkeys = awful.util.table.join(
 awful.key({ WK,           }, "g",      function (c) c.fullscreen = not c.fullscreen  end),
-awful.key({ WK, AK   }, "c",      killnoplasma ),
+awful.key({ WK, AK   }, "c",     function(c) c.kill(c) end),
 awful.key({ WK,     }, "f",  awful.client.floating.toggle                     ),
 awful.key({ WK, CK }, "Return", function (c) c:swap(awful.client.getmaster()) end),
 awful.key({ WK,           }, "o",      awful.client.movetoscreen                        ),
