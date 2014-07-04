@@ -223,7 +223,6 @@ end
 
 -- Create a wibox for each screen and add it
 mywibox = {}
-mypromptbox = {}
 mylayoutbox = {}
 mytaglist = {}
 mytasklist = {}
@@ -270,8 +269,6 @@ awful.button({ }, 5, function ()
 end))
 
 for s = 1, screen.count() do
-    -- Create a promptbox for each screen
-    mypromptbox[s] = awful.widget.prompt()
     -- Create an imagebox widget which will contains an icon indicating which layout we're using.
     -- We need one layoutbox per screen.
     mylayoutbox[s] = awful.widget.layoutbox(s)
@@ -293,7 +290,6 @@ for s = 1, screen.count() do
     local left_layout = wibox.layout.fixed.horizontal()
     --left_layout:add(mylauncher)
     left_layout:add(mytaglist[s])
-    left_layout:add(mypromptbox[s])
 
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
@@ -431,17 +427,7 @@ awful.key({ WK, AK, CK, SK   }, "space", function () awful.layout.inc(layouts, -
 
 awful.key({ WK, CK }, "n", awful.client.restore),
 
--- Prompt
-awful.key({ WK },            "r",     function () mypromptbox[mouse.screen]:run() end),
-
-awful.key({ WK }, "x",
-function ()
-    awful.prompt.run({ prompt = "Run Lua code: " },
-    mypromptbox[mouse.screen].widget,
-    awful.util.eval, nil,
-    awful.util.getdir("cache") .. "/history_eval")
-end),
--- Menubar
+- Menubar
 awful.key({ CK, AK }, "r", function() menubar.show() end)
 )
 
