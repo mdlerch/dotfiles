@@ -367,38 +367,47 @@ function ()
     end
 end),
 
--- Standard program
-awful.key({ CK, AK          }, "t", function () awful.util.spawn(terminal) end),
-awful.key({ CK, AK          }, "e", function () awful.util.spawn(terminalnotmux) end),
-awful.key({ CK, AK          }, "a", function () awful.util.spawn(terminaljoin) end),
-awful.key({ CK, AK          }, "f", function () awful.util.spawn("chromium") end),
-awful.key({ CK, AK          }, "g", function () awful.util.spawn("google-chrome") end),
-awful.key({ CK, AK          }, "m", function () awful.util.spawn("mendeleydesktop") end),
-awful.key({ CK, AK          }, "c", function () awful.util.spawn("xcalc") end),
-awful.key({                            }, "XF86Calculator", function () awful.util.spawn("kcalc") end),
-awful.key({ WK, CK          }, "p", function () awful.util.spawn_with_shell("/home/mike/bin/playertoggle") end),
-awful.key({ CK, WK          }, "n", function () awful.util.spawn_with_shell("/home/mike/bin/playernext") end),
-awful.key({ CK, WK          }, "b", function () awful.util.spawn_with_shell("/home/mike/bin/playerprev") end),
-awful.key({ CK                           }, "KP_Right", function () awful.util.spawn_with_shell("/home/mike/bin/playernext") end),
-awful.key({                            }, "XF86Launch9", function () awful.util.spawn_with_shell("/home/mike/bin/playernext") end),
-awful.key({                            }, "XF86Launch8", function () awful.util.spawn_with_shell("/home/mike/bin/playerprev") end),
-awful.key({ CK                           }, "KP_Left", function () awful.util.spawn_with_shell("/home/mike/bin/playerprev") end),
-awful.key({ CK, WK          }, "l", function () awful.util.spawn_with_shell("amixer set Master 2%+ > /dev/null") end),
-awful.key({}, "XF86AudioRaiseVolume", function () awful.util.spawn_with_shell("amixer set Master 2%+ > /dev/null") end),
-awful.key({CK}, "KP_Up", function () awful.util.spawn_with_shell("amixer set Master 2%+ > /dev/null") end),
-awful.key({ CK, WK          }, "k", function () awful.util.spawn_with_shell("amixer set Master 2%- > /dev/null") end),
-awful.key({}, "XF86AudioLowerVolume", function () awful.util.spawn_with_shell("amixer set Master 2%- > /dev/null") end),
-awful.key({CK}, "KP_Down", function () awful.util.spawn_with_shell("amixer set Master 2%- > /dev/null") end),
-awful.key({}, "XF86AudioMute", function () awful.util.spawn_with_shell("amixer set Master toggle > /dev/null") end),
-awful.key({CK, WK}, "m", function () awful.util.spawn_with_shell("amixer set Master toggle > /dev/null") end),
-awful.key({}, "XF86AudioPlay", function () awful.util.spawn_with_shell("/home/mike/bin/playertoggle > /dev/null") end),
-awful.key({CK}, "KP_Begin", function () awful.util.spawn_with_shell("/home/mike/bin/playertoggle > /dev/null") end),
+-- Launch Programs
+awful.key({CK, AK}, "t", function () awful.util.spawn(terminal) end),
+awful.key({CK, AK}, "e", function () awful.util.spawn(terminalnotmux) end),
+awful.key({CK, AK}, "a", function () awful.util.spawn(terminaljoin) end),
+awful.key({CK, AK}, "f", function () awful.util.spawn("chromium") end),
+awful.key({CK, AK}, "g", function () awful.util.spawn("google-chrome") end),
+awful.key({CK, AK}, "m", function () awful.util.spawn("mendeleydesktop") end),
+awful.key({CK, AK}, "c", function () awful.util.spawn("xcalc") end),
+
+awful.key({      }, "XF86Calculator", function () awful.util.spawn("xcalc") end),
+
+-- Media
+awful.key({CK, WK}, "p", function () awful.util.spawn_with_shell("playertoggle") end),
+awful.key({CK, WK}, "n", function () awful.util.spawn_with_shell("playernext") end),
+awful.key({CK, WK}, "b", function () awful.util.spawn_with_shell("playerprev") end),
+awful.key({CK, WK}, "l", function () awful.util.spawn_with_shell("volinc") end),
+awful.key({CK, WK}, "k", function () awful.util.spawn_with_shell("voldec") end),
+awful.key({CK, WK}, "m", function () awful.util.spawn_with_shell("volmute") end),
+
+awful.key({}, "XF86AudioPlay", function () awful.util.spawn_with_shell("playertoggle") end),
+awful.key({}, "XF86Launch9", function () awful.util.spawn_with_shell("playernext") end),
+awful.key({}, "XF86Launch8", function () awful.util.spawn_with_shell("playerprev") end),
+awful.key({}, "XF86AudioRaiseVolume", function () awful.util.spawn_with_shell("volinc") end),
+awful.key({}, "XF86AudioLowerVolume", function () awful.util.spawn_with_shell("voldec") end),
+awful.key({}, "XF86AudioMute", function () awful.util.spawn_with_shell("volmute") end),
+
+awful.key({CK}, "KP_Begin", function () awful.util.spawn_with_shell("playertoggle") end),
+awful.key({CK}, "KP_Right", function () awful.util.spawn_with_shell("playernext") end),
+awful.key({CK}, "KP_Left", function () awful.util.spawn_with_shell("playerprev") end),
+awful.key({CK}, "KP_Up", function () awful.util.spawn_with_shell("volinc") end),
+awful.key({CK}, "KP_Down", function () awful.util.spawn_with_shell("voldec") end),
+
+-- Switch page up/page down and web forward back
 awful.key({WK}, "Return", function () awful.util.spawn_with_shell("/home/mike/bin/pgup") end),
 awful.key({WK, SK}, "Return", function () awful.util.spawn_with_shell("/home/mike/bin/pgdown") end),
+
+-- Awesome commands
 awful.key({ WK, CK, AK }, "r", awesome.restart),
 awful.key({ WK, CK, AK   }, "q", awesome.quit),
-awful.key({WK}, "e", revelation),
 
+-- Mouse control
 awful.key({WK}, "KP_Left", function() awful.util.spawn_with_shell("xdotool mousemove_relative -- -15 0") end),
 awful.key({WK}, "KP_Right", function() awful.util.spawn_with_shell("xdotool mousemove_relative -- 15 0") end),
 awful.key({WK}, "KP_Up", function() awful.util.spawn_with_shell("xdotool mousemove_relative -- 0 -15") end),
