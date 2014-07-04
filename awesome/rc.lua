@@ -1,3 +1,4 @@
+-- {{{ Load libraries
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
@@ -11,7 +12,7 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 vicious = require("vicious")
-
+-- }}}
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -318,139 +319,97 @@ end
 -- }}}
 -- {{{ Key bindings
 
+-- Moving around tags
 globalkeys = awful.util.table.join(
-awful.key({ CK, AK           }, "Left", 
-function ()  
-    awful.tag.viewprev()
-    c = awful.client.getmaster()
-    if c then
-        client.focus = c
-        c:raise()
-    end
-end
-),
-awful.key({ CK, AK          }, "Right",
-function ()  
-    awful.tag.viewnext() 
-    c = awful.client.getmaster()
-    if c then
-        client.focus = c
-        c:raise()
-    end
-end
-),
-awful.key({ CK, AK          }, "Escape", awful.tag.history.restore),
+    awful.key({CK, AK}, "Left",  awful.tag.viewprev),
+    awful.key({CK, AK}, "Right", awful.tag.viewnext),
+    awful.key({CK, AK}, "Escape", awful.tag.history.restore),
+    awful.key({CK, AK}, "space", function() awful.screen.focus_relative(1) end),
 
-awful.key({ WK,           }, "j",
-function ()
-    awful.client.focus.byidx( 1)
-    if client.focus then client.focus:raise() end
-end),
-awful.key({ WK,           }, "k",
-function ()
-    awful.client.focus.byidx(-1)
-    if client.focus then client.focus:raise() end
-end),
---awful.key({ WK,           }, "w", function () mymainmenu:show() end),
+    -- Moving around clients
+    awful.key({WK}, "j", function()
+        awful.client.focus.byidx( 1)
+        if client.focus then client.focus:raise() end
+    end),
+    awful.key({WK}, "k", function()
+        awful.client.focus.byidx(-1)
+        if client.focus then client.focus:raise() end
+    end),
+    awful.key({AK}, "Tab", function()
+        awful.client.focus.byidx(1)
+        if client.focus then
+            client.focus:raise()
+        end
+    end),
+    awful.key({SK, AK}, "Tab", function()
+        awful.client.focus.byidx(1)
+        if client.focus then
+            client.focus:raise()
+        end
+    end),
 
--- Layout manipulation
-awful.key({ WK, AK   }, "j", function () awful.client.swap.byidx(  1)    end),
-awful.key({ WK, AK   }, "k", function () awful.client.swap.byidx( -1)    end),
-awful.key({CK, AK}, "space", function () awful.screen.focus_relative( 1) end),
-awful.key({ WK, SK }, "k", function () awful.screen.focus_relative(-1) end),
-awful.key({ WK,           }, "u", awful.client.urgent.jumpto),
-awful.key({ AK,           }, "Tab",
-function ()
-    awful.client.focus.byidx(1)
-    if client.focus then
-        client.focus:raise()
-    end
-end),
+    -- Layout manipulation
+    awful.key({WK, AK}, "j", function() awful.client.swap.byidx(  1) end),
+    awful.key({WK, AK}, "k", function() awful.client.swap.byidx( -1) end),
+    awful.key({WK, AK}, "l", function() awful.tag.incmwfact( 0.05)   end),
+    awful.key({WK, AK}, "h", function() awful.tag.incmwfact(-0.05)   end),
+    awful.key({WK, SK}, "h", function() awful.tag.incnmaster( 1)     end),
+    awful.key({WK, SK}, "l", function() awful.tag.incnmaster(-1)     end),
+    awful.key({WK, CK, AK}, "h", function() awful.tag.incncol( 1)   end),
+    awful.key({WK, CK, AK}, "l", function() awful.tag.incncol(-1)   end),
+    awful.key({WK, CK, AK},     "space", function() awful.layout.inc(layouts,  1) end),
+    awful.key({WK, AK, CK, SK}, "space", function() awful.layout.inc(layouts, -1) end),
 
--- Launch Programs
-awful.key({CK, AK}, "t", function () awful.util.spawn(terminal) end),
-awful.key({CK, AK}, "e", function () awful.util.spawn(terminalnotmux) end),
-awful.key({CK, AK}, "a", function () awful.util.spawn(terminaljoin) end),
-awful.key({CK, AK}, "f", function () awful.util.spawn("chromium") end),
-awful.key({CK, AK}, "g", function () awful.util.spawn("google-chrome") end),
-awful.key({CK, AK}, "m", function () awful.util.spawn("mendeleydesktop") end),
-awful.key({CK, AK}, "c", function () awful.util.spawn("xcalc") end),
+    -- Launch Programs
+    awful.key({CK, AK}, "t", function() awful.util.spawn(terminal) end),
+    awful.key({CK, AK}, "e", function() awful.util.spawn(terminalnotmux) end),
+    awful.key({CK, AK}, "a", function() awful.util.spawn(terminaljoin) end),
+    awful.key({CK, AK}, "f", function() awful.util.spawn("chromium") end),
+    awful.key({CK, AK}, "g", function() awful.util.spawn("google-chrome") end),
+    awful.key({CK, AK}, "m", function() awful.util.spawn("mendeleydesktop") end),
+    awful.key({CK, AK}, "c", function() awful.util.spawn("xcalc") end),
 
-awful.key({      }, "XF86Calculator", function () awful.util.spawn("xcalc") end),
+    awful.key({}, "XF86Calculator", function () awful.util.spawn("xcalc") end),
 
--- Media
-awful.key({CK, WK}, "p", function () awful.util.spawn_with_shell("playertoggle") end),
-awful.key({CK, WK}, "n", function () awful.util.spawn_with_shell("playernext") end),
-awful.key({CK, WK}, "b", function () awful.util.spawn_with_shell("playerprev") end),
-awful.key({CK, WK}, "l", function () awful.util.spawn_with_shell("volinc") end),
-awful.key({CK, WK}, "k", function () awful.util.spawn_with_shell("voldec") end),
-awful.key({CK, WK}, "m", function () awful.util.spawn_with_shell("volmute") end),
+    -- Media
+    awful.key({CK, WK}, "p", function () awful.util.spawn_with_shell("playertoggle") end),
+    awful.key({CK, WK}, "n", function () awful.util.spawn_with_shell("playernext") end),
+    awful.key({CK, WK}, "b", function () awful.util.spawn_with_shell("playerprev") end),
+    awful.key({CK, WK}, "l", function () awful.util.spawn_with_shell("volinc") end),
+    awful.key({CK, WK}, "k", function () awful.util.spawn_with_shell("voldec") end),
+    awful.key({CK, WK}, "m", function () awful.util.spawn_with_shell("volmute") end),
 
-awful.key({}, "XF86AudioPlay", function () awful.util.spawn_with_shell("playertoggle") end),
-awful.key({}, "XF86Launch9", function () awful.util.spawn_with_shell("playernext") end),
-awful.key({}, "XF86Launch8", function () awful.util.spawn_with_shell("playerprev") end),
-awful.key({}, "XF86AudioRaiseVolume", function () awful.util.spawn_with_shell("volinc") end),
-awful.key({}, "XF86AudioLowerVolume", function () awful.util.spawn_with_shell("voldec") end),
-awful.key({}, "XF86AudioMute", function () awful.util.spawn_with_shell("volmute") end),
+    awful.key({}, "XF86AudioPlay", function () awful.util.spawn_with_shell("playertoggle") end),
+    awful.key({}, "XF86Launch9", function () awful.util.spawn_with_shell("playernext") end),
+    awful.key({}, "XF86Launch8", function () awful.util.spawn_with_shell("playerprev") end),
+    awful.key({}, "XF86AudioRaiseVolume", function () awful.util.spawn_with_shell("volinc") end),
+    awful.key({}, "XF86AudioLowerVolume", function () awful.util.spawn_with_shell("voldec") end),
+    awful.key({}, "XF86AudioMute", function () awful.util.spawn_with_shell("volmute") end),
 
-awful.key({CK}, "KP_Begin", function () awful.util.spawn_with_shell("playertoggle") end),
-awful.key({CK}, "KP_Right", function () awful.util.spawn_with_shell("playernext") end),
-awful.key({CK}, "KP_Left", function () awful.util.spawn_with_shell("playerprev") end),
-awful.key({CK}, "KP_Up", function () awful.util.spawn_with_shell("volinc") end),
-awful.key({CK}, "KP_Down", function () awful.util.spawn_with_shell("voldec") end),
+    -- Switch page up/page down and web forward back
+    awful.key({WK}, "Return", function () awful.util.spawn_with_shell("pgup") end),
+    awful.key({WK, SK}, "Return", function () awful.util.spawn_with_shell("pgdown") end),
 
--- Switch page up/page down and web forward back
-awful.key({WK}, "Return", function () awful.util.spawn_with_shell("/home/mike/bin/pgup") end),
-awful.key({WK, SK}, "Return", function () awful.util.spawn_with_shell("/home/mike/bin/pgdown") end),
+    -- Awesome commands
+    awful.key({WK, CK, AK}, "r", awesome.restart),
+    awful.key({WK, CK, AK}, "q", awesome.quit),
 
--- Awesome commands
-awful.key({ WK, CK, AK }, "r", awesome.restart),
-awful.key({ WK, CK, AK   }, "q", awesome.quit),
-
--- Mouse control
-awful.key({WK}, "KP_Left", function() awful.util.spawn_with_shell("xdotool mousemove_relative -- -15 0") end),
-awful.key({WK}, "KP_Right", function() awful.util.spawn_with_shell("xdotool mousemove_relative -- 15 0") end),
-awful.key({WK}, "KP_Up", function() awful.util.spawn_with_shell("xdotool mousemove_relative -- 0 -15") end),
-awful.key({WK}, "KP_Down", function() awful.util.spawn_with_shell("xdotool mousemove_relative -- 0 15") end),
-awful.key({WK}, "KP_Begin", function() awful.util.spawn_with_shell("xdotool click --clearmodifiers 1") end),
-awful.key({WK, AK}, "KP_Begin", function() awful.util.spawn_with_shell("xdotool click --clearmodifiers 3") end),
-awful.key({WK, CK, AK}, "KP_Begin", function() awful.util.spawn_with_shell("xdotool click --clearmodifiers 2") end),
-
-
-
-awful.key({ WK, AK          }, "l",     function () awful.tag.incmwfact( 0.05)    end),
-awful.key({ WK, AK          }, "h",     function () awful.tag.incmwfact(-0.05)    end),
-awful.key({ WK, SK   }, "h",     function () awful.tag.incnmaster( 1)      end),
-awful.key({ WK, SK   }, "l",     function () awful.tag.incnmaster(-1)      end),
---awful.key({ WK, CK }, "h",     function () awful.tag.incncol( 1)         end),
---awful.key({ WK, CK }, "l",     function () awful.tag.incncol(-1)         end),
-awful.key({ WK, AK , CK }, "space", function () awful.layout.inc(layouts,  1) end),
-awful.key({ WK, AK, CK, SK   }, "space", function () awful.layout.inc(layouts, -1) end),
-
-awful.key({ WK, CK }, "n", awful.client.restore),
-
--- Menubar
-awful.key({ CK, AK }, "r", function() menubar.show() end)
+    -- Menubar
+    awful.key({ CK, AK }, "r", function() menubar.show() end)
 )
 
+-- Keys that operate on a client
 clientkeys = awful.util.table.join(
-awful.key({ WK,           }, "g",      function (c) c.fullscreen = not c.fullscreen  end),
-awful.key({ WK, AK   }, "c",     function(c) c.kill(c) end),
-awful.key({ WK,     }, "f",  awful.client.floating.toggle                     ),
-awful.key({ WK, CK }, "Return", function (c) c:swap(awful.client.getmaster()) end),
-awful.key({ WK,           }, "o",      awful.client.movetoscreen                        ),
-awful.key({ WK,           }, "t",      function (c) c.ontop = not c.ontop            end),
-awful.key({ WK,           }, "n",
-function (c)
-    -- The client currently has the input focus, so it cannot be
-    -- minimized, since minimized clients can't have the focus.
-    c.minimized = true
-end),
-awful.key({ WK,           }, "m",
-function (c)
-    c.maximized_horizontal = not c.maximized_horizontal
-    c.maximized_vertical   = not c.maximized_vertical
-end)
+    awful.key({WK, AK}, "c", function(c) c.kill(c) end),
+    awful.key({WK, AK}, "Return", function (c) c:swap(awful.client.getmaster()) end),
+    awful.key({WK}, "F11", function (c) c.fullscreen = not c.fullscreen  end),
+    awful.key({WK}, "f", awful.client.floating.toggle),
+    awful.key({WK}, "o", awful.client.movetoscreen),
+    awful.key({WK}, "t", function (c) c.ontop = not c.ontop            end),
+    awful.key({WK}, "m", function (c)
+        c.maximized_horizontal = not c.maximized_horizontal
+        c.maximized_vertical   = not c.maximized_vertical
+    end)
 )
 
 -- Compute the maximum number of digit we need, limited to 9
@@ -464,8 +423,7 @@ end
 -- This should map on the top row of your keyboard, usually 1 to 9.
 for i = 1, keynumber do
     globalkeys = awful.util.table.join(globalkeys,
-    awful.key({ CK }, "#" .. i + 9,
-    function ()
+    awful.key({CK}, "#" .. i + 9, function ()
         local screen = mouse.screen
         if tags[screen][i] then
             awful.tag.viewonly(tags[screen][i])
@@ -476,8 +434,7 @@ for i = 1, keynumber do
             end
         end
     end),
-    awful.key({ CK, AK  }, "#" .. i + 9,
-    function ()
+    awful.key({CK, AK}, "#" .. i + 9, function ()
         local screen = mouse.screen
         if screen == 1 then
             screen = 2
@@ -494,15 +451,13 @@ for i = 1, keynumber do
             end
         end
     end),
-    awful.key({ WK, CK }, "#" .. i + 9,
-    function ()
+    awful.key({WK, CK}, "#" .. i + 9, function ()
         local screen = mouse.screen
         if tags[screen][i] then
             awful.tag.viewtoggle(tags[screen][i])
         end
     end),
-    awful.key({ AK, WK, CK }, "#" .. i + 9,
-    function ()
+    awful.key({AK, WK, CK}, "#" .. i + 9, function ()
         local screen = mouse.screen
         if screen == 1 then
             screen = 2
@@ -513,14 +468,12 @@ for i = 1, keynumber do
             awful.tag.viewtoggle(tags[screen][i])
         end
     end),
-    awful.key({ CK, SK }, "#" .. i + 9,
-    function ()
+    awful.key({CK, SK}, "#" .. i + 9, function ()
         if client.focus and tags[client.focus.screen][i] then
             awful.client.movetotag(tags[client.focus.screen][i])
         end
     end),
-    awful.key({ CK, SK, AK }, "#" .. i + 9,
-    function ()
+    awful.key({CK, SK, AK}, "#" .. i + 9, function ()
         local screen = mouse.screen
         if screen == 1 then
             screen = 2
@@ -531,14 +484,12 @@ for i = 1, keynumber do
             awful.client.movetotag(tags[screen][i])
         end
     end),
-    awful.key({ WK, CK, SK }, "#" .. i + 9,
-    function ()
+    awful.key({WK, CK, SK}, "#" .. i + 9, function ()
         if client.focus and tags[client.focus.screen][i] then
             awful.client.toggletag(tags[client.focus.screen][i])
         end
     end),
-    awful.key({AK,  WK, CK, SK }, "#" .. i + 9,
-    function ()
+    awful.key({AK, WK, CK, SK}, "#" .. i + 9, function ()
         local screen = mouse.screen
         if screen == 1 then
             screen = 2
@@ -551,15 +502,17 @@ for i = 1, keynumber do
     end))
 end
 
-
-
-clientbuttons = awful.util.table.join(
-awful.button({ }, 1, function (c) client.focus = c; c:raise() end),
-awful.button({ AK }, 1, awful.mouse.client.move),
-awful.button({ AK }, 3, awful.mouse.client.resize))
-
 -- Set keys
 root.keys(globalkeys)
+
+-- }}}
+-- {{{ Mouse buttons on clients
+
+clientbuttons = awful.util.table.join(
+    awful.button({ }, 1, function (c) client.focus = c; c:raise() end),
+    awful.button({ AK }, 1, awful.mouse.client.move),
+    awful.button({ AK }, 3, awful.mouse.client.resize)
+)
 
 -- }}}
 -- {{{ Per class rules
@@ -665,11 +618,11 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+-- {{{ Run some commands
 
---
 os.execute("/home/mike/bin/run_nmapp &")
 -- os.execute("wicd &")
 -- os.execute("/home/mike/bin/myconky")
 
-
+-- }}}
 -- vim: fdm=marker
