@@ -426,7 +426,7 @@ awful.key({ WK, AK, CK, SK   }, "space", function () awful.layout.inc(layouts, -
 
 awful.key({ WK, CK }, "n", awful.client.restore),
 
-- Menubar
+-- Menubar
 awful.key({ CK, AK }, "r", function() menubar.show() end)
 )
 
