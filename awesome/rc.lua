@@ -166,6 +166,10 @@ terminalnotmux = "urxvtc"
 terminaljoin = "/home/mike/bin/termjoin"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
+WK = "Mod4"
+AK = "Mod1"
+CK = "Control"
+SK = "Shift"
 
 -- }}}
 -- {{{ Layouts and tags
@@ -225,9 +229,9 @@ mytaglist = {}
 mytasklist = {}
 mytaglist.buttons = awful.util.table.join(
     awful.button({ }, 1, awful.tag.viewonly),
-    awful.button({ "Mod4" }, 1, awful.client.movetotag),
+    awful.button({ WK }, 1, awful.client.movetotag),
     awful.button({ }, 3, awful.tag.viewtoggle),
-    awful.button({ "Mod4" }, 3, awful.client.toggletag),
+    awful.button({ WK }, 3, awful.client.toggletag),
     awful.button({ }, 4, function(t) awful.tag.viewprev(awful.tag.getscreen(t)) end),
     awful.button({ }, 5, function(t) awful.tag.viewnext(awful.tag.getscreen(t)) end)
 )
@@ -326,7 +330,7 @@ awful.button({ }, 5, awful.tag.viewnext)
 -- {{{ Key bindings
 
 globalkeys = awful.util.table.join(
-awful.key({ "Control", "Mod1"           }, "Left", 
+awful.key({ CK, AK           }, "Left", 
 function ()  
     awful.tag.viewprev()
     c = awful.client.getmaster()
@@ -336,7 +340,7 @@ function ()
     end
 end
 ),
-awful.key({ "Control", "Mod1"          }, "Right",
+awful.key({ CK, AK          }, "Right",
 function ()  
     awful.tag.viewnext() 
     c = awful.client.getmaster()
@@ -346,27 +350,27 @@ function ()
     end
 end
 ),
-awful.key({ "Control", "Mod1"          }, "Escape", awful.tag.history.restore),
+awful.key({ CK, AK          }, "Escape", awful.tag.history.restore),
 
-awful.key({ "Mod4",           }, "j",
+awful.key({ WK,           }, "j",
 function ()
     awful.client.focus.byidx( 1)
     if client.focus then client.focus:raise() end
 end),
-awful.key({ "Mod4",           }, "k",
+awful.key({ WK,           }, "k",
 function ()
     awful.client.focus.byidx(-1)
     if client.focus then client.focus:raise() end
 end),
---awful.key({ "Mod4",           }, "w", function () mymainmenu:show() end),
+--awful.key({ WK,           }, "w", function () mymainmenu:show() end),
 
 -- Layout manipulation
-awful.key({ "Mod4", "Mod1"   }, "j", function () awful.client.swap.byidx(  1)    end),
-awful.key({ "Mod4", "Mod1"   }, "k", function () awful.client.swap.byidx( -1)    end),
-awful.key({"Control", "Mod1"}, "space", function () awful.screen.focus_relative( 1) end),
-awful.key({ "Mod4", "Shift" }, "k", function () awful.screen.focus_relative(-1) end),
-awful.key({ "Mod4",           }, "u", awful.client.urgent.jumpto),
-awful.key({ "Mod1",           }, "Tab",
+awful.key({ WK, AK   }, "j", function () awful.client.swap.byidx(  1)    end),
+awful.key({ WK, AK   }, "k", function () awful.client.swap.byidx( -1)    end),
+awful.key({CK, AK}, "space", function () awful.screen.focus_relative( 1) end),
+awful.key({ WK, SK }, "k", function () awful.screen.focus_relative(-1) end),
+awful.key({ WK,           }, "u", awful.client.urgent.jumpto),
+awful.key({ AK,           }, "Tab",
 function ()
     awful.client.focus.byidx(1)
     if client.focus then
@@ -375,62 +379,62 @@ function ()
 end),
 
 -- Standard program
-awful.key({ "Control", "Mod1"          }, "t", function () awful.util.spawn(terminal) end),
-awful.key({ "Control", "Mod1"          }, "e", function () awful.util.spawn(terminalnotmux) end),
-awful.key({ "Control", "Mod1"          }, "a", function () awful.util.spawn(terminaljoin) end),
-awful.key({ "Control", "Mod1"          }, "f", function () awful.util.spawn("chromium") end),
-awful.key({ "Control", "Mod1"          }, "g", function () awful.util.spawn("google-chrome") end),
-awful.key({ "Control", "Mod1"          }, "m", function () awful.util.spawn("mendeleydesktop") end),
-awful.key({ "Control", "Mod1"          }, "c", function () awful.util.spawn("xcalc") end),
+awful.key({ CK, AK          }, "t", function () awful.util.spawn(terminal) end),
+awful.key({ CK, AK          }, "e", function () awful.util.spawn(terminalnotmux) end),
+awful.key({ CK, AK          }, "a", function () awful.util.spawn(terminaljoin) end),
+awful.key({ CK, AK          }, "f", function () awful.util.spawn("chromium") end),
+awful.key({ CK, AK          }, "g", function () awful.util.spawn("google-chrome") end),
+awful.key({ CK, AK          }, "m", function () awful.util.spawn("mendeleydesktop") end),
+awful.key({ CK, AK          }, "c", function () awful.util.spawn("xcalc") end),
 awful.key({                            }, "XF86Calculator", function () awful.util.spawn("kcalc") end),
-awful.key({ "Mod4", "Control"          }, "p", function () awful.util.spawn_with_shell("/home/mike/bin/playertoggle") end),
-awful.key({ "Control", "Mod4"          }, "n", function () awful.util.spawn_with_shell("/home/mike/bin/playernext") end),
-awful.key({ "Control", "Mod4"          }, "b", function () awful.util.spawn_with_shell("/home/mike/bin/playerprev") end),
-awful.key({ "Control"                           }, "KP_Right", function () awful.util.spawn_with_shell("/home/mike/bin/playernext") end),
+awful.key({ WK, CK          }, "p", function () awful.util.spawn_with_shell("/home/mike/bin/playertoggle") end),
+awful.key({ CK, WK          }, "n", function () awful.util.spawn_with_shell("/home/mike/bin/playernext") end),
+awful.key({ CK, WK          }, "b", function () awful.util.spawn_with_shell("/home/mike/bin/playerprev") end),
+awful.key({ CK                           }, "KP_Right", function () awful.util.spawn_with_shell("/home/mike/bin/playernext") end),
 awful.key({                            }, "XF86Launch9", function () awful.util.spawn_with_shell("/home/mike/bin/playernext") end),
 awful.key({                            }, "XF86Launch8", function () awful.util.spawn_with_shell("/home/mike/bin/playerprev") end),
-awful.key({ "Control"                           }, "KP_Left", function () awful.util.spawn_with_shell("/home/mike/bin/playerprev") end),
-awful.key({ "Control", "Mod4"          }, "l", function () awful.util.spawn_with_shell("amixer set Master 2%+ > /dev/null") end),
+awful.key({ CK                           }, "KP_Left", function () awful.util.spawn_with_shell("/home/mike/bin/playerprev") end),
+awful.key({ CK, WK          }, "l", function () awful.util.spawn_with_shell("amixer set Master 2%+ > /dev/null") end),
 awful.key({}, "XF86AudioRaiseVolume", function () awful.util.spawn_with_shell("amixer set Master 2%+ > /dev/null") end),
-awful.key({"Control"}, "KP_Up", function () awful.util.spawn_with_shell("amixer set Master 2%+ > /dev/null") end),
-awful.key({ "Control", "Mod4"          }, "k", function () awful.util.spawn_with_shell("amixer set Master 2%- > /dev/null") end),
+awful.key({CK}, "KP_Up", function () awful.util.spawn_with_shell("amixer set Master 2%+ > /dev/null") end),
+awful.key({ CK, WK          }, "k", function () awful.util.spawn_with_shell("amixer set Master 2%- > /dev/null") end),
 awful.key({}, "XF86AudioLowerVolume", function () awful.util.spawn_with_shell("amixer set Master 2%- > /dev/null") end),
-awful.key({"Control"}, "KP_Down", function () awful.util.spawn_with_shell("amixer set Master 2%- > /dev/null") end),
+awful.key({CK}, "KP_Down", function () awful.util.spawn_with_shell("amixer set Master 2%- > /dev/null") end),
 awful.key({}, "XF86AudioMute", function () awful.util.spawn_with_shell("amixer set Master toggle > /dev/null") end),
-awful.key({"Control", "Mod4"}, "m", function () awful.util.spawn_with_shell("amixer set Master toggle > /dev/null") end),
+awful.key({CK, WK}, "m", function () awful.util.spawn_with_shell("amixer set Master toggle > /dev/null") end),
 awful.key({}, "XF86AudioPlay", function () awful.util.spawn_with_shell("/home/mike/bin/playertoggle > /dev/null") end),
-awful.key({"Control"}, "KP_Begin", function () awful.util.spawn_with_shell("/home/mike/bin/playertoggle > /dev/null") end),
-awful.key({"Mod4"}, "Return", function () awful.util.spawn_with_shell("/home/mike/bin/pgup") end),
-awful.key({"Mod4", "Shift"}, "Return", function () awful.util.spawn_with_shell("/home/mike/bin/pgdown") end),
-awful.key({ "Mod4", "Control", "Mod1" }, "r", awesome.restart),
-awful.key({ "Mod4", "Control", "Mod1"   }, "q", awesome.quit),
-awful.key({"Mod4"}, "e", revelation),
+awful.key({CK}, "KP_Begin", function () awful.util.spawn_with_shell("/home/mike/bin/playertoggle > /dev/null") end),
+awful.key({WK}, "Return", function () awful.util.spawn_with_shell("/home/mike/bin/pgup") end),
+awful.key({WK, SK}, "Return", function () awful.util.spawn_with_shell("/home/mike/bin/pgdown") end),
+awful.key({ WK, CK, AK }, "r", awesome.restart),
+awful.key({ WK, CK, AK   }, "q", awesome.quit),
+awful.key({WK}, "e", revelation),
 
-awful.key({"Mod4"}, "KP_Left", function() awful.util.spawn_with_shell("xdotool mousemove_relative -- -15 0") end),
-awful.key({"Mod4"}, "KP_Right", function() awful.util.spawn_with_shell("xdotool mousemove_relative -- 15 0") end),
-awful.key({"Mod4"}, "KP_Up", function() awful.util.spawn_with_shell("xdotool mousemove_relative -- 0 -15") end),
-awful.key({"Mod4"}, "KP_Down", function() awful.util.spawn_with_shell("xdotool mousemove_relative -- 0 15") end),
-awful.key({"Mod4"}, "KP_Begin", function() awful.util.spawn_with_shell("xdotool click --clearmodifiers 1") end),
-awful.key({"Mod4", "Mod1"}, "KP_Begin", function() awful.util.spawn_with_shell("xdotool click --clearmodifiers 3") end),
-awful.key({"Mod4", "Control", "Mod1"}, "KP_Begin", function() awful.util.spawn_with_shell("xdotool click --clearmodifiers 2") end),
+awful.key({WK}, "KP_Left", function() awful.util.spawn_with_shell("xdotool mousemove_relative -- -15 0") end),
+awful.key({WK}, "KP_Right", function() awful.util.spawn_with_shell("xdotool mousemove_relative -- 15 0") end),
+awful.key({WK}, "KP_Up", function() awful.util.spawn_with_shell("xdotool mousemove_relative -- 0 -15") end),
+awful.key({WK}, "KP_Down", function() awful.util.spawn_with_shell("xdotool mousemove_relative -- 0 15") end),
+awful.key({WK}, "KP_Begin", function() awful.util.spawn_with_shell("xdotool click --clearmodifiers 1") end),
+awful.key({WK, AK}, "KP_Begin", function() awful.util.spawn_with_shell("xdotool click --clearmodifiers 3") end),
+awful.key({WK, CK, AK}, "KP_Begin", function() awful.util.spawn_with_shell("xdotool click --clearmodifiers 2") end),
 
 
 
-awful.key({ "Mod4", "Mod1"          }, "l",     function () awful.tag.incmwfact( 0.05)    end),
-awful.key({ "Mod4", "Mod1"          }, "h",     function () awful.tag.incmwfact(-0.05)    end),
-awful.key({ "Mod4", "Shift"   }, "h",     function () awful.tag.incnmaster( 1)      end),
-awful.key({ "Mod4", "Shift"   }, "l",     function () awful.tag.incnmaster(-1)      end),
---awful.key({ "Mod4", "Control" }, "h",     function () awful.tag.incncol( 1)         end),
---awful.key({ "Mod4", "Control" }, "l",     function () awful.tag.incncol(-1)         end),
-awful.key({ "Mod4", "Mod1" , "Control" }, "space", function () awful.layout.inc(layouts,  1) end),
-awful.key({ "Mod4", "Mod1", "Control", "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
+awful.key({ WK, AK          }, "l",     function () awful.tag.incmwfact( 0.05)    end),
+awful.key({ WK, AK          }, "h",     function () awful.tag.incmwfact(-0.05)    end),
+awful.key({ WK, SK   }, "h",     function () awful.tag.incnmaster( 1)      end),
+awful.key({ WK, SK   }, "l",     function () awful.tag.incnmaster(-1)      end),
+--awful.key({ WK, CK }, "h",     function () awful.tag.incncol( 1)         end),
+--awful.key({ WK, CK }, "l",     function () awful.tag.incncol(-1)         end),
+awful.key({ WK, AK , CK }, "space", function () awful.layout.inc(layouts,  1) end),
+awful.key({ WK, AK, CK, SK   }, "space", function () awful.layout.inc(layouts, -1) end),
 
-awful.key({ "Mod4", "Control" }, "n", awful.client.restore),
+awful.key({ WK, CK }, "n", awful.client.restore),
 
 -- Prompt
-awful.key({ "Mod4" },            "r",     function () mypromptbox[mouse.screen]:run() end),
+awful.key({ WK },            "r",     function () mypromptbox[mouse.screen]:run() end),
 
-awful.key({ "Mod4" }, "x",
+awful.key({ WK }, "x",
 function ()
     awful.prompt.run({ prompt = "Run Lua code: " },
     mypromptbox[mouse.screen].widget,
@@ -438,23 +442,23 @@ function ()
     awful.util.getdir("cache") .. "/history_eval")
 end),
 -- Menubar
-awful.key({ "Control", "Mod1" }, "r", function() menubar.show() end)
+awful.key({ CK, AK }, "r", function() menubar.show() end)
 )
 
 clientkeys = awful.util.table.join(
-awful.key({ "Mod4",           }, "g",      function (c) c.fullscreen = not c.fullscreen  end),
-awful.key({ "Mod4", "Mod1"   }, "c",      killnoplasma ),
-awful.key({ "Mod4",     }, "f",  awful.client.floating.toggle                     ),
-awful.key({ "Mod4", "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end),
-awful.key({ "Mod4",           }, "o",      awful.client.movetoscreen                        ),
-awful.key({ "Mod4",           }, "t",      function (c) c.ontop = not c.ontop            end),
-awful.key({ "Mod4",           }, "n",
+awful.key({ WK,           }, "g",      function (c) c.fullscreen = not c.fullscreen  end),
+awful.key({ WK, AK   }, "c",      killnoplasma ),
+awful.key({ WK,     }, "f",  awful.client.floating.toggle                     ),
+awful.key({ WK, CK }, "Return", function (c) c:swap(awful.client.getmaster()) end),
+awful.key({ WK,           }, "o",      awful.client.movetoscreen                        ),
+awful.key({ WK,           }, "t",      function (c) c.ontop = not c.ontop            end),
+awful.key({ WK,           }, "n",
 function (c)
     -- The client currently has the input focus, so it cannot be
     -- minimized, since minimized clients can't have the focus.
     c.minimized = true
 end),
-awful.key({ "Mod4",           }, "m",
+awful.key({ WK,           }, "m",
 function (c)
     c.maximized_horizontal = not c.maximized_horizontal
     c.maximized_vertical   = not c.maximized_vertical
@@ -472,7 +476,7 @@ end
 -- This should map on the top row of your keyboard, usually 1 to 9.
 for i = 1, keynumber do
     globalkeys = awful.util.table.join(globalkeys,
-    awful.key({ "Control" }, "#" .. i + 9,
+    awful.key({ CK }, "#" .. i + 9,
     function ()
         local screen = mouse.screen
         if tags[screen][i] then
@@ -484,7 +488,7 @@ for i = 1, keynumber do
             end
         end
     end),
-    awful.key({ "Control", "Mod1"  }, "#" .. i + 9,
+    awful.key({ CK, AK  }, "#" .. i + 9,
     function ()
         local screen = mouse.screen
         if screen == 1 then
@@ -502,14 +506,14 @@ for i = 1, keynumber do
             end
         end
     end),
-    awful.key({ "Mod4", "Control" }, "#" .. i + 9,
+    awful.key({ WK, CK }, "#" .. i + 9,
     function ()
         local screen = mouse.screen
         if tags[screen][i] then
             awful.tag.viewtoggle(tags[screen][i])
         end
     end),
-    awful.key({ "Mod1", "Mod4", "Control" }, "#" .. i + 9,
+    awful.key({ AK, WK, CK }, "#" .. i + 9,
     function ()
         local screen = mouse.screen
         if screen == 1 then
@@ -521,13 +525,13 @@ for i = 1, keynumber do
             awful.tag.viewtoggle(tags[screen][i])
         end
     end),
-    awful.key({ "Control", "Shift" }, "#" .. i + 9,
+    awful.key({ CK, SK }, "#" .. i + 9,
     function ()
         if client.focus and tags[client.focus.screen][i] then
             awful.client.movetotag(tags[client.focus.screen][i])
         end
     end),
-    awful.key({ "Control", "Shift", "Mod1" }, "#" .. i + 9,
+    awful.key({ CK, SK, AK }, "#" .. i + 9,
     function ()
         local screen = mouse.screen
         if screen == 1 then
@@ -539,13 +543,13 @@ for i = 1, keynumber do
             awful.client.movetotag(tags[screen][i])
         end
     end),
-    awful.key({ "Mod4", "Control", "Shift" }, "#" .. i + 9,
+    awful.key({ WK, CK, SK }, "#" .. i + 9,
     function ()
         if client.focus and tags[client.focus.screen][i] then
             awful.client.toggletag(tags[client.focus.screen][i])
         end
     end),
-    awful.key({"Mod1",  "Mod4", "Control", "Shift" }, "#" .. i + 9,
+    awful.key({AK,  WK, CK, SK }, "#" .. i + 9,
     function ()
         local screen = mouse.screen
         if screen == 1 then
@@ -563,8 +567,8 @@ end
 
 clientbuttons = awful.util.table.join(
 awful.button({ }, 1, function (c) client.focus = c; c:raise() end),
-awful.button({ "Mod1" }, 1, awful.mouse.client.move),
-awful.button({ "Mod1" }, 3, awful.mouse.client.resize))
+awful.button({ AK }, 1, awful.mouse.client.move),
+awful.button({ AK }, 3, awful.mouse.client.resize))
 
 -- }}}
 -- {{{ Get active outputs
@@ -698,7 +702,7 @@ awful.button({ "Mod1" }, 3, awful.mouse.client.resize))
 
 -- -- }}}
 
--- globalkeys = awful.util.table.join(awful.key({"Mod4"}, "F1", xrandr))
+-- globalkeys = awful.util.table.join(awful.key({WK}, "F1", xrandr))
 -- Set keys
 root.keys(globalkeys)
 
