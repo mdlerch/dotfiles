@@ -538,7 +538,7 @@ awful.rules.rules =
         properties = { floating = true }
     },
     {
-        rule = { name = "XCalc" },
+        rule = { class = "XCalc" },
         properties = { floating = true }
     },
     {
