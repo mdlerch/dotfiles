@@ -543,8 +543,7 @@ awful.rules.rules =
     },
     {
         rule = { class = "R_x11" },
-        properties = {floating = true },
-        callback = function(c) c:geometry({x=950, y=30, width=600, height=400}) end
+        properties = {floating = true, ontop = true },
     },
     -- Set Firefox to always map on tags number 2 of screen 1.
     -- { rule = { class = "Firefox" },
