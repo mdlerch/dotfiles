@@ -32,3 +32,5 @@ color body brightgreen   default '(^|\W)_\w.*\w_($|\W)'
 color body brightgreen   default '(^|\W)/\w[^/]*\w/($|\W)'
 color body brightmagenta default '\w+://[a-z0-9./% <at> #?+&=-]+'
 color body brightred     default '[a-z0-9.+-]+ <at> [a-z0-9.-]+\.[a-z]{2,4}'
+
+# vim: set filetype=muttrc:
