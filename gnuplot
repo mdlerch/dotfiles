@@ -33,7 +33,7 @@ text_color = "#6a6a6a"
 
 
 
-my_font = "Helvetica, 12"
+my_font = "NimbusSanL-Regu, 12"
 
 
 my_line_width = "2"

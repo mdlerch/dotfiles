@@ -427,11 +427,11 @@ for i = 1, keynumber do
         local screen = mouse.screen
         if tags[screen][i] then
             awful.tag.viewonly(tags[screen][i])
-            c = awful.client.getmaster()
-            if c then
-                client.focus = c
-                c:raise()
-            end
+            -- c = awful.client.getmaster()
+            -- if c then
+                -- client.focus = c
+                -- c:raise()
+            -- end
         end
     end),
     awful.key({CK, AK}, "#" .. i + 9, function ()
@@ -444,11 +444,11 @@ for i = 1, keynumber do
         if tags[screen][i] then
             awful.screen.focus(screen)
             awful.tag.viewonly(tags[screen][i])
-            c = awful.client.getmaster()
-            if c then
-                client.focus = c
-                c:raise()
-            end
+            -- c = awful.client.getmaster()
+            -- if c then
+                -- client.focus = c
+                -- c:raise()
+            -- end
         end
     end),
     awful.key({WK, CK}, "#" .. i + 9, function ()

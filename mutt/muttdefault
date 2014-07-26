@@ -22,6 +22,6 @@ bind index k previous-entry
 bind pager j next-line
 bind pager k previous-line
 
-source ~/.mutt/muttcolors
+source ~/.mutt/colors.muttrc
 
 # vim:set ft=muttrc:
