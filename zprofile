@@ -1,5 +1,5 @@
 export WORKON_HOME=$HOME/virtualenvs
-export PROJECT_HOME=$HOME/work/devel
+export PROJECT_HOME=$HOME/work/code
 source /usr/bin/virtualenvwrapper.sh
 export _JAVA_AWT_WM_NONREPARENTING
 
