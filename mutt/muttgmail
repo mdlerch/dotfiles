@@ -10,6 +10,8 @@ set header_cache = ~/.gmail/cache/headers
 set message_cachedir = ~/.gmail/cache/bodies
 set certificate_file = ~/.gmail/certificates
 set spoolfile = +INBOX
+set timeout = 90
+unmailboxes +[Gmail]/Spam
 
 set query_command="goobook query '%s'"
 set editor = "vim --cmd 'let g:goobookrc=\"/home/mike/.goobookrc\"' +/^$"
