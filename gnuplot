@@ -52,19 +52,19 @@ set style line 1 linecolor rgbcolor blue_025 linewidth @my_line_width pt 7 lt 1
 set style line 2 linecolor rgbcolor green_025 linewidth @my_line_width pt 5 lt 1
 set style line 3 linecolor rgbcolor red_025 linewidth @my_line_width pt 9 lt 1
 set style line 4 linecolor rgbcolor brown_025 linewidth @my_line_width pt 13 lt 1
-set style line 5 linecolor rgbcolor blue_050 linewidth @my_line_width pt 11
-set style line 6 linecolor rgbcolor green_050 linewidth @my_line_width pt 7
-set style line 7 linecolor rgbcolor red_050 linewidth @my_line_width pt 5
-set style line 8 linecolor rgbcolor brown_050 linewidth @my_line_width pt 9
-set style line 9 linecolor rgbcolor blue_075 linewidth @my_line_width pt 13
-set style line 10 linecolor rgbcolor green_075 linewidth @my_line_width pt 11
-set style line 11 linecolor rgbcolor red_075 linewidth @my_line_width pt 7
-set style line 12 linecolor rgbcolor brown_075 linewidth @my_line_width pt 5
-set style line 13 linecolor rgbcolor blue_100 linewidth @my_line_width pt 9
-set style line 14 linecolor rgbcolor green_100 linewidth @my_line_width pt 13
-set style line 15 linecolor rgbcolor red_100 linewidth @my_line_width pt 11
-set style line 16 linecolor rgbcolor brown_100 linewidth @my_line_width pt 7
-set style line 17 linecolor rgbcolor "#224499" linewidth @my_line_width pt 5
+set style line 5 linecolor rgbcolor blue_050 linewidth @my_line_width pt 11 lt 1
+set style line 6 linecolor rgbcolor green_050 linewidth @my_line_width pt 7 lt 1
+set style line 7 linecolor rgbcolor red_050 linewidth @my_line_width pt 5 lt 1
+set style line 8 linecolor rgbcolor brown_050 linewidth @my_line_width pt 9 lt 1
+set style line 9 linecolor rgbcolor blue_075 linewidth @my_line_width pt 13 lt 1
+set style line 10 linecolor rgbcolor green_075 linewidth @my_line_width pt 11 lt 1
+set style line 11 linecolor rgbcolor red_075 linewidth @my_line_width pt 7 lt 1
+set style line 12 linecolor rgbcolor brown_075 linewidth @my_line_width pt 5 lt 1
+set style line 13 linecolor rgbcolor blue_100 linewidth @my_line_width pt 9 lt 1
+set style line 14 linecolor rgbcolor green_100 linewidth @my_line_width pt 13 lt 1
+set style line 15 linecolor rgbcolor red_100 linewidth @my_line_width pt 11 lt 1
+set style line 16 linecolor rgbcolor brown_100 linewidth @my_line_width pt 7 lt 1
+set style line 17 linecolor rgbcolor "#224499" linewidth @my_line_width pt 5 lt 1
 
 # this is to use the user-defined styles we just defined.
 set style increment user
