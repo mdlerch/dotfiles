@@ -11,7 +11,7 @@ set message_cachedir = ~/.gmail/cache/bodies
 set certificate_file = ~/.gmail/certificates
 set spoolfile = +INBOX
 set timeout = 90
-unmailboxes +[Gmail]/Spam +[Gmail]/Trash
+unmailboxes "+[Gmail]/Spam" "+[Gmail]/Trash" "+[Gmail]/All Mail"
 set text_flowed
 
 set query_command="goobook query '%s'"
