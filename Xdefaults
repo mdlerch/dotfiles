@@ -46,7 +46,7 @@ urxvt*fading:             25
 !urxvt*urgentOnBell:       boolean
 !urxvt*visualBell:         boolean
 !urxvt*mapAlert:           boolean
-!urxvt*meta8:              boolean
+urxvt*meta8:              false
 !urxvt*mouseWheelScrollPage:   boolean
 !urxvt*tripleclickwords:   boolean
 !urxvt*insecure:           boolean
