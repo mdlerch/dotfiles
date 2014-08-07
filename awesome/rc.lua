@@ -361,7 +361,7 @@ globalkeys = awful.util.table.join(
     awful.key({WK, AK, CK, SK}, "space", function() awful.layout.inc(layouts, -1) end),
 
     -- Launch Programs
-    awful.key({CK, AK}, "t", function() awful.util.spawn(terminal) end),
+    awful.key({CK, AK}, "t", function() awful.util.spawn(terminalnotmux) end),
     awful.key({CK, AK}, "e", function() awful.util.spawn(terminalnotmux) end),
     awful.key({CK, AK}, "a", function() awful.util.spawn(terminaljoin) end),
     awful.key({CK, AK}, "f", function() awful.util.spawn("chromium") end),
