@@ -11,7 +11,7 @@ set editor = "vim +:silent+/^$"
 unset record
 auto_view text/html
 alternative_order text/plain text/html
-set postponed = +[Gmail]/Drafts
+set postponed = "imaps://imap.gmail.com/[Gmail]/Drafts"
 set pager_stop
 
 set mailcap_path = "~/.mutt/mailcap"
