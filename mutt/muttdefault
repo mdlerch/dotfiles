@@ -21,6 +21,8 @@ bind index j next-entry
 bind index k previous-entry
 bind pager j next-line
 bind pager k previous-line
+bind pager <down> next-line
+bind pager <up> previous-line
 
 source ~/.mutt/colors.muttrc
 
