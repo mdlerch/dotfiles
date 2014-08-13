@@ -1,6 +1,6 @@
 set realname = "Michael Lerch"
 set reverse_name = yes
-set edit_headers=yes
+set edit_headers=no
 set imap_check_subscribed
 set move = no
 set sort = 'threads'
