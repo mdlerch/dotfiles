@@ -13,6 +13,8 @@ if (interactive() & Sys.getenv("TERM")!="") {
 
 options(repos=c("http://cran.fhcrc.org/","http://cran.cs.wwu.edu/"))
 
+options(menu.graphics = F)
+
 cd <- setwd
 pwd <- getwd
 h <- utils::head
