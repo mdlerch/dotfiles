@@ -27,4 +27,5 @@ alias unix2dos='dos2unix -D'
 alias skype='xhost +local: && sudo -u skype /usr/bin/skype'
 alias mocp="if [ "$TMUX" ]; then tmux setw monitor-activity off; tmux move-window -t 9; tmux rename-window 'mocp'; fi; mocp -A"
 alias mutt="if [ "$TMUX" ]; then tmux move-window -t 8; tmux rename-window 'mutt'; fi; mutt"
+alias cmus="player"
 #alias ipython="python /usr/bin/ipython"
