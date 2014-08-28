@@ -163,6 +163,7 @@ end
 -- {{{ Aliases
 
 terminaltmux = "/home/mike/bin/termattach"
+terminalmusic = "/home/mike/bin/termmusic"
 terminalnotmux = "urxvtc"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminalnotmux .. " -e " .. editor
@@ -365,7 +366,7 @@ globalkeys = awful.util.table.join(
     awful.key({CK, AK}, "a", function() awful.util.spawn(terminaltmux) end),
     awful.key({CK, AK}, "f", function() awful.util.spawn("chromium") end),
     awful.key({CK, AK}, "g", function() awful.util.spawn("google-chrome") end),
-    awful.key({CK, AK}, "m", function() awful.util.spawn("mendeleydesktop") end),
+    awful.key({CK, AK}, "m", function() awful.util.spawn(terminalmusic) end),
     awful.key({CK, AK}, "c", function() awful.util.spawn("xcalc") end),
 
     awful.key({}, "XF86Calculator", function () awful.util.spawn("xcalc") end),
