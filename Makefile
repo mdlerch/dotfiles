@@ -3,7 +3,7 @@ LINK = ln -f -s
 
 essentials: git_ zsh_ gnuplot_ R_ inputrc_ tmux_
 
-all: essentials awesome_ moc_ mutt_ bash_ inputrc_
+all: essentials awesome_ moc_ mutt_ bash_ inputrc_ cmus_
 
 reallyall: all user_dirs_ mutt_ awesome_ xdefaults_ xmodmap_ screen_it_
 
@@ -21,6 +21,9 @@ awesome_: awesome/rc.lua awesome/theme.lua
 
 moc_: moc/
 	${LINK} ${DOTDIR}/moc/ ~/.moc
+
+cmus_: cmus/autosave
+	${LINK} ${DOTDIR}/cmus/ ~/.config/cmus/
 
 mutt_: mutt/
 	${LINK} ${DOTDIR}/mutt/ ~/.mutt
