@@ -54,6 +54,19 @@ end
 -- }}}
 -- {{{ Make widgets
 
+-- {{{ Cmus info
+-- Initialize widget
+cmus_widget = wibox.widget.textbox()
+-- Register widget
+vicious.register(cmus_widget, vicious.widgets.cmus,
+    function (widget, args)
+        if args["{status}"] == "Stopped" then 
+            return " - "
+        else 
+            return args["{status}"]..': '.. args["{artist}"]..' - '.. args["{title}"]..'    '
+        end
+    end, 4)
+--}}}
 
 -- Memory progressbar
 memwidget = awful.widget.progressbar()
@@ -296,6 +309,7 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
+    right_layout:add(cmus_widget)
     right_layout:add(memintro)
     right_layout:add(memwidget)
     right_layout:add(batspace)
