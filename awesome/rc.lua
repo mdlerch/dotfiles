@@ -63,7 +63,7 @@ vicious.register(cmus_widget, vicious.widgets.cmus,
         if args["{status}"] == "Stopped" then 
             return " - "
         else 
-            return '   '..args["{status}"]..': '.. args["{artist}"]..' - '.. args["{title}"]..'    '
+            return '   '..args["{status}"]..' '.. args["{artist}"]..' - '.. args["{title}"]..'    '
         end
     end, 4)
 --}}}

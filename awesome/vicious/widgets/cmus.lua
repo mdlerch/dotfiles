@@ -22,8 +22,6 @@ local function worker(format, warg)
         ["{status}"] = "N/A",
         ["{artist}"] = "N/A",
         ["{title}"]  = "N/A",
-        ["{album}"]  = "N/A",
-        ["{genre}"]  = "N/A",
     }
 
 
@@ -39,12 +37,16 @@ local function worker(format, warg)
             if     k == "artist" then cmus_state["{"..k.."}"] = helpers.escape(v)
             elseif k == "status" then cmus_state["{"..k.."}"] = helpers.escape(v)
             elseif k == "title"  then cmus_state["{"..k.."}"] = helpers.escape(v)
-            elseif k == "album"  then cmus_state["{"..k.."}"] = helpers.escape(v)
-            elseif k == "genre"  then cmus_state["{"..k.."}"] = helpers.escape(v)
             end
         end
+
     end
     f:close()
+
+    if cmus_state["{status}"] == "Playing" then cmus_state["{status}"] = ">"
+    end
+    if cmus_state["{status}"] == "Paused" then cmus_state["{status}"] = "||"
+    end
 
     return cmus_state
 end
