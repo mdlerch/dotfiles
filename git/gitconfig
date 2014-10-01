@@ -45,3 +45,5 @@
 	prompt = false
 
 # vim:ft=gitconfig
+[include]
+    path = ~/dotfiles/git/ghi.gitconfig
