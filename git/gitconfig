@@ -47,3 +47,4 @@
 # vim:ft=gitconfig
 [include]
     path = ~/dotfiles/git/ghi.gitconfig
+    path = ~/dotfiles/github.gitconfig
