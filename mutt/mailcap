@@ -3,3 +3,4 @@ text/html; w3m -I %{charset} -T text/html; copiousoutput;
 application/pdf; zathura /dev/stdin
 application/x-forcedownload; okular %s & sleep 2
 image/jpeg; gpicview /dev/stdin
+image/png; gpicview /dev/stdin
