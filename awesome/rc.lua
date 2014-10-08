@@ -394,8 +394,8 @@ globalkeys = awful.util.table.join(
     awful.key({CK, WK}, "m", function () awful.util.spawn_with_shell("volmute") end),
 
     awful.key({}, "XF86AudioPlay", function () awful.util.spawn_with_shell("playertoggle") end),
-    awful.key({}, "XF86Launch9", function () awful.util.spawn_with_shell("playernext") end),
-    awful.key({}, "XF86Launch8", function () awful.util.spawn_with_shell("playerprev") end),
+    awful.key({}, "XF86AudioNext", function () awful.util.spawn_with_shell("playernext") end),
+    awful.key({}, "XF86AudioPrev", function () awful.util.spawn_with_shell("playerprev") end),
     awful.key({}, "XF86AudioRaiseVolume", function () awful.util.spawn_with_shell("volinc") end),
     awful.key({}, "XF86AudioLowerVolume", function () awful.util.spawn_with_shell("voldec") end),
     awful.key({}, "XF86AudioMute", function () awful.util.spawn_with_shell("volmute") end),
