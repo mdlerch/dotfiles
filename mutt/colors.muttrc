@@ -1,36 +1,36 @@
-color normal    white default
-color attachment brightyellow default
-color hdrdefault cyan default
+color normal    white black
+color attachment brightyellow black
+color hdrdefault cyan black
 color indicator default cyan
-color markers   brightred default
-color quoted    green default
-color signature cyan default
+color markers   brightred black
+color quoted    green black
+color signature cyan black
 color status    brightgreen blue
-color tilde     blue default
-color tree      red default
+color tilde     blue black
+color tree      red black
 # color body     brightred default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
-color body     brightblue default (https?|ftp)://[\-\.\,/%~_:?\#a-zA-Z0-9=&]+
+color body     brightblue black (https?|ftp)://[\-\.\,/%~_:?\#a-zA-Z0-9=&]+
 # color body     brightblue default "(ftp|https?)://[^ ]+"
-color quoted1 brightyellow default
-color quoted2 red default
-color hdrdefault cyan default
-color header   brightred default ^Subject:
-color header   brightgreen default ^From:
-color signature cyan default
+color quoted1 brightyellow black
+color quoted2 red black
+color hdrdefault cyan black
+color header   brightred black ^Subject:
+color header   brightgreen black ^From:
+color signature cyan black
 
-color index green default ~A # default
-color index default default ~p  # To me
-color index blue default ~P # From me
-color index yellow default ~O  # Old
-color index brightyellow default ~X>0
+color index green black ~A # default
+color index default black ~p  # To me
+color index blue black ~P # From me
+color index yellow black ~O  # Old
+color index brightyellow black ~X>0
 color index brightyellow brightblue ~N  # New
-color index blue default ~T # Tagged
+color index blue black ~T # Tagged
 color index black red ~D # Deleted
 
-color body brightgreen   default '(^|\W)\*\w.*\w\*($|\W)'
-color body brightgreen   default '(^|\W)_\w.*\w_($|\W)'
-color body brightgreen   default '(^|\W)/\w[^/]*\w/($|\W)'
+color body brightgreen   black '(^|\W)\*\w.*\w\*($|\W)'
+color body brightgreen   black '(^|\W)_\w.*\w_($|\W)'
+color body brightgreen   black '(^|\W)/\w[^/]*\w/($|\W)'
 # color body brightblue default '\w+://[a-z0-9./% <at> #?+&=-]+'
-color body brightred     default '[a-z0-9.+-]+ <at> [a-z0-9.-]+\.[a-z]{2,4}'
+color body brightred     black '[a-z0-9.+-]+ <at> [a-z0-9.-]+\.[a-z]{2,4}'
 
 # vim: set filetype=muttrc:
