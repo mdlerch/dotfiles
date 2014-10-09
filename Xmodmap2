@@ -1,0 +1,5 @@
+keycode 166 = XF86Back
+keycode 167 = XF86Forward
+keycode 112 = Prior
+keycode 117 = Next
+
