@@ -28,3 +28,7 @@ logit <- function(x) log(x / (1 - x))
 ilogit <- function(x) exp(x) / (1 + exp(x))
 
 create <- function(...) devtools::create(..., rstudio = F)
+
+updatevimcom <- function() devtools::install_github("jalvesaq/vimcom")
+
+# vim:ft=r
