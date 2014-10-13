@@ -24,7 +24,7 @@
 	token = 7035c51d364e417dc09ec3150883e32b
 [alias]
 	lg = "log --graph --decorate --pretty=oneline --abbrev-commit --all"
-	lol = "log --graph --decorate --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all"
+	lol = "log --graph --decorate --pretty=format:'%C(yellow)%h%Creset %C(yellow)%d%Creset %s %Cgreen(%cd) %Creset' --abbrev-commit --date=local --all"
 	tracked = "ls-files --error-unmatch"
 	unadd = "reset HEAD"
 	pushall = "push -u origin --all"
