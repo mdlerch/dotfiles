@@ -3,7 +3,7 @@ LINK = ln -f -s
 
 essentials: git_ zsh_ gnuplot_ R_ inputrc_ tmux_
 
-all: essentials awesome_ moc_ mutt_ bash_ inputrc_ cmus_
+all: essentials awesome_ moc_ mutt_ bash_ inputrc_ cmus_ fonts_
 
 reallyall: all user_dirs_ mutt_ awesome_ xdefaults_ xmodmap_ screen_it_
 
@@ -56,3 +56,6 @@ xmodmap_: Xmodmap
 
 screen_it_: screen-it.txt
 	tic screen-it.txt
+
+fonts_: fonts.conf
+	${LINK} ${DOTDIR}/fonts.conf ~/.fonts.conf
