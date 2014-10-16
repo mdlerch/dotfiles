@@ -24,7 +24,7 @@ bind pager k previous-line
 bind pager <down> next-line
 bind pager <up> previous-line
 
-set index_format="%4C %Z %[%b %d %I:%M](%{%I:%M}) %-15.15L %s"
+set index_format="%4C %Z %[%b %d %H:%M](%{%H:%M})  %-15.15L   %s"
 source ~/.mutt/colors.muttrc
 
 # vim:set ft=muttrc:
