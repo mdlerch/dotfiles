@@ -41,6 +41,8 @@ bindkey "^[[4~" end-of-line
 bindkey    "^[[3~"          delete-char
 bindkey    "^[3;5~"         delete-char
 
+bindkey -M viins ',,' vi-cmd-mode
+
 source ~/.zsh/alias.zsh
 source /usr/bin/virtualenvwrapper.sh
 
