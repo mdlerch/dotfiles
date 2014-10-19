@@ -53,6 +53,8 @@ xdefaults_: Xdefaults
 
 xmodmap_: Xmodmap
 	${LINK} ${DOTDIR}/Xmodmap ~/.Xmodmap
+	${LINK} ${DOTDIR}/Xmodmap2 ~/.Xmodmap2
+	${LINK} ${DOTDIR}/Xmodmap3 ~/.Xmodmap3
 
 screen_it_: screen-it.txt
 	tic screen-it.txt
