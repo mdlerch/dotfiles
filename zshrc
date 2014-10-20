@@ -44,6 +44,9 @@ bindkey    "^[3;5~"         delete-char
 bindkey -M viins ',,' vi-cmd-mode
 
 source ~/.zsh/alias.zsh
+source ~/.zsh/goto_alias.zsh
 source /usr/bin/virtualenvwrapper.sh
+
+alias goto='vim ~/.zsh/goto_alias.zsh; source ~/.zsh/goto_alias.zsh'
 
 stty stop undef
