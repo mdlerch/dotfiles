@@ -1,4 +1,5 @@
 if (interactive() & Sys.getenv("TERM")!="") {
+    options(vimcom.verbose = 0)
 	library(vimcom)
 	library(colorout)
 	# options(pager = "vimrpager")
