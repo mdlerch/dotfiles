@@ -165,14 +165,14 @@ wp_files = scandir(wp_path, wp_filter)
 
 wp_index = math.random(1, #wp_files)
 for s = 1, screen.count() do
-    gears.wallpaper.maximized(wp_path .. wp_files[wp_index], s, true)
+    gears.wallpaper.fit(wp_path .. wp_files[wp_index], s)
 end
 
 
 wp_timer = timer { timeout = wp_timeout }
 wp_timer:connect_signal("timeout", function()
     for s = 1, screen.count() do
-        gears.wallpaper.maximized(wp_path .. wp_files[wp_index], s, true)
+        gears.wallpaper.fit(wp_path .. wp_files[wp_index], s)
     end
 
     wp_timer:stop()
