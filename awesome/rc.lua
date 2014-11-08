@@ -160,7 +160,7 @@ end
 wp_index = 1
 wp_timeout = 300
 wp_path = "/data/wallpapers/"
-wp_filter = function(s) return string.match(s, "%.png$") or string.match(s, "%.jpg$") end
+wp_filter = function(s) return string.match(s, "%.png$") or string.match(s, "%.jpg$") or string.match(s, "%.bmp$") end
 wp_files = scandir(wp_path, wp_filter)
 
 wp_index = math.random(1, #wp_files)
