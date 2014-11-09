@@ -1,36 +1,29 @@
 DOTDIR = ~/dotfiles
 LINK = ln -f -s
 
-essentials: git_ zsh_ gnuplot_ R_ inputrc_ tmux_
+linux: bash_ ctags_ git_ gnuplot_ inputrc_ R_ screen_it_ tmux_ zsh_
 
-all: essentials awesome_ moc_ mutt_ bash_ inputrc_ cmus_ fonts_ ctags_
-
-reallyall: all user_dirs_ mutt_ awesome_ xdefaults_ xmodmap_ screen_it_
-
-git_: git/gitconfig git/gitignore_global
-	${LINK} ${DOTDIR}/git/gitconfig ~/.gitconfig
-	${LINK} ${DOTDIR}/git/gitignore_global ~/.gitignore_global
-
-zsh_: zshrc zsh
-	${LINK} ${DOTDIR}/zshrc ~/.zshrc
-	${LINK} ${DOTDIR}/zprofile ~/.zprofile
-	${LINK} ${DOTDIR}/zsh/ ~/.zsh
+arch: linux awesome_ cmus_ fonts_ mutt_ offlineimap_ user_dirs_ xdefaults_ xmodmap_ 
 
 awesome_: awesome/rc.lua awesome/theme.lua
 	${LINK} ${DOTDIR}/awesome/ ~/.config/awesome
 
-moc_: moc/
-	${LINK} ${DOTDIR}/moc/ ~/.moc
+bash_: bash/ bashrc
+	${LINK} ${DOTDIR}/bash ~/.bash
+	${LINK} ${DOTDIR}/bash/bashrc ~/.bashrc
 
 cmus_: cmus/autosave
 	${LINK} ${DOTDIR}/cmus/ ~/.config/cmus/
 
-mutt_: mutt/
-	${LINK} ${DOTDIR}/mutt/ ~/.mutt
+ctags_: ctags
+	${LINK} ${DOTDIR}/ctags ~/.ctags
 
-bash_: bash/ bashrc
-	${LINK} ${DOTDIR}/bash ~/.bash
-	${LINK} ${DOTDIR}/bashrc ~/.bashrc
+fonts_: fonts.conf
+	${LINK} ${DOTDIR}/fonts.conf ~/.fonts.conf
+
+git_: git/gitconfig git/gitignore_global
+	${LINK} ${DOTDIR}/git/gitconfig ~/.gitconfig
+	${LINK} ${DOTDIR}/git/gitignore_global ~/.gitignore_global
 
 gnuplot_: gnuplot
 	${LINK} ${DOTDIR}/gnuplot ~/.gnuplot
@@ -38,9 +31,21 @@ gnuplot_: gnuplot
 inputrc_: inputrc
 	${LINK} ${DOTDIR}/inputrc ~/.inputrc
 
+moc_: moc/
+	${LINK} ${DOTDIR}/moc/ ~/.moc
+
+mutt_: mutt/
+	${LINK} ${DOTDIR}/mutt/ ~/.mutt
+
+offlineimap_: offlineimaprc
+	${LINK} ${DOTDIR}/offlineimaprc/ ~/.offlineimaprc
+
 R_: Renviron Rprofile
 	${LINK} ${DOTDIR}/Rprofile ~/.Rprofile
 	${LINK} ${DOTDIR}/Renviron ~/.Renviron
+
+screen_it_: screen-it.txt
+	tic screen-it.txt
 
 tmux_: tmux.conf
 	${LINK} ${DOTDIR}/tmux.conf ~/.tmux.conf
@@ -52,15 +57,12 @@ xdefaults_: Xdefaults
 	${LINK} ${DOTDIR}/Xdefaults ~/.Xdefaults
 
 xmodmap_: Xmodmap
-	${LINK} ${DOTDIR}/Xmodmap ~/.Xmodmap
-	${LINK} ${DOTDIR}/Xmodmap2 ~/.Xmodmap2
-	${LINK} ${DOTDIR}/Xmodmap3 ~/.Xmodmap3
+	${LINK} ${DOTDIR}/xmodmap/Xmodmap ~/.Xmodmap
+	${LINK} ${DOTDIR}/xmodmap/Xmodmap2 ~/.Xmodmap2
+	${LINK} ${DOTDIR}/xmodmap/Xmodmap3 ~/.Xmodmap3
 
-screen_it_: screen-it.txt
-	tic screen-it.txt
+zsh_: zshrc zsh
+	${LINK} ${DOTDIR}/zsh/zshrc ~/.zshrc
+	${LINK} ${DOTDIR}/zsh/zprofile ~/.zprofile
+	${LINK} ${DOTDIR}/zsh/ ~/.zsh
 
-fonts_: fonts.conf
-	${LINK} ${DOTDIR}/fonts.conf ~/.fonts.conf
-
-ctags_: ctags
-	${LINK} ${DOTDIR}/ctags ~/.ctags
