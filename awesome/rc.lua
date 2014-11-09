@@ -170,25 +170,20 @@ end
 
 
 wp_timer = timer { timeout = wp_timeout }
-wp_timer:connect_signal("timeout", function()
-    for s = 1, screen.count() do
-        gears.wallpaper.fit(wp_path .. wp_files[wp_index], s)
-    end
-
-    wp_timer:stop()
-
-    wp_index = math.random(1, #wp_files)
-
-    wp_timer.timeout = wp_timeout
-
-    wp_timer.timeout = wp_timeout
-    wp_timer:start()
-end)
+wp_timer:connect_signal("timeout",
+    function()
+        wp_timer:stop()
+        wp_index = math.random(1, #wp_files)
+        for s = 1, screen.count() do
+            gears.wallpaper.fit(wp_path .. wp_files[wp_index], s)
+        end
+        wp_timer.timeout = wp_timeout
+        wp_timer:start()
+    end)
 
 wp_timer:start()
 
-
--- }}}
+-- }}} Random Wallpapers
 -- {{{ Aliases
 
 terminaltmux = "/home/mike/bin/termattach"
