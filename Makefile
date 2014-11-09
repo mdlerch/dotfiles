@@ -8,7 +8,7 @@ arch: linux awesome_ cmus_ fonts_ mutt_ offlineimap_ user_dirs_ xdefaults_ xmodm
 awesome_: awesome/rc.lua awesome/theme.lua
 	${LINK} ${DOTDIR}/awesome/ ~/.config/awesome
 
-bash_: bash/ bashrc
+bash_: bash/bashrc
 	${LINK} ${DOTDIR}/bash ~/.bash
 	${LINK} ${DOTDIR}/bash/bashrc ~/.bashrc
 
@@ -56,12 +56,12 @@ user_dirs_: user-dirs.dirs
 xdefaults_: Xdefaults
 	${LINK} ${DOTDIR}/Xdefaults ~/.Xdefaults
 
-xmodmap_: Xmodmap
+xmodmap_: xmodmap
 	${LINK} ${DOTDIR}/xmodmap/Xmodmap ~/.Xmodmap
 	${LINK} ${DOTDIR}/xmodmap/Xmodmap2 ~/.Xmodmap2
 	${LINK} ${DOTDIR}/xmodmap/Xmodmap3 ~/.Xmodmap3
 
-zsh_: zshrc zsh
+zsh_: zsh/zshrc
 	${LINK} ${DOTDIR}/zsh/zshrc ~/.zshrc
 	${LINK} ${DOTDIR}/zsh/zprofile ~/.zprofile
 	${LINK} ${DOTDIR}/zsh/ ~/.zsh
