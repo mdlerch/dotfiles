@@ -1,18 +1,17 @@
 source ~/.mutt/muttdefault
 
 set from =  "mdlerch@gmail.com"
-set imap_user = "mdlerch@gmail.com"
 source ~/.mutt/gmailpass.muttrc
 alternates lerch@math.montana.edu michael.lerch@msu.montana.edu
-set folder = imaps://imap.gmail.com:993/
 set smtp_url = "smtp://mdlerch@smtp.gmail.com:587/"
-set header_cache = ~/.gmail/cache/headers
-set message_cachedir = ~/.gmail/cache/bodies
-set certificate_file = ~/.gmail/certificates
 set spoolfile = +INBOX
 set timeout = 90
-unmailboxes "+[Gmail]/Spam" "+[Gmail]/Trash" "+[Gmail]/All Mail" "+[Gmail]/Important"
 set text_flowed
+
+set mbox_type = Maildir
+set folder = $HOME/mail/mdlerch
+set spoolfile = +/INBOX/
+set header_cache = $HOME/mail/cache/
 
 set query_command="goobook query '%s'"
 set editor = "vim --cmd 'let g:goobookrc=\"/home/mike/.goobookrc\"' +:1"

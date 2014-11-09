@@ -1,0 +1,20 @@
+[general]
+accounts = mdlerch
+ui = ttyui
+pythonfile=/home/mike/.offlineimap/password.py
+socktimeout = 30
+
+[Account mdlerch]
+localrepository = local-mdlerch
+remoterepository = remote-mdlerch
+
+[Repository local-mdlerch]
+type = Maildir
+localfolders = /home/mike/mail/mdlerch
+
+[Repository remote-mdlerch]
+type = Gmail
+remoteuser = mdlerch@gmail.com
+remotepasseval = mdlerchpassword
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+folderfilter = lambda folder: folder.startswith('INBOX')
