@@ -165,7 +165,7 @@ wp_path = "/data/wallpapers/"
 -- Files that are wallpapers
 wp_pics = function(s) return string.match(s, "%.png$") or string.match(s, "%.jpg$") or string.match(s, "%.bmp$") end
 
-wp_files = scandir(wp_path, wp_filter)
+wp_files = scandir(wp_path, wp_pics)
 
 wp_index = math.random(1, #wp_files)
 for s = 1, screen.count() do
