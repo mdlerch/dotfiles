@@ -159,7 +159,7 @@ end
 
 -- Seconds until wallpaper swap
 wp_timeout = 300
--- Walpaper dir
+-- Wallpaper dir
 wp_path = "/data/wallpapers/"
 
 -- Files that are wallpapers
