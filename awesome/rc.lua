@@ -62,7 +62,7 @@ vicious.register(cmus_widget, vicious.widgets.cmus,
     function (widget, args)
         if args["{status}"] == "Stopped" then 
             return " - "
-        else 
+        else
             return '   '..args["{status}"]..' '.. args["{artist}"]..' - '.. args["{title}"]..'    '
         end
     end, 4)
@@ -142,14 +142,14 @@ beautiful.init("/home/mike/.config/awesome/theme.lua")
 -- {{{ Random Wallpapers
 
 -- function to return list of wallpapers
-function scandir(directory, filter)
-    local i, t, popen = 0, {}, io.popen
-    if not filter then
-        filter = function(s) return true end
+function scandir(directory, findPics)
+    local i = 0
+    local t = {}
+    if not findPics then
+        findPics = function(s) return true end
     end
-    print(filter)
-    for filename in popen('ls -a "'..directory..'"'):lines() do
-        if filter(filename) then
+    for filename in io.popen('ls -a "'..directory..'"'):lines() do
+        if findPics(filename) then
             i = i + 1
             t[i] = filename
         end
@@ -157,17 +157,20 @@ function scandir(directory, filter)
     return t
 end
 
-wp_index = 1
+-- Seconds until wallpaper swap
 wp_timeout = 300
+-- Walpaper dir
 wp_path = "/data/wallpapers/"
-wp_filter = function(s) return string.match(s, "%.png$") or string.match(s, "%.jpg$") or string.match(s, "%.bmp$") end
+
+-- Files that are wallpapers
+wp_pics = function(s) return string.match(s, "%.png$") or string.match(s, "%.jpg$") or string.match(s, "%.bmp$") end
+
 wp_files = scandir(wp_path, wp_filter)
 
 wp_index = math.random(1, #wp_files)
 for s = 1, screen.count() do
     gears.wallpaper.fit(wp_path .. wp_files[wp_index], s)
 end
-
 
 wp_timer = timer { timeout = wp_timeout }
 wp_timer:connect_signal("timeout",
@@ -210,7 +213,7 @@ local layouts =
 tags = {
     names= {1,2,3,4,5,6,7,8,9},
     layout={layouts[1], layouts[1], layouts[1], layouts[1],
-    layouts[1], layouts[1], layouts[3], layouts[3],
+    layouts[1], layouts[1], layouts[1], layouts[3],
     layouts[1]}
 }
 
