@@ -38,7 +38,7 @@ mutt_: mutt/
 	${LINK} ${DOTDIR}/mutt/ ~/.mutt
 
 offlineimap_: offlineimaprc
-	${LINK} ${DOTDIR}/offlineimaprc/ ~/.offlineimaprc
+	${LINK} ${DOTDIR}/offlineimaprc ~/.offlineimaprc
 
 R_: Renviron Rprofile
 	${LINK} ${DOTDIR}/Rprofile ~/.Rprofile
