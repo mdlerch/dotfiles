@@ -1,21 +1,24 @@
-set realname = "Michael Lerch"
-set reverse_name = yes
-set edit_headers=no
-set imap_check_subscribed
+# reading mail
 set move = no
-set sort = 'threads'
-set sort_aux = 'reverse-last-date-received'
 set mark_old = no
 set pager_context = 10
-set editor = "vim +:silent+/^$"
-unset record
+set pager_stop
+set mailcap_path = "~/.mutt/mailcap"
 auto_view text/html
 alternative_order text/plain text/html
-set postponed = "imaps://imap.gmail.com/[Gmail]/Drafts"
-set pager_stop
 
-set mailcap_path = "~/.mutt/mailcap"
+# setting from
+set realname = "Michael Lerch"
+set reverse_name = yes
 
+# writing mail
+set edit_headers=no
+set editor = "vim +:silent+/^$"
+
+# sending mail
+unset record
+
+# mappings
 bind pager b previous-page
 bind index j next-entry
 bind index k previous-entry
@@ -24,6 +27,9 @@ bind pager k previous-line
 bind pager <down> next-line
 bind pager <up> previous-line
 
+# appearance
+set sort = 'threads'
+set sort_aux = 'reverse-last-date-received'
 set index_format="%4C %Z %[%b %d %H:%M](%{%H:%M})  %-15.15L   %s"
 source ~/.mutt/colors.muttrc
 

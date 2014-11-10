@@ -17,4 +17,5 @@ type = Gmail
 remoteuser = mdlerch@gmail.com
 remotepasseval = mdlerchpassword
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
-folderfilter = lambda folder: folder.startswith('INBOX')
+nametrans = lambda folder: re.sub('\[Gmail\]\/Drafts', 'drafts', folder)
+folderfilter = lambda folder: folder in ['INBOX', '[Gmail]/Drafts']

@@ -1,22 +1,26 @@
 source ~/.mutt/muttdefault
 
+# sending mail
 set from =  "mdlerch@gmail.com"
-source ~/.mutt/gmailpass.muttrc
-alternates lerch@math.montana.edu michael.lerch@msu.montana.edu
 set smtp_url = "smtp://mdlerch@smtp.gmail.com:587/"
-set spoolfile = +INBOX
-set timeout = 90
-set text_flowed
+alternates lerch@math.montana.edu michael.lerch@msu.montana.edu
+source ~/.mutt/gmailpass.muttrc
 
+# receiving mail
 set mbox_type = Maildir
 set folder = $HOME/mail/mdlerch
 set spoolfile = +/INBOX/
 set header_cache = $HOME/mail/cache/
 
+# writing mail
+set text_flowed
 set query_command="goobook query '%s'"
-set editor = "vim --cmd 'let g:goobookrc=\"/home/mike/.goobookrc\"' +:1"
 bind editor <Tab> complete-query
+set editor = "vim --cmd 'let g:goobookrc=\"/home/mike/.goobookrc\"' +:1"
+set postponed = +/drafts/
 
+# misc
+set timeout = 30
 macro generic ,1 ":set from=mdlerch@gmail.com"
 macro generic ,2 ":set from=lerch@math.montana.edu"
 macro generic ,3 ":set from=michael.lerch@montana.edu"
