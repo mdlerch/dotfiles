@@ -158,7 +158,7 @@ function scandir(directory, findPics)
 end
 
 -- Seconds until wallpaper swap
-wp_timeout = 300
+wp_timeout = 600
 -- Wallpaper dir
 wp_path = "/data/wallpapers/"
 
@@ -172,14 +172,18 @@ for s = 1, screen.count() do
     gears.wallpaper.fit(wp_path .. wp_files[wp_index], s)
 end
 
+wp_new = function()
+    wp_index = math.random(1, #wp_files)
+    for s = 1, screen.count() do
+        gears.wallpaper.fit(wp_path .. wp_files[wp_index], s)
+    end
+end
+
 wp_timer = timer { timeout = wp_timeout }
 wp_timer:connect_signal("timeout",
     function()
         wp_timer:stop()
-        wp_index = math.random(1, #wp_files)
-        for s = 1, screen.count() do
-            gears.wallpaper.fit(wp_path .. wp_files[wp_index], s)
-        end
+        wp_new()
         wp_timer.timeout = wp_timeout
         wp_timer:start()
     end)
@@ -421,6 +425,7 @@ globalkeys = awful.util.table.join(
     -- Awesome commands
     awful.key({WK, CK, AK}, "r", awesome.restart),
     awful.key({WK, CK, AK}, "q", awesome.quit),
+    awful.key({WK, CK, AK}, "n", function() wp_new() end),
 
     -- Menubar
     awful.key({ CK, AK }, "r", function() menubar.show() end)
