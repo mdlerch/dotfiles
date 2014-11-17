@@ -32,4 +32,6 @@ create <- function(...) devtools::create(..., rstudio = F)
 
 updatevimcom <- function() devtools::install_github("jalvesaq/vimcom")
 
+myvimcom <- function() devtools::install_bitbucket("VimCom", "mdlerch")
+
 # vim:ft=r
