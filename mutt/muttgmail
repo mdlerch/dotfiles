@@ -23,7 +23,7 @@ set postponed = +/drafts/
 set timeout = 30
 macro generic ,1 ":set from=mdlerch@gmail.com"
 macro generic ,2 ":set from=lerch@math.montana.edu"
-macro generic ,3 ":set from=michael.lerch@montana.edu"
+macro generic ,3 ":set from=michael.lerch@msu.montana.edu"
 
 
 # vim:set ft=muttrc:
