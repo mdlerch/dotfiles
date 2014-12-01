@@ -47,6 +47,13 @@ source ~/.zsh/alias.zsh
 source ~/.zsh/goto_alias.zsh
 source /usr/bin/virtualenvwrapper.sh
 
+function tmux_win_name () {
+if [ "$TMUX" ]
+then
+    tmux rename-window $1
+fi
+}
+
 alias goto='vim ~/.zsh/goto_alias.zsh; source ~/.zsh/goto_alias.zsh'
 
 stty stop undef
