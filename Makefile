@@ -13,7 +13,7 @@ bash_: bash/bashrc
 	${LINK} ${DOTDIR}/bash/bashrc ~/.bashrc
 
 cmus_: cmus/autosave
-	${LINK} ${DOTDIR}/cmus/ ~/.config/cmus/
+	${LINK} ${DOTDIR}/cmus/ ~/.config/cmus
 
 ctags_: ctags
 	${LINK} ${DOTDIR}/ctags ~/.ctags
