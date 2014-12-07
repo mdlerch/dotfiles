@@ -1,0 +1,50 @@
+###########################################################################
+##                              KEYBINDINGS                              ##
+###########################################################################
+
+# Use q to add to first in queue
+# Use Q to add to end of queue
+unbind -f common q
+unbind -f common Q
+bind -f library q win-add-Q
+bind -f playlist q win-add-Q
+bind -f library Q win-add-q
+bind -f playlist Q win-add-q
+
+# use p to add to playlist
+unbind -f common p
+bind -f library p win-add-p
+
+# use C to clear the current playlist or queue
+unbind -f common C
+bind -f playlist C clear
+bind -f queue C clear
+
+# use D to remove selection from playlist or queue
+unbind -f common D
+bind -f playlist D win-remove
+bind -f queue D win-remove
+
+# use < and > for fast scroll
+bind -f common < :seek -1m
+bind -f common > :seek +1m
+
+###########################################################################
+##                              APPEARANCE                               ##
+###########################################################################
+
+colorscheme zenburn
+
+set format_current= %t -- %a -- %l
+set format_playlist= %-15%a   %-20%l   %n %t %= %y    %d 
+set format_playlist_va= %-25%A %3n. %t (%a)%= %y %d 
+set format_title=%a - %l - %t (%y)
+set format_trackwin=%3n. %t%= %y %d 
+set format_trackwin_va=%3n. %t (%a)%= %y %d 
+
+set altformat_current= %F 
+set altformat_playlist= %f%= %d 
+set altformat_title=%f
+set altformat_trackwin= %f%= %d 
+
+set display_artist_sort_name=false
