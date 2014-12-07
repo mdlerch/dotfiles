@@ -29,6 +29,10 @@ bind -f queue D win-remove
 bind -f common < :seek -1m
 bind -f common > :seek +1m
 
+# clear filters with F
+unbind -f common F
+bind -f common F factivate 
+
 ###########################################################################
 ##                              APPEARANCE                               ##
 ###########################################################################
