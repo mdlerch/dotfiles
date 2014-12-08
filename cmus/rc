@@ -21,6 +21,9 @@ unbind -f common C
 bind -f playlist C clear
 bind -f queue C clear
 
+# use c to toggle continue
+bind -f common c toggle continue
+
 # use D to remove selection from playlist or queue or filters
 unbind -f common D
 bind -f playlist D win-remove
@@ -43,6 +46,9 @@ bind -f common A factivate allmusic
 unbind -f common P
 bind -f common P factivate allpodcasts
 
+# use S to filter all sounds
+unbind -f common S
+bind -f common S factivate allsounds
 
 ###########################################################################
 ##                              APPEARANCE                               ##
