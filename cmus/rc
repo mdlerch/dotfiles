@@ -36,19 +36,19 @@ bind -f common > :seek +1m
 
 # use F to clear filters
 unbind -f common F
-bind -f common F factivate 
+bind -f common F factivate
 
 # use A to filter all music
 unbind -f common A
-bind -f common A factivate allmusic
+bind -f common A factivate Music
 
 # use P to filter all podcasts
 unbind -f common P
-bind -f common P factivate allpodcasts
+bind -f common P factivate Podcasts
 
 # use S to filter all sounds
 unbind -f common S
-bind -f common S factivate allsounds
+bind -f common S factivate Sounds
 
 ###########################################################################
 ##                              APPEARANCE                               ##
@@ -70,10 +70,18 @@ set altformat_trackwin= %f%= %d
 
 set display_artist_sort_name=false
 
+###########################################################################
+##                            DEFINE FILTERS                             ##
+###########################################################################
+
+fset Music=filename="/data/music/*"
+fset Podcasts=filename="/data/podcasts/*"
+fset Podcasts=filename="/data/sounds/*"
 
 ###########################################################################
 ##                                STARTUP                                ##
 ###########################################################################
 
 cd /data/music/
-view 3
+view 1
+factivate Music
