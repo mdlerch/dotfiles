@@ -14,24 +14,35 @@ bind -f playlist Q win-add-q
 # use p to add to playlist
 unbind -f common p
 bind -f library p win-add-p
+bind -f browser p win-add-p
 
 # use C to clear the current playlist or queue
 unbind -f common C
 bind -f playlist C clear
 bind -f queue C clear
 
-# use D to remove selection from playlist or queue
+# use D to remove selection from playlist or queue or filters
 unbind -f common D
 bind -f playlist D win-remove
 bind -f queue D win-remove
+bind -f filters D win-remove
 
 # use < and > for fast scroll
 bind -f common < :seek -1m
 bind -f common > :seek +1m
 
-# clear filters with F
+# use F to clear filters
 unbind -f common F
 bind -f common F factivate 
+
+# use A to filter all music
+unbind -f common A
+bind -f common A factivate allmusic
+
+# use P to filter all podcasts
+unbind -f common P
+bind -f common P factivate allpodcasts
+
 
 ###########################################################################
 ##                              APPEARANCE                               ##
@@ -52,3 +63,11 @@ set altformat_title=%f
 set altformat_trackwin= %f%= %d 
 
 set display_artist_sort_name=false
+
+
+###########################################################################
+##                                STARTUP                                ##
+###########################################################################
+
+cd /data/music/
+view 3
