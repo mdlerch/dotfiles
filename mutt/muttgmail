@@ -2,6 +2,7 @@ source ~/.mutt/muttdefault
 
 # sending mail
 set from =  "mdlerch@gmail.com"
+set reverse_name = yes
 set smtp_url = "smtp://mdlerch@smtp.gmail.com:587/"
 alternates lerch@math.montana.edu michael.lerch@msu.montana.edu
 source ~/.mutt/gmailpass.muttrc
