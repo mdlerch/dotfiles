@@ -1,7 +1,9 @@
 if (interactive() & Sys.getenv("TERM")!="") {
     options(vimcom.verbose = 0)
+    options(vimcom.vimpager = FALSE)
 	library(vimcom)
 	library(colorout)
+    library(rlerch)
 	# options(pager = "vimrpager")
 	#if (Sys.getenv("VIM_PANE") != "")
 	#{
@@ -25,13 +27,11 @@ l <- base::list
 
 less <- function() options(pager = "less")
 
-logit <- function(x) log(x / (1 - x))
-ilogit <- function(x) exp(x) / (1 + exp(x))
-
 create <- function(...) devtools::create(..., rstudio = F)
 
 updatevimcom <- function() devtools::install_github("jalvesaq/vimcom")
 
 myvimcom <- function() devtools::install_bitbucket("VimCom", "mdlerch")
+rlerch <- function() devtools::install_github("mdlerch/rlerch")
 
 # vim:ft=r

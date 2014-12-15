@@ -2,7 +2,7 @@
 	name = Michael Lerch
 	email = mdlerch@gmail.com
 [core]
-	editor = vim
+	editor = nvim
 	excludesfile = /home/mike/.gitignore_global
 [color]
 	ui = auto
