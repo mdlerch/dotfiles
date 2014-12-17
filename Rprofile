@@ -1,14 +1,14 @@
 if (interactive() & Sys.getenv("TERM")!="") {
     options(vimcom.verbose = 0)
     options(vimcom.vimpager = FALSE)
-	library(vimcom)
-	library(colorout)
+    library(vimcom)
+    library(colorout)
     library(rlerch)
-	# options(pager = "vimrpager")
-	#if (Sys.getenv("VIM_PANE") != "")
-	#{
-	#	options(help_type = "text", pager = vim.pager)
-	#}
+    # options(pager = "vimrpager")
+    #if (Sys.getenv("VIM_PANE") != "")
+    #{
+    #   options(help_type = "text", pager = vim.pager)
+    #}
 }
 
 # library(grDevices)
