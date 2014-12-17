@@ -9,7 +9,7 @@ color status    brightgreen blue
 color tilde     blue black
 color tree      red black
 # color body     brightred default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
-color body     brightblue black (https?|ftp)://[\-\.\,/%~_:?\#a-zA-Z0-9=&]+
+color body     brightblue black (https?|ftp)://[\-\.\,/%~_:?\#a-zA-Z0-9=&\+]+
 # color body     brightblue default "(ftp|https?)://[^ ]+"
 color quoted1 brightyellow black
 color quoted2 red black
