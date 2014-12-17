@@ -13,7 +13,7 @@ set reverse_name = yes
 
 # writing mail
 set edit_headers=no
-set editor = "vim +:silent+/^$"
+set editor = "nvim +:silent+/^$"
 
 # sending mail
 unset record

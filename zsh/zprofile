@@ -4,8 +4,8 @@ source /usr/bin/virtualenvwrapper.sh
 
 export _JAVA_AWT_WM_NONREPARENTING
 
-export VISUAL=vim
-export EDITOR=vim
+export VISUAL=nvim
+export EDITOR=nvim
 
 PATH="$PATH:/home/mike/bin:/home/mike/.gem/ruby/2.1.0/bin"
 export PATH
