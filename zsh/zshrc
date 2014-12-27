@@ -22,9 +22,9 @@ precmd () {
     vcs_info
 }
 
-local smiley="%(?,%{$fg[green]%}:%)%{$reset_color%},%{$fg[red]%}:(%{$reset_color%})"
+local smiley="%(?,%{$fg_bold[green]%}:%)%{$reset_color%},%{$fg_bold[red]%}:(%{$reset_color%})"
 
-PROMPT='[%(#~%{$fg[red]%}>root< %{$reset_color%}~)%{$fg[green]%}%m%{$reset_color%}] %{$fg[yellow]%}> %{$reset_color%}%~${vcs_info_msg_0_}
+PROMPT='[%(#~%{$fg_bold[red]%}>root< %{$reset_color%}~)%{$fg_bold[green]%}%m%{$reset_color%}] %{$fg[yellow]%}> %{$reset_color%}%~${vcs_info_msg_0_}
 ${smiley} '
 
 export HISTSIZE=2000
