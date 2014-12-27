@@ -1,5 +1,5 @@
 # status bar
-color status black red
+color status red black
 
 # index
 color indicator black white
@@ -39,4 +39,4 @@ color body brightred magenta '[a-z0-9.+-]+ <at> [a-z0-9.-]+\.[a-z]{2,4}'
 color body brightblue magenta (https?|ftp)://[\-\.\,/%~_:?\#a-zA-Z0-9=&\+]+
 color tilde white magenta
 
-# vim: set file type=mutt RC:
+# vim: set filetype=mutt

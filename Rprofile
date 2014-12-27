@@ -1,5 +1,5 @@
 if (interactive() & Sys.getenv("TERM")!="") {
-    options(vimcom.verbose = 0)
+    options(nvimcom.verbose = 4)
     # options(vimcom.vimpager = FALSE)
     library(nvimcom)
     library(colorout)
