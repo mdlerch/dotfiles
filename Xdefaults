@@ -168,8 +168,8 @@ urxvt*color12:		#87afd7
 !magenta
 !urxvt*color5:		#75507b
 !urxvt*color13:		#ad7fa8
-urxvt*color5:		#af8787
-urxvt*color13:		#303030
+urxvt*color5:		#303030
+urxvt*color13:		#af8787
 !cyan
 !urxvt*color6:		#06989a
 !urxvt*color14:		#34e2e2
