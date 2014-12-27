@@ -1,39 +1,42 @@
-color normal    white black
-color attachment brightyellow black
-color hdrdefault cyan black
-color indicator default cyan
-color markers   brightred black
-color quoted    green black
-color signature cyan black
-color status    brightgreen blue
-color tilde     blue black
-color tree      red black
-# color body     brightred default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
-color body     brightblue black (https?|ftp)://[\-\.\,/%~_:?\#a-zA-Z0-9=&\+]+
-# color body     brightblue default "(ftp|https?)://[^ ]+"
-color quoted brightred black
-color quoted1 brightmagenta black
-color quoted2 brightgreen black
-color quoted3 brightblue black
-color quoted4 blue black
-color hdrdefault cyan black
-color header   brightred black ^Subject:
-color header   brightgreen black ^From:
-color signature cyan black
+# status bar
+color status black red
 
-color index green black ~A # default
-color index default black ~p  # To me
-color index blue black ~P # From me
-color index yellow black ~O  # Old
-color index brightyellow black ~X>0
-color index brightyellow brightblue ~N  # New
-color index blue black ~T # Tagged
+# index
+color indicator black white
+color index green magenta ~A # default
+color index white magenta ~p  # To me
+color index blue magenta ~P # From me
+color index yellow magenta ~O  # Old
+color index brightyellow magenta ~X>0 # has attachment
+color index brightblack brightblue ~N  # New
+color index red cyan ~T # Tagged
 color index black red ~D # Deleted
+color tree red magenta
 
-color body brightgreen   black '(^|\W)\*\w.*\w\*($|\W)'
-color body brightgreen   black '(^|\W)_\w.*\w_($|\W)'
-color body brightgreen   black '(^|\W)/\w[^/]*\w/($|\W)'
-# color body brightblue default '\w+://[a-z0-9./% <at> #?+&=-]+'
-color body brightred     black '[a-z0-9.+-]+ <at> [a-z0-9.-]+\.[a-z]{2,4}'
+# body header
+# attachment bold hdrdefault index indicator markers message
+# normal quoted quotedN search signature status tilde tree underline
+# messages
+color message white magenta
+color hdrdefault brightwhite magenta
+color header brightblue magenta ^Subject:
+color header brightblue magenta ^From:
+color normal white magenta
+color quoted red magenta
+color quoted1 brightmagenta magenta
+color quoted2 green magenta
+color quoted3 brightcyan magenta
+color quoted4 blue magenta
+color attachment brightyellow magenta
+color markers   brightred magenta
+color signature blue magenta
+color bold brightgreen magenta
+color underline brightgreen magenta
+color body brightblue magenta '(^|\W)\*\w.*\w\*($|\W)' # bold
+color body brightcyan magenta '(^|\W)_\w.*\w_($|\W)' # underline
+# color body brightgreen magenta '(^|\W)/\w[^/]*\w/($|\W)'
+color body brightred magenta '[a-z0-9.+-]+ <at> [a-z0-9.-]+\.[a-z]{2,4}'
+color body brightblue magenta (https?|ftp)://[\-\.\,/%~_:?\#a-zA-Z0-9=&\+]+
+color tilde white magenta
 
-# vim: set filetype=muttrc:
+# vim: set file type=mutt RC:
