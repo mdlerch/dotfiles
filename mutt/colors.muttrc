@@ -11,8 +11,11 @@ color tree      red black
 # color body     brightred default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
 color body     brightblue black (https?|ftp)://[\-\.\,/%~_:?\#a-zA-Z0-9=&\+]+
 # color body     brightblue default "(ftp|https?)://[^ ]+"
-color quoted1 brightyellow black
-color quoted2 red black
+color quoted brightred black
+color quoted1 brightmagenta black
+color quoted2 brightgreen black
+color quoted3 brightblue black
+color quoted4 blue black
 color hdrdefault cyan black
 color header   brightred black ^Subject:
 color header   brightgreen black ^From:

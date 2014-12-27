@@ -141,29 +141,45 @@ urxvt.matcher.button:   1
 
 !colors reg bright? 
 !black
-urxvt*color0:		#2e3436
-urxvt*color8:		#555753
+!urxvt*color0:		#2e3436
+!urxvt*color8:		#555753
+urxvt*color0:		#1c1c1c
+urxvt*color8:		#444444
 !red
-urxvt*color1:		#cc0000
-urxvt*color9:		#f25353
+!urxvt*color1:		#cc0000
+!urxvt*color9:		#f25353
+urxvt*color1:		#ff0000
+urxvt*color9:		#af5f5f
 !green
-urxvt*color2:		#4e9a06
-urxvt*color10:		#8ae234
+!urxvt*color2:		#4e9a06
+!urxvt*color10:		#8ae234
+urxvt*color2:		#87ff00
+urxvt*color10:		#87d7af
 !yellow
-urxvt*color3:		#c4a000
-urxvt*color11:		#fce94f
+!urxvt*color3:		#c4a000
+!urxvt*color11:		#fce94f
+urxvt*color3:		#d7d7af
+urxvt*color11:		#d7af87
 !blue
-urxvt*color4:		#3465a4
-urxvt*color12:		#729fcf
+!urxvt*color4:		#3465a4
+!urxvt*color12:		#729fcf
+urxvt*color4:		#87afd7
+urxvt*color12:		#5f5f87
 !magenta
-urxvt*color5:		#75507b
-urxvt*color13:		#ad7fa8
+!urxvt*color5:		#75507b
+!urxvt*color13:		#ad7fa8
+urxvt*color5:		#af8787
+urxvt*color13:		#303030
 !cyan
-urxvt*color6:		#06989a
-urxvt*color14:		#34e2e2
+!urxvt*color6:		#06989a
+!urxvt*color14:		#34e2e2
+urxvt*color6:		#d0d0d0
+urxvt*color14:		#87ffff
 !white
-urxvt*color7:		#d3d7cf
-urxvt*color15:		#eeeeec
+!urxvt*color7:		#d3d7cf
+!urxvt*color15:		#eeeeec
+urxvt*color7:		#e4e4e4
+urxvt*color15:		#949494
 
 
 
