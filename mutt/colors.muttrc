@@ -22,11 +22,13 @@ color hdrdefault brightwhite magenta
 color header brightblue magenta ^Subject:
 color header brightblue magenta ^From:
 color normal white magenta
-color quoted red magenta
+color quoted brightyellow magenta
 color quoted1 brightmagenta magenta
-color quoted2 green magenta
-color quoted3 brightcyan magenta
-color quoted4 blue magenta
+color quoted2 red magenta
+color quoted3 blue magenta
+color quoted4 brightblue magenta
+color quoted5 green magenta
+color quoted6 yellow magenta
 color attachment brightyellow magenta
 color markers   brightred magenta
 color signature blue magenta
