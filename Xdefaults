@@ -171,9 +171,9 @@ urxvt*color12:		#87afd7
 urxvt*color5:		#303030
 urxvt*color13:		#af8787
 !cyan
-!urxvt*color6:		#06989a
+urxvt*color6:		#06989a
 !urxvt*color14:		#34e2e2
-urxvt*color6:		#d0d0d0
+!urxvt*color6:		#d0d0d0
 urxvt*color14:		#87ffff
 !white
 !urxvt*color7:		#d3d7cf
