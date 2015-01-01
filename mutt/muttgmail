@@ -17,7 +17,7 @@ set header_cache = $HOME/mail/cache/
 set text_flowed
 set query_command="goobook query '%s'"
 bind editor <Tab> complete-query
-set editor = "vim --cmd 'let g:goobookrc=\"/home/mike/.goobookrc\"' +:1"
+set editor = "nvim --cmd 'let g:goobookrc=\"/home/mike/.goobookrc\"' +:1"
 set postponed = +/drafts/
 
 # misc
