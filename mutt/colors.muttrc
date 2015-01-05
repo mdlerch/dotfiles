@@ -1,5 +1,5 @@
 # status bar
-color status red black
+color status brightblue black
 
 # index
 color indicator black white
