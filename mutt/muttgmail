@@ -4,8 +4,10 @@ source ~/.mutt/muttdefault
 set from =  "mdlerch@gmail.com"
 set reverse_name = yes
 set smtp_url = "smtp://mdlerch@smtp.gmail.com:587/"
-alternates lerch@math.montana.edu michael.lerch@msu.montana.edu
+alternates mdlerch@gmail.com lerch@math.montana.edu michael.lerch@msu.montana.edu
 source ~/.mutt/gmailpass.muttrc
+set reply_self = yes
+set attribution = "On %[%b %e %l:%M%p %z], %n wrote:"
 
 # receiving mail
 set mbox_type = Maildir
