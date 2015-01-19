@@ -6,6 +6,8 @@ set pager_stop
 set mailcap_path = "~/.mutt/mailcap"
 auto_view text/html
 alternative_order text/plain text/html
+unset markers
+# set pager_index_lines = 6
 
 # setting from
 set realname = "Michael Lerch"
@@ -19,9 +21,11 @@ set editor = "nvim +:silent+/^$"
 unset record
 
 # mappings
-bind pager b previous-page
 bind index j next-entry
 bind index k previous-entry
+bind index gg first-entry
+bind index G last-entry
+bind pager b previous-page
 bind pager j next-line
 bind pager k previous-line
 bind pager <down> next-line

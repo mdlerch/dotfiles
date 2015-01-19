@@ -85,3 +85,4 @@ fset Podcasts=filename="/data/sounds/*"
 cd /data/music/
 view 1
 factivate Music
+set follow
