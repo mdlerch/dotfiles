@@ -30,6 +30,9 @@ bind pager j next-line
 bind pager k previous-line
 bind pager <down> next-line
 bind pager <up> previous-line
+bind pager R group-reply
+bind pager gg top
+bind pager G bottom
 
 # appearance
 set sort = 'threads'

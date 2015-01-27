@@ -4,8 +4,12 @@ source /usr/bin/virtualenvwrapper.sh
 
 export _JAVA_AWT_WM_NONREPARENTING
 
+export XDG_CONFIG_HOME=$HOME/.config/
+
 export VISUAL=nvim
 export EDITOR=nvim
+
+export $(dbus-launch)
 
 PATH="$PATH:/home/mike/bin:/home/mike/.gem/ruby/2.1.0/bin"
 export PATH

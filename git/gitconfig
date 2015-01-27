@@ -19,9 +19,6 @@
 	added = yellow
 	changed = green
 	untracked = cyan
-[github]
-	user = mdlerch
-	token = 7035c51d364e417dc09ec3150883e32b
 [alias]
 	lg = "log --graph --decorate --pretty=oneline --abbrev-commit --all"
 	lol = "log --graph --decorate --pretty=format:'%C(yellow)%h%Creset %C(yellow)%d%Creset %s %Cgreen(%cd) %Creset' --abbrev-commit --date=local --all"
@@ -47,4 +44,4 @@
 # vim:ft=gitconfig
 [include]
     path = ~/dotfiles/git/ghi.gitconfig
-    path = ~/dotfiles/github.gitconfig
+    path = ~/dotfiles/git/github.gitconfig
