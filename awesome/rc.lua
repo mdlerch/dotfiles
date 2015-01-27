@@ -374,7 +374,7 @@ globalkeys = awful.util.table.join(
         end
     end),
     awful.key({SK, AK}, "Tab", function()
-        awful.client.focus.byidx(1)
+        awful.client.focus.byidx(-1)
         if client.focus then
             client.focus:raise()
         end
@@ -398,8 +398,8 @@ globalkeys = awful.util.table.join(
     awful.key({CK, AK}, "a", function() awful.util.spawn(terminaltmux) end),
     awful.key({CK, AK}, "f", function() awful.util.spawn("chromium") end),
     awful.key({CK, AK}, "g", function() awful.util.spawn("google-chrome") end),
-    awful.key({CK, AK}, "m", function() awful.util.spawn(terminalmusic) end),
     awful.key({CK, AK}, "c", function() awful.util.spawn("xcalc") end),
+    awful.key({CK, AK}, "m", function() awful.util.spawn("mendeleydesktop") end),
 
     awful.key({}, "XF86Calculator", function () awful.util.spawn("xcalc") end),
 
@@ -647,8 +647,48 @@ client.connect_signal("manage", function (c, startup)
     end
 end)
 
-client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
-client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+-- client.connect_signal("tagged",function(c,new_tag)
+--    if ( #(new_tag:clients())==1 ) then
+--        c.maximized_horizontal = true
+--        c.maximized_vertical = true
+--    end
+-- end)
+
+-- client.connect_signal("untagged",function(c,old_tag)
+--    if ( #(old_tag:clients())==1 ) then
+--        local myclients = old_tag:clients()
+--        for _,cl in ipairs(myclients) do             
+--           cl.maximized_horizontal = true
+--           cl.maximized_vertical = true
+--        end
+--    end
+-- end)
+
+-- client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
+-- client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+client.connect_signal("focus",
+    function(c)
+        local curidx = awful.tag.getidx()
+        local nc = #( tags[client.focus.screen][curidx]:clients() )
+        if nc == 1 or curidx == 8 then
+            c.border_width = beautiful.border_width
+            c.border_color = beautiful.border_normal
+        else
+            c.border_width = beautiful.border_width
+            c.border_color = beautiful.border_focus
+        end
+    end)
+client.connect_signal("unfocus",
+    function(c)
+        c.border_color = beautiful.border_normal
+        c.border_width = beautiful.border_width
+    end)
+-- client.connect_signal("unfocus",
+--     function(c)
+--         c.border_width = "3"
+--         c.border_color = "#000000"
+--     end)
+
 -- }}}
 -- {{{ Run some commands
 
