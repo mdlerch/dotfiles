@@ -1,9 +1,9 @@
 DOTDIR = ~/dotfiles
 LINK = ln -f -s
 
-linux: bash_ ctags_ git_ gnuplot_ inputrc_ R_ screen_it_ tmux_ zsh_
+linux: bash_ ctags_ git_ gnuplot_ inputrc_ R_ screen_it_ tmux_ zathura_ zsh_
 
-arch: linux awesome_ cmus_ fonts_ mutt_ offlineimap_ user_dirs_ xdefaults_ xmodmap_ 
+arch: linux awesome_ cmus_ fonts_ mutt_ offlineimap_ user_dirs_ xdefaults_ xmodmap_
 
 awesome_: awesome/rc.lua awesome/theme.lua
 	${LINK} ${DOTDIR}/awesome/ ~/.config/awesome
@@ -60,6 +60,9 @@ xmodmap_: xmodmap
 	${LINK} ${DOTDIR}/xmodmap/Xmodmap ~/.Xmodmap
 	${LINK} ${DOTDIR}/xmodmap/Xmodmap2 ~/.Xmodmap2
 	${LINK} ${DOTDIR}/xmodmap/Xmodmap3 ~/.Xmodmap3
+
+zathura_: zathura
+	${LINK} ${DOTDIR}/zathura ~/.config/zathura
 
 zsh_: zsh/zshrc
 	${LINK} ${DOTDIR}/zsh/zshrc ~/.zshrc

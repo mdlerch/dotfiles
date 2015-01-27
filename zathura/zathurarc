@@ -1,0 +1,4 @@
+map [normal] Button1 follow
+map [normal] b scroll full-up
+map [normal] <Left> navigate previous
+map [normal] <Right> navigate next
