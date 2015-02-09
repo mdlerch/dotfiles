@@ -19,6 +19,7 @@ tags
 *.dvi
 *.eps
 *.tif
+*.docx
 
 # Compiled source #
 *.com

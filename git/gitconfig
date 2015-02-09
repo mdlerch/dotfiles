@@ -1,3 +1,4 @@
+# vim:ft=gitconfig
 [user]
 	name = Michael Lerch
 	email = mdlerch@gmail.com
@@ -21,7 +22,7 @@
 	untracked = cyan
 [alias]
 	lg = "log --graph --decorate --pretty=oneline --abbrev-commit --all"
-	lol = "log --graph --decorate --pretty=format:'%C(yellow)%h%Creset %C(yellow)%d%Creset %s %Cgreen(%cd) %Creset' --abbrev-commit --date=local --all"
+	lol = "log --graph --decorate --pretty=format:'%C(yellow)%h%Creset %C(yellow)%d%Creset %s %Cgreen(%ad) %Creset' --abbrev-commit --date=local --all"
 	tracked = "ls-files --error-unmatch"
 	unadd = "reset HEAD"
 	pushall = "push -u origin --all"
@@ -29,19 +30,18 @@
 	vd = difftool
 	diff = "diff --check"
     istracked = "ls-files --error-unmatch"
-[diff]
-	tool = vimdiff
 [merge]
 	tool = vimdiff
 [push]
 	default = simple
 [gist]
 	home = /home/mike/work/gists/
-
 [difftool]
 	prompt = false
-
-# vim:ft=gitconfig
 [include]
     path = ~/dotfiles/git/ghi.gitconfig
     path = ~/dotfiles/git/github.gitconfig
+[branch]
+	autosetuprebase = always
+[mergetool "vimdiff"]
+	path = nvim
