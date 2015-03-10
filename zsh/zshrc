@@ -4,6 +4,9 @@ colors
 
 setopt rmstarsilent
 setopt prompt_subst
+setopt auto_cd
+
+# cdpath=($HOME/projects)
 
 # Prompt
 
