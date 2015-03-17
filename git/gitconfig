@@ -36,8 +36,6 @@
 	default = simple
 [gist]
 	home = /home/mike/work/gists/
-[branch]
-	autosetuprebase = always
 [difftool]
 	prompt = false
 [include]
@@ -45,3 +43,5 @@
     path = ~/dotfiles/git/github.gitconfig
 [mergetool "vimdiff"]
 	path = nvim
+[pull]
+	rebase = true
