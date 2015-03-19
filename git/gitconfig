@@ -17,8 +17,8 @@
 	old = red bold
 	new = green bold
 [color "status"]
-	added = yellow
-	changed = green
+	added = green bold
+	changed = red bold
 	untracked = cyan
 [alias]
 	lol = "log --graph --decorate --pretty=oneline --abbrev-commit --all"
@@ -30,6 +30,7 @@
 	vd = difftool
 	diff = "diff --check"
     istracked = "ls-files --error-unmatch"
+	st = "status -sb"
 [merge]
 	tool = vimdiff
 [push]
