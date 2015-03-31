@@ -15,7 +15,7 @@ set reverse_name = yes
 
 # writing mail
 set edit_headers=no
-set editor = "nvim +:silent+/^$"
+set editor = "/usr/bin/vim +:silent+/^$"
 
 # sending mail
 unset record
@@ -33,6 +33,8 @@ bind pager <up> previous-line
 bind pager R group-reply
 bind pager gg top
 bind pager G bottom
+
+macro index o "<shell-escape>offlineimap<enter>" "run offlineimap"
 
 # appearance
 set sort = 'threads'
