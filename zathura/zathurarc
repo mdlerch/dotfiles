@@ -1,3 +1,2 @@
-map [normal] Button1 follow
 map [normal] b scroll full-up
-map [normal] Button2 follow
+map [normal] <Button1> follow
