@@ -1,2 +1,11 @@
 map [normal] b scroll full-up
 map [normal] <Button1> follow
+
+set default-bg "#000000"
+set default-fg "#e4e4e4"
+
+set recolor-darkcolor  "#dddddd"
+set recolor-lightcolor "#101010"
+set recolor-reverse-video
+set recolor-keephue
+set recolor
