@@ -2,6 +2,10 @@
 autoload -U colors
 colors
 
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "" edit-command-line
+
 setopt rmstarsilent
 setopt prompt_subst
 setopt auto_cd
