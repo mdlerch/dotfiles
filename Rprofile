@@ -3,7 +3,7 @@ if (interactive() & Sys.getenv("TERM")!="") {
     options(nvimcom.verbose = 4)
     # options(vimcom.vimpager = FALSE)
     library(nvimcom)
-    library(colorout)
+    # library(colorout)
     library(rlerch)
     # options(pager = "vimrpager")
     #if (Sys.getenv("VIM_PANE") != "")
