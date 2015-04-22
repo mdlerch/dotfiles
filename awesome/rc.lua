@@ -123,7 +123,7 @@ batspace:set_text("   ")
 
 -- Temperature text box
 tempwidget = wibox.widget.textbox()
-vicious.register(tempwidget, vicious.widgets.thermal, " $1C  ", 20, {"thermal_zone0", "sys"} )
+vicious.register(tempwidget, vicious.widgets.therm2, " $1C  ", 20, {"hwmon0", "hwmon"} )
 
 -- Clock text box
 mytextclock = awful.widget.textclock(" %a %b %d, %I:%M ", 20)
