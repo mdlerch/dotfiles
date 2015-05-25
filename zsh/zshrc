@@ -1,3 +1,9 @@
+if [ "$TERM" = "xterm" ]
+then
+    export TERM="xterm-256color"
+fi
+
+
 # Colors
 autoload -U colors
 colors
@@ -17,14 +23,14 @@ setopt auto_cd
 autoload -Uz vcs_info
 
 zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' stagedstr '%F{10} ...'
-zstyle ':vcs_info:*' unstagedstr '%F{9} +++'
+zstyle ':vcs_info:*' stagedstr '%F{10} ...%f'
+zstyle ':vcs_info:*' unstagedstr '%F{9} +++%f'
 zstyle ':vcs_info:*' enable git svn
 precmd () {
     if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]] {
-        zstyle ':vcs_info:*' formats ' [%F{10}%b%c%u%%F{7}]'
+        zstyle ':vcs_info:*' formats ' [%F{10}%b%c%u%f]'
     } else {
-        zstyle ':vcs_info:*' formats ' [%F{10}%b%F{6} !!!%c%u%F{7}]'
+        zstyle ':vcs_info:*' formats ' [%F{10}%b%F{6} !!!%c%u%f]'
     }
     vcs_info
 }
