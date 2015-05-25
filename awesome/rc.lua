@@ -195,7 +195,7 @@ wp_timer:start()
 
 terminaltmux = "/home/mike/bin/termattach"
 terminalmusic = "/home/mike/bin/termmusic"
-terminalnotmux = "urxvtc"
+terminalnotmux = "roxterm"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminalnotmux .. " -e " .. editor
 WK = "Mod4"

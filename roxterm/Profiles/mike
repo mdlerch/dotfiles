@@ -1,0 +1,13 @@
+[roxterm profile]
+colour_scheme=
+hide_menubar=1
+always_show_tabs=0
+scrollbar_pos=0
+background_type=2
+saturation=0.316109
+font=Inconsolata LGC Bold 11
+allow_bold=0
+color_term=xterm-256color
+term=xterm-256color
+browser_spawn_type=2
+browser=chromium

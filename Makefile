@@ -61,6 +61,10 @@ R_: Renviron Rprofile
 	$(call INFECT,Rprofile,~/.Rprofile)
 	$(call INFECT,Renviron,~/.Renviron)
 
+.PHONY: roxterm_
+roxterm_: roxterm
+	$(call INFECT,roxterm,~/.config/roxterm.sourceforge.net)
+
 .PHONY: screen_it_
 screen_it_: screen-it.txt
 	tic screen-it.txt
