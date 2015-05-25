@@ -1,44 +1,48 @@
+# brightblack seems to use regular black; call color8 instead
+# default
+color normal default color8
+
 # status bar
-color status brightblue black
+color status red black
 
 # index
 color indicator black white
-color index green magenta ~A # default
-color index white magenta ~p  # To me
-color index blue magenta ~P # From me
-color index yellow magenta ~O  # Old
-color index brightyellow magenta ~X>0 # has attachment
-color index brightblack brightblue ~N  # New
+color index green color8 ~A # default
+color index default color8 ~p  # To me
+color index blue color8 ~P # From me
+color index yellow color8 ~O  # Old
+color index brightyellow color8 ~X>0 # has attachment
+color index brightblack color12 ~N  # New
 color index red cyan ~T # Tagged
 color index black red ~D # Deleted
-color tree red magenta
+color tree red color8
 
 # body header
 # attachment bold hdrdefault index indicator markers message
 # normal quoted quotedN search signature status tilde tree underline
-# messages
-color message white magenta
-color hdrdefault brightwhite magenta
-color header brightblue magenta ^Subject:
-color header brightblue magenta ^From:
-color normal white magenta
-color quoted brightyellow magenta
-color quoted1 brightmagenta magenta
-color quoted2 red magenta
-color quoted3 blue magenta
-color quoted4 brightblue magenta
-color quoted5 green magenta
-color quoted6 yellow magenta
-color attachment brightyellow magenta
-color markers   brightred magenta
-color signature blue magenta
-color bold brightgreen magenta
-color underline brightgreen magenta
-color body brightblue magenta '(^|\W)\*\w.*\w\*($|\W)' # bold
-color body brightcyan magenta '(^|\W)_\w.*\w_($|\W)' # underline
-# color body brightgreen magenta '(^|\W)/\w[^/]*\w/($|\W)'
-color body brightred magenta '[a-z0-9.+-]+ <at> [a-z0-9.-]+\.[a-z]{2,4}'
-color body brightblue magenta (https?|ftp)://[\-\.\,/%~_:?\#a-zA-Z0-9=&\+]+
-color tilde white magenta
+color message default color8
+color hdrdefault brightwhite color8
+color header brightblue color8 ^Subject:
+color header brightblue color8 ^From:
+color quoted brightyellow color8
+color quoted1 brightmagenta color8
+color quoted2 red color8
+color quoted3 blue color8
+color quoted4 brightblue color8
+color quoted5 green color8
+color quoted6 yellow color8
+color attachment brightyellow color8
+color markers brightred color8
+color signature blue color8
+color bold brightgreen color8
+color underline brightgreen color8
+color tilde white color8
+
+# regex
+color body brightblue color8 '(^|\W)\*\w.*\w\*($|\W)' # bold
+color body brightcyan color8 '(^|\W)_\w.*\w_($|\W)' # underline
+# color body brightgreen color8 '(^|\W)/\w[^/]*\w/($|\W)'
+color body brightred color8 '[a-z0-9.+-]+ <at> [a-z0-9.-]+\.[a-z]{2,4}'
+color body brightblue color8 (https?|ftp)://[\-\.\,/%~_:?\#a-zA-Z0-9=&\+]+
 
 # vim: set filetype=mutt
