@@ -3,7 +3,7 @@
 color normal default color8
 
 # status bar
-color status red black
+color status color12 black
 
 # index
 color indicator black white
