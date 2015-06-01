@@ -12,7 +12,11 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 vicious = require("vicious")
+widgets = require("vicious.widgets")
 -- }}}
+
+host = (widgets.os()[4])
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -85,7 +89,7 @@ vicious.register(memwidget, vicious.widgets.mem, "$1", 13)
 
 -- Memory text box
 memintro = wibox.widget.textbox()
-memintro:set_text(" Mem:")
+memintro:set_text("Mem: ")
 
 -- CPU graph
 cpuwidgetg = awful.widget.graph()
@@ -123,7 +127,11 @@ batspace:set_text("   ")
 
 -- Temperature text box
 tempwidget = wibox.widget.textbox()
-vicious.register(tempwidget, vicious.widgets.therm2, " $1C  ", 20, {"hwmon0", "hwmon"} )
+if host == "buddy" then
+    vicious.register(tempwidget, vicious.widgets.therm2, " $1C  ", 20, {"hwmon0", "hwmon"} )
+else
+    vicious.register(tempwidget, vicious.widgets.thermal, " $1C  ", 20, {"thermal_zone0", "sys"} )
+end
 
 -- Clock text box
 mytextclock = awful.widget.textclock(" %a %b %d, %I:%M ", 20)
