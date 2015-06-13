@@ -128,7 +128,7 @@ batspace:set_text("   ")
 -- Temperature text box
 tempwidget = wibox.widget.textbox()
 if host == "buddy" then
-    vicious.register(tempwidget, vicious.widgets.therm2, " $1C  ", 20, {"hwmon0", "hwmon"} )
+    vicious.register(tempwidget, vicious.widgets.therm2, " $1C  ", 20, {"hwmon1", "hwmon"} )
 else
     vicious.register(tempwidget, vicious.widgets.thermal, " $1C  ", 20, {"thermal_zone0", "sys"} )
 end
