@@ -4,7 +4,7 @@
 	email = mdlerch@gmail.com
 [core]
 	editor = nvim
-	excludesfile = /home/mike/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [color]
 	ui = auto
 [color "branch"]
