@@ -58,7 +58,10 @@ bindkey -M viins ',,' vi-cmd-mode
 
 source ~/.zsh/alias.zsh
 source ~/.zsh/goto_alias.zsh
-source /usr/bin/virtualenvwrapper.sh
+if [ -f /usr/bin/virtualenvwrapper.sh ]
+then
+    source /usr/bin/virtualenvwrapper.sh
+fi
 
 function tmux_win_name () {
 if [ "$TMUX" ]

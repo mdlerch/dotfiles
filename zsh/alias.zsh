@@ -2,8 +2,13 @@ alias ovim='/usr/bin/vim --servername VIM'
 alias vi='nvim'
 alias vim='nvim'
 alias vir='nvim -R'
-alias ls='ls --color=auto --group-directories-first'
-alias lt='ls --color=auto --group-directories-first -t'
+# if [ "$HOST" == "WF12611" ];
+# then
+    alias ls='ls -G'
+# else
+#     alias ls='ls --color=auto --group-directories-first'
+#     alias lt='ls --color=auto --group-directories-first -t'
+# fi
 alias mv='mv -i'
 alias grep='grep --color'
 alias n='urxvtc &'

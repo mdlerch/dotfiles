@@ -1,6 +1,9 @@
 export WORKON_HOME=$HOME/pyenvs
 export PROJECT_HOME=$HOME/work/code
-source /usr/bin/virtualenvwrapper.sh
+if [ -f /usr/bin/virtualenvwrapper.sh ]
+then
+    source /usr/bin/virtualenvwrapper.sh
+fi
 
 export _JAVA_AWT_WM_NONREPARENTING
 
@@ -9,7 +12,10 @@ export XDG_CONFIG_HOME=$HOME/.config/
 export VISUAL=nvim
 export EDITOR=nvim
 
-export $(dbus-launch)
+if type dbus-launch > /dev/null
+then
+    export $(dbus-launch)
+fi
 
 PATH="$PATH:/home/mike/bin:/home/mike/.gem/ruby/2.1.0/bin"
 export PATH
