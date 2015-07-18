@@ -1,3 +1,4 @@
 [roxterm options]
 colour_scheme=mike
 profile=mike
+warn_close=1
