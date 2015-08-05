@@ -4,10 +4,10 @@ alias vim='nvim'
 alias vir='nvim -R'
 # if [ "$HOST" == "WF12611" ];
 # then
-    alias ls='ls -G'
+    # alias ls='ls -G'
 # else
-#     alias ls='ls --color=auto --group-directories-first'
-#     alias lt='ls --color=auto --group-directories-first -t'
+    alias ls='ls --color=auto --group-directories-first'
+    alias lt='ls --color=auto --group-directories-first -t'
 # fi
 alias mv='mv -i'
 alias grep='grep --color'

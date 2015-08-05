@@ -54,13 +54,13 @@ bind -f common S factivate Sounds
 ##                              APPEARANCE                               ##
 ###########################################################################
 
-colorscheme zenburn
+colorscheme tungsten
 
 set format_current= %t -- %a -- %l
 set format_playlist= %-15%a   %-20%l   %n %t %= [%{codec}] %-4y %d 
 set format_playlist_va= %-25%A %3n. %t (%a)%= [%{codec}] %-4y %d 
 set format_title=%a - %l - %t (%y)
-set format_trackwin=%3n. %t%= [%{codec}]  %-4y %d 
+set format_trackwin=%3n. %t%= [%{codec}]  [ %X ]  %-4y %d 
 set format_trackwin_va=%3n. %t (%a)%= [%{codec}] %-4y %d 
 
 set altformat_current= %F 
@@ -69,6 +69,11 @@ set altformat_title=%f
 set altformat_trackwin= %f%= %d 
 
 set display_artist_sort_name=false
+
+set auto_expand_albums_follow=false
+set auto_expand_albums_search=false
+set auto_expand_albums_selcur=false
+set show_all_tracks=true
 
 ###########################################################################
 ##                            DEFINE FILTERS                             ##
@@ -82,7 +87,7 @@ fset Sounds=filename="/data/sounds/*"
 ##                                STARTUP                                ##
 ###########################################################################
 
+set follow
 cd /data/music/
 view 1
 factivate Music
-set follow
