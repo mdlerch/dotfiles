@@ -36,4 +36,5 @@ alias skype='xhost +local: && sudo -u skype /usr/bin/skype'
 alias mutt="if [ "$TMUX" ]; then tmux move-window -t 8; tmux rename-window 'mutt'; fi; mutt"
 alias cmus="player"
 alias pynchclock="if [ "$TMUX" ]; then tmux setw monitor-activity off; tmux move-window -t 9; tmux rename-window 'time'; fi; cd ~/work/time/; pynchclock"
+alias todo="ghi list -a --mine"
 #alias ipython="python /usr/bin/ipython"
