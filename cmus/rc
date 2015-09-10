@@ -21,6 +21,11 @@ unbind -f common C
 bind -f playlist C clear
 bind -f queue C clear
 
+# use x to remove from playlist, queue
+unbind -f common x
+bind -f playlist x win-remove
+bind -f queue x win-remove
+
 # use c to toggle continue
 bind -f common c toggle continue
 
