@@ -31,6 +31,7 @@
 	diff = "diff --check"
     istracked = "ls-files --error-unmatch"
 	st = "status -sb"
+	difftex = "difftool -y -t latex"
 [merge]
 	tool = vimdiff
 [push]
@@ -46,3 +47,5 @@
 	path = nvim
 [pull]
 	rebase = true
+[difftool "latex"]
+	cmd = latexdiff "$LOCAL" "$REMOTE"
