@@ -35,6 +35,7 @@ bind pager gg top
 bind pager G bottom
 bind pager \Cu previous-page
 bind pager \Cd next-page
+bind index p noop
 
 macro index o "<shell-escape>offlineimap<enter>" "run offlineimap"
 
