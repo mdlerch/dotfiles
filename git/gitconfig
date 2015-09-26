@@ -20,10 +20,17 @@
 	added = green bold
 	changed = red bold
 	untracked = cyan
+[color "decorate"]
+	branch = red bold
+	remoteBranch = green bold
+	tag = blue bold
+	stash = red
+	HEAD = green
 [alias]
 	lol = "log --graph --decorate --pretty=oneline --abbrev-commit --all"
-	lg = "log --graph --decorate --pretty=format:'%C(red)%h%C(bold green)%d%Creset %s %C(red)[%ar] %C(blue) <%an>' --abbrev-commit --date=local --all"
+	lgg = "log --graph --decorate --pretty=format:'%C(red)%h%C(bold green)%d%Creset %s %C(red)[%ar] %C(blue) <%an>' --abbrev-commit --date=local --all"
 	tracked = "ls-files --error-unmatch"
+	lg = "log --pretty=format:'%C(red)%h%C(reset) %C(auto)%d%C(reset) %s %C(red)[%ar] %C(blue)<%an>' --graph --abbrev-commit --date=local"
 	unadd = "reset HEAD"
 	pushall = "push -u origin --all"
 	dt = difftool
