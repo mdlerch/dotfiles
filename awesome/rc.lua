@@ -223,10 +223,9 @@ local layouts =
 }
 
 tags = {
-    names= {1,2,3,4,5,6,7,8,9},
+    names= {1, 2, 3, 4, 5, 6, 7, 8, 9},
     layout={layouts[1], layouts[1], layouts[1], layouts[1],
-    layouts[1], layouts[1], layouts[1], layouts[3],
-    layouts[1]}
+            layouts[1], layouts[1], layouts[1], layouts[3], layouts[1]}
 }
 
 for s = 1, screen.count() do
@@ -462,6 +461,8 @@ end
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it works on any keyboard layout.
 -- This should map on the top row of your keyboard, usually 1 to 9.
+-- The '..' is lua string concat.  The "#" and +9 are to get the "keycodes"
+-- 1 -> 10; 2 -> 11; etc
 for i = 1, keynumber do
     globalkeys = awful.util.table.join(globalkeys,
     awful.key({CK}, "#" .. i + 9, function ()
@@ -674,11 +675,43 @@ end)
 
 -- client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 -- client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+-- client.connect_signal("focus",
+--     function(c)
+--         if c.maximized_horizontal and c.maximized_vertical then
+--             c.border_width = 0
+--             c.border_color = beautiful.border_normal
+--         else
+--             c.border_width = beautiful.border_width
+--             c.border_color = beautiful.border_focus
+--         end
+--     end)
+
+for s = 1, screen.count() do screen[s]:connect_signal("arrange", function ()
+        local clients = awful.client.visible(s)
+        local layout  = awful.layout.getname(awful.layout.get(s))
+
+        if #clients > 0 then -- Fine grained borders and floaters control
+            for _, c in pairs(clients) do -- Floaters always have borders
+                if awful.client.floating.get(c) or layout == "floating" then
+                    c.border_width = beautiful.border_width
+
+                -- No borders with only one visible client
+                elseif #clients == 1 or layout == "max" then
+                    c.border_width = beautiful.border_width
+                else
+                    c.border_width = beautiful.border_width
+                end
+            end
+        end
+      end)
+end
+
 client.connect_signal("focus",
     function(c)
         local curidx = awful.tag.getidx()
+        local layout = awful.layout.getname(awful.layout.get(client.focus.screen))
         local nc = #( tags[client.focus.screen][curidx]:clients() )
-        if nc == 1 or curidx == 8 then
+        if nc == 1 or layout == "max" then
             c.border_width = beautiful.border_width
             c.border_color = beautiful.border_normal
         else
