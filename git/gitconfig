@@ -41,8 +41,8 @@
 [difftool]
 	prompt = false
 [include]
-    path = ~/dotfiles/git/ghi.gitconfig
-    path = ~/dotfiles/git/github.gitconfig
+	path = ~/dotfiles/git/ghi.gitconfig
+	path = ~/dotfiles/git/github.gitconfig
 [mergetool "vimdiff"]
 	path = nvim
 [pull]
