@@ -9,3 +9,5 @@ set recolor-lightcolor "#101010"
 set recolor-reverse-video
 set recolor-keephue
 set recolor
+
+set font "inconsolatalgc normal 10"
