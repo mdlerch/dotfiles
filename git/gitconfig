@@ -39,6 +39,7 @@
     istracked = "ls-files --error-unmatch"
 	st = "status -sb"
 	difftex = "difftool -y -t latex"
+	ff = "merge --ff-only"
 [merge]
 	tool = vimdiff
 [push]
