@@ -1,7 +1,7 @@
 alias ovim='/usr/bin/vim --servername VIM'
-alias vi='nvim'
-alias vim='nvim'
-alias vir='nvim -R'
+alias vi='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
+alias vim='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
+alias vir='NVIM_TUI_ENABLE_TRUE_COLOR=1nvim -R'
 # if [ "$HOST" == "WF12611" ];
 # then
     # alias ls='ls -G'
