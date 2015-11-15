@@ -73,3 +73,5 @@ fi
 alias goto='vim ~/.zsh/goto_alias.zsh; source ~/.zsh/goto_alias.zsh'
 
 stty stop undef
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
