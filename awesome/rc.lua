@@ -69,7 +69,7 @@ vicious.register(cmus_widget, vicious.widgets.cmus,
         else
             return '   '..args["{status}"]..' '.. args["{artist}"]..' - '.. args["{title}"]..'    '
         end
-    end, 4)
+    end, 1)
 --}}}
 
 -- Memory progressbar
