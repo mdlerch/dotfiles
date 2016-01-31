@@ -38,4 +38,5 @@ alias unix2dos='dos2unix -D'
 alias skype='xhost +local: && sudo -u skype /usr/bin/skype'
 alias cmus="player"
 alias open='xdg-open'
+alias darktable='darktable --noiseprofiles ~/dotfiles/noiseprofiles.json'
 #alias ipython="python /usr/bin/ipython"

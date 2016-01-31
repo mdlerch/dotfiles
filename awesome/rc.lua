@@ -404,6 +404,7 @@ globalkeys = awful.util.table.join(
     awful.key({CK, AK}, "e", function() awful.util.spawn(terminalnotmux) end),
     awful.key({CK, AK}, "a", function() awful.util.spawn(terminaltmux) end),
     awful.key({CK, AK}, "f", function() awful.util.spawn("chromium") end),
+    awful.key({CK, AK}, "d", function() awful.util.spawn("darktable --noiseprofiles /home/mike/dotfiles/noiseprofiles.json") end),
     awful.key({CK, AK}, "g", function() awful.util.spawn("google-chrome") end),
     awful.key({CK, AK}, "c", function() awful.util.spawn("xcalc") end),
     awful.key({CK, AK}, "m", function() awful.util.spawn("mendeleydesktop") end),
