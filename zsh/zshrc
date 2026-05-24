@@ -1,33 +1,34 @@
-if [ "$TERM" = "xterm" ]
-then
-    export TERM="xterm-256color"
-fi
 
 
-# Colors
+# Make color variables available
 autoload -U colors
 colors
 
-autoload -z edit-command-line
+# Allow editor mode to run zsh commands
+autoload -Uz edit-command-line
 zle -N edit-command-line
-bindkey "" edit-command-line
+bindkey "" edit-command-line
+export EDITOR=nvim
 
 setopt rmstarsilent
 setopt prompt_subst
 setopt auto_cd
 
-# cdpath=($HOME/projects)
 
 # Prompt
-
 autoload -Uz vcs_info
-
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' stagedstr '%F{10} ...%f'
 zstyle ':vcs_info:*' unstagedstr '%F{9} +++%f'
-zstyle ':vcs_info:*' enable git svn
+zstyle ':vcs_info:*' enable git
 precmd () {
-    if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]] {
+    if [[ "$PWD" == "$HOME/pi/vault"* ]]; then
+        vcs_info_msg_0_=''
+        return
+    fi
+    local untracked
+    untracked=$(git ls-files --other --exclude-standard --max-count=1 2> /dev/null)
+    if [[ -z $untracked ]] {
         zstyle ':vcs_info:*' formats ' [%F{10}%b%c%u%f]'
     } else {
         zstyle ':vcs_info:*' formats ' [%F{10}%b%F{6} !!!%c%u%f]'
@@ -40,28 +41,24 @@ local smiley="%(?,%{$fg_bold[green]%}:%)%{$reset_color%},%{$fg_bold[red]%}:(%{$r
 PROMPT='[%(#~%{$fg_bold[red]%}>root< %{$reset_color%}~)%{$fg_bold[green]%}%m%{$reset_color%}] %{$fg[yellow]%}> %{$reset_color%}%~${vcs_info_msg_0_}
 ${smiley} '
 
-export HISTSIZE=10000
+# Use zipper merge history across sessions
+# consider installing atuin in the future which can integrate with fzf
+setopt SHARE_HISTORY
+export HISTSIZE=100000
+export SAVEHIST=1000000
 export HISTFILE="$HOME/.zsh_history"
-
-export SAVEHIST=$HISTSIZE
 setopt hist_ignore_all_dups
-autoload compinit
-compinit
 
-bindkey "^[[1~" beginning-of-line
-bindkey "^[[4~" end-of-line
 
-bindkey    "^[[3~"          delete-char
-bindkey    "^[3;5~"         delete-char
+# zsh smart auto load system
+autoload -Uz compinit
+compinit -C
+
 
 bindkey -M viins ',,' vi-cmd-mode
 
 source ~/.zsh/alias.zsh
-source ~/.zsh/goto_alias.zsh
-if [ -f /usr/bin/virtualenvwrapper.sh ]
-then
-    source /usr/bin/virtualenvwrapper.sh
-fi
+
 
 function tmux_win_name () {
 if [ "$TMUX" ]
@@ -70,8 +67,12 @@ then
 fi
 }
 
-alias goto='vim ~/.zsh/goto_alias.zsh; source ~/.zsh/goto_alias.zsh'
+# alias goto='vim ~/.zsh/goto_alias.zsh; source ~/.zsh/goto_alias.zsh'
 
 stty stop undef
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH="$HOME/.npm-global/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
