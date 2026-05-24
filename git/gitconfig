@@ -1,7 +1,4 @@
 # vim:ft=gitconfig:expandtab
-[user]
-    name = Michael Lerch
-    email = mdlerch@gmail.com
 [core]
     editor = nvim
     excludesfile = ~/.gitignore_global
@@ -49,3 +46,8 @@
     rebase = true
 [difftool "latex"]
     cmd = latexdiff "$LOCAL" "$REMOTE"
+
+# Machine-specific identity (not tracked in repo — create ~/.gitconfig.local manually)
+# See git/gitconfig-local.example for templates
+[include]
+    path = ~/.gitconfig.local

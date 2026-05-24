@@ -55,3 +55,6 @@ tags
 ehthumbs.db
 Icon?
 Thumbs.db
+
+# Machine-local git identity (not tracked — see git/gitconfig-local.example)
+.gitconfig.local
