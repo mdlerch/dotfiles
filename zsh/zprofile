@@ -7,6 +7,9 @@ export XDG_CONFIG_HOME=$HOME/.config/
 
 export VISUAL=nvim
 export EDITOR=nvim
+# -R: preserve color escape sequences
+# -X: don't use alternate screen, so output stays in scrollback history after exit
+export LESS="-R -X"
 
 # --- PATH ---
 # Initialize Homebrew (sets PATH, MANPATH, HOMEBREW_PREFIX, HOMEBREW_CELLAR, etc.)
