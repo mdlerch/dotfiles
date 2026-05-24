@@ -1,27 +1,25 @@
+# vim: ft=zsh
 
+# --- Options ---
+setopt rmstarsilent   # suppress "are you sure?" prompt on rm *
+setopt prompt_subst   # allow command substitution and expansion in PROMPT
+setopt auto_cd        # type a directory name without cd to enter it
 
-# Make color variables available
-autoload -U colors
+# --- Colors ---
+# Loads $fg[], $fg_bold[], $bg[], and $reset_color for use in the prompt
+autoload -Uz colors
 colors
 
-# Allow editor mode to run zsh commands
-autoload -Uz edit-command-line
-zle -N edit-command-line
-bindkey "" edit-command-line
-export EDITOR=nvim
-
-setopt rmstarsilent
-setopt prompt_subst
-setopt auto_cd
-
-
-# Prompt
+# --- Prompt ---
 autoload -Uz vcs_info
+
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' stagedstr '%F{10} ...%f'
 zstyle ':vcs_info:*' unstagedstr '%F{9} +++%f'
 zstyle ':vcs_info:*' enable git
+
 precmd () {
+    # Skip git checks in pi/vault — repo is too large, causes noticeable prompt lag
     if [[ "$PWD" == "$HOME/pi/vault"* ]]; then
         vcs_info_msg_0_=''
         return
@@ -31,48 +29,54 @@ precmd () {
     if [[ -z $untracked ]] {
         zstyle ':vcs_info:*' formats ' [%F{10}%b%c%u%f]'
     } else {
+        # !!! signals untracked files are present
         zstyle ':vcs_info:*' formats ' [%F{10}%b%F{6} !!!%c%u%f]'
     }
     vcs_info
 }
 
+# Smiley reflects last command exit status: :) on success, :( on failure
 local smiley="%(?,%{$fg_bold[green]%}:%)%{$reset_color%},%{$fg_bold[red]%}:(%{$reset_color%})"
 
 PROMPT='[%(#~%{$fg_bold[red]%}>root< %{$reset_color%}~)%{$fg_bold[green]%}%m%{$reset_color%}] %{$fg[yellow]%}> %{$reset_color%}%~${vcs_info_msg_0_}
 ${smiley} '
 
-# Use zipper merge history across sessions
-# consider installing atuin in the future which can integrate with fzf
+# --- History ---
+# SHARE_HISTORY: writes and reads history in real-time across all open sessions
+# SAVEHIST >> HISTSIZE: file accumulates far more than any single session holds in memory
 setopt SHARE_HISTORY
+setopt hist_ignore_all_dups
 export HISTSIZE=100000
 export SAVEHIST=1000000
 export HISTFILE="$HOME/.zsh_history"
-setopt hist_ignore_all_dups
 
-
-# zsh smart auto load system
+# --- Completion ---
+# -Uz: standard flags — zsh-style loading, suppress alias expansion
+# -C: skip the security scan for faster shell startup
 autoload -Uz compinit
 compinit -C
 
+# --- Key bindings ---
+bindkey -M viins ',,' vi-cmd-mode   # ,, to switch from insert to normal mode
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^X^E' edit-command-line   # open current command line in $EDITOR
 
-bindkey -M viins ',,' vi-cmd-mode
-
-source ~/.zsh/alias.zsh
-
-
+# --- Functions ---
+# Rename the current tmux window; useful to label long-running tasks
 function tmux_win_name () {
-if [ "$TMUX" ]
-then
-    tmux rename-window $1
-fi
+    if [ "$TMUX" ]; then
+        tmux rename-window $1
+    fi
 }
 
-# alias goto='vim ~/.zsh/goto_alias.zsh; source ~/.zsh/goto_alias.zsh'
-
-stty stop undef
-
+# --- Sources ---
+source ~/.zsh/alias.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# --- PATH ---
 export PATH="$HOME/.npm-global/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
+# Disable Ctrl+S flow control (which would otherwise freeze the terminal)
+stty stop undef

@@ -1,18 +1,23 @@
 # vim: ft=zsh
 
-export _JAVA_AWT_WM_NONREPARENTING
-
+# --- Environment ---
+# XDG_CONFIG_HOME: Linux standard also respected by Neovim and some cross-platform
+# tools on macOS (e.g. nvim config lives at $XDG_CONFIG_HOME/nvim/)
 export XDG_CONFIG_HOME=$HOME/.config/
 
 export VISUAL=nvim
 export EDITOR=nvim
 
-if type dbus-launch > /dev/null
-then
-    export $(dbus-launch)
-fi
-
-export "$PATH:/home/mike/bin:/home/mike/.gem/ruby/2.1.0/bin"
+# --- PATH ---
 export PATH="/opt/homebrew/bin:$PATH"
 
+# --- Linux only ---
+# The following have no effect on macOS; kept here for portability
 
+# Fixes Java AWT GUIs under non-reparenting window managers (e.g. xmonad, i3)
+export _JAVA_AWT_WM_NONREPARENTING
+
+# Start D-Bus session if available (Linux desktop session bus)
+if type dbus-launch > /dev/null 2>&1; then
+    export $(dbus-launch)
+fi
