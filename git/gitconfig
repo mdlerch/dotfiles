@@ -1,59 +1,51 @@
-# vim:ft=gitconfig:noexpandtab
+# vim:ft=gitconfig:expandtab
 [user]
-	name = Michael Lerch
-	email = mdlerch@gmail.com
+    name = Michael Lerch
+    email = mdlerch@gmail.com
 [core]
-	editor = nvim
-	excludesfile = ~/.gitignore_global
+    editor = nvim
+    excludesfile = ~/.gitignore_global
 [color]
-	ui = auto
+    ui = auto
 [color "branch"]
-	current = yellow reverse
-	local = yellow
-	remote = green
+    current = yellow reverse
+    local = yellow
+    remote = green
 [color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
 [color "status"]
-	added = green bold
-	changed = red bold
-	untracked = cyan
+    added = green bold
+    changed = red bold
+    untracked = cyan
 [color "decorate"]
-	branch = red bold
-	remoteBranch = green bold
-	tag = blue bold
-	stash = red
-	HEAD = green
+    branch = red bold
+    remoteBranch = green bold
+    tag = blue bold
+    stash = red
+    HEAD = green
 [alias]
-	lol = "log --graph --decorate --pretty=oneline --abbrev-commit --all"
-	lgg = "log --graph --decorate --pretty=format:'%C(red)%h%C(bold green)%d%Creset %s %C(red)[%ar] %C(blue) <%an>' --abbrev-commit --date=local --all"
-	tracked = "ls-files --error-unmatch"
-	lg = "log --pretty=format:'%C(red)%h%C(reset) %C(auto)%d%C(reset) %s %C(red)[%ar] %C(blue)<%an>' --graph --abbrev-commit --date=local --all"
-	unadd = "reset HEAD"
-	pushall = "push -u origin --all"
-	dt = difftool
-	vd = difftool
-	diff = "diff --check"
-    istracked = "ls-files --error-unmatch"
-	st = "status -sb"
-	difftex = "difftool -y -t latex"
-	ff = "merge --ff-only"
+    tracked = "ls-files --error-unmatch"
+    lg = "log --pretty=format:'%C(bold yellow)%h%C(reset) %C(auto)%d%C(reset) %s %C(cyan)[%ar]%C(reset) %C(brightgreen)<%an>%C(reset)' --graph --abbrev-commit --date=local --all"
+    unadd = "restore --staged"
+    pushall = "push -u origin --all"
+    dt = difftool
+    st = "status -sb"
+    difftex = "difftool -y -t latex"
+    ff = "merge --ff-only"
+[init]
+    defaultBranch = main
+[fetch]
+    prune = true
 [merge]
-	tool = vimdiff
-[push]
-	default = simple
-[gist]
-	home = /home/mike/work/gists/
+    tool = nvimdiff
 [difftool]
-	prompt = false
-[include]
-	path = ~/dotfiles/git/ghi.gitconfig
-	path = ~/dotfiles/git/github.gitconfig
-[mergetool "vimdiff"]
-	path = nvim
+    prompt = false
+[mergetool "nvimdiff"]
+    path = nvim
 [pull]
-	rebase = true
+    rebase = true
 [difftool "latex"]
-	cmd = latexdiff "$LOCAL" "$REMOTE"
+    cmd = latexdiff "$LOCAL" "$REMOTE"
