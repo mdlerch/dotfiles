@@ -25,6 +25,4 @@ alias darktable='darktable --noiseprofiles ~/dotfiles/noiseprofiles.json'
 alias unix2dos='dos2unix -D'
 
 # --- Pi storage ---
-# NOTE: sshfs path is pinned to a specific Cellar version — update after: brew upgrade sshfs-fuse-t
-alias sshfs='/opt/homebrew/Cellar/sshfs-fuse-t/2026.05.12-cebbdd3/bin/sshfs'
 alias reconnectpi='diskutil unmount force ~/pi 2>/dev/null; sshfs miggy@192.168.1.100:/home/pi ~/pi -o reconnect,volname=PiStorage,ConnectTimeout=5,ServerAliveInterval=15'
