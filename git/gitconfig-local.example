@@ -1,0 +1,25 @@
+# vim:ft=gitconfig:expandtab
+#
+# gitconfig-local.example — copy to ~/.gitconfig.local on each machine
+# This file is NOT tracked in the repo (machine-specific identity config)
+#
+# ---------------------------------------------------------------------------
+# PERSONAL MACHINE
+# Only one identity needed — include gitconfig-personal as the default
+# ---------------------------------------------------------------------------
+#
+# [include]
+#     path = ~/dotfiles/git/gitconfig-personal
+#
+# ---------------------------------------------------------------------------
+# WORK MACHINE
+# Work identity is the default; personal identity applies to ~/personal/ repos
+# gitconfig-personal is referenced directly from the dotfiles repo
+# ---------------------------------------------------------------------------
+#
+# [user]
+#     name = Michael Lerch
+#     email = WORK_EMAIL_HERE
+#
+# [includeIf "gitdir:~/personal/"]
+#     path = ~/personal/dotfiles/git/gitconfig-personal

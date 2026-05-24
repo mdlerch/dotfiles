@@ -1,0 +1,4 @@
+# vim:ft=gitconfig:expandtab
+[user]
+    name = Michael Lerch
+    email = mdlerch@gmail.com
