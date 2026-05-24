@@ -47,5 +47,14 @@ fi
 # alias combinepdf='gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=combinedpdf.pdf -dBATCH '
 # alias skype='xhost +local: && sudo -u skype /usr/bin/skype'
 # alias open='xdg-open'
-#alias ipython="python /usr/bin/ipython"
+# alias ipython="python /usr/bin/ipython"
 # alias cmus="player"
+
+# Fixes Java AWT GUIs under non-reparenting window managers (e.g. xmonad, i3)
+export _JAVA_AWT_WM_NONREPARENTING
+
+# Start D-Bus session if available (Linux desktop session bus)
+if type dbus-launch > /dev/null 2>&1; then
+    export $(dbus-launch)
+fi
+

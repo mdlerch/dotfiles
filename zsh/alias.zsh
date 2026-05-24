@@ -9,8 +9,12 @@ alias vir='nvim -R'   # open read-only
 
 # --- File listing ---
 # Requires GNU coreutils: brew install coreutils
-alias ls='gls --color=auto --group-directories-first'
-alias lt='gls --color=auto --group-directories-first -t'   # sort by modified time
+if (( $+commands[gls] )); then
+    alias ls='gls --color=auto --group-directories-first'
+    alias lt='gls --color=auto --group-directories-first -t'   # sort by modified time
+else
+    alias ls='ls -G' # Fallback to BSD ls with colors
+fi
 
 # --- Safety / defaults ---
 alias mv='mv -i'          # prompt before overwrite

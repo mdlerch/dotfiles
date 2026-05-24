@@ -18,10 +18,3 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # --- Linux only ---
 # The following have no effect on macOS; kept here for portability
 
-# Fixes Java AWT GUIs under non-reparenting window managers (e.g. xmonad, i3)
-export _JAVA_AWT_WM_NONREPARENTING
-
-# Start D-Bus session if available (Linux desktop session bus)
-if type dbus-launch > /dev/null 2>&1; then
-    export $(dbus-launch)
-fi

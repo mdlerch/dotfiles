@@ -46,15 +46,22 @@ ${smiley} '
 # SAVEHIST >> HISTSIZE: file accumulates far more than any single session holds in memory
 setopt SHARE_HISTORY
 setopt hist_ignore_all_dups
+setopt HIST_IGNORE_SPACE      # don't save commands starting with a space
+setopt HIST_REDUCE_BLANKS     # remove extra blanks from commands
+setopt HIST_EXPIRE_DUPS_FIRST # delete duplicates first when history is full
 export HISTSIZE=100000
 export SAVEHIST=1000000
 export HISTFILE="$HOME/.zsh_history"
 
 # --- Completion ---
 # -Uz: standard flags — zsh-style loading, suppress alias expansion
-# -C: skip the security scan for faster shell startup
 autoload -Uz compinit
-compinit -C
+# Only run compinit once a day to keep startup fast; otherwise use the cache
+if [[ -n ~/.zcompdump(#qN.m-1) ]]; then
+    compinit
+else
+    compinit -C
+fi
 
 # --- Key bindings ---
 bindkey -M viins ',,' vi-cmd-mode   # ,, to switch from insert to normal mode

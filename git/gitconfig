@@ -2,7 +2,11 @@
 [core]
     editor = nvim
     excludesfile = ~/.gitignore_global
+[diff]
+    algorithm = histogram
 [color]
+    ui = auto
+[column]
     ui = auto
 [color "branch"]
     current = yellow reverse
@@ -23,6 +27,8 @@
     tag = blue bold
     stash = red
     HEAD = green
+[branch]
+    sort = -committerdate
 [alias]
     tracked = "ls-files --error-unmatch"
     lg = "log --pretty=format:'%C(bold yellow)%h%C(reset) %C(auto)%d%C(reset) %s %C(cyan)[%ar]%C(reset) %C(brightgreen)<%an>%C(reset)' --graph --abbrev-commit --date=local --all"
@@ -44,6 +50,8 @@
     path = nvim
 [pull]
     rebase = true
+[push]
+    autoSetupRemote = true
 [difftool "latex"]
     cmd = latexdiff "$LOCAL" "$REMOTE"
 
