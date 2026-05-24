@@ -9,7 +9,8 @@ export VISUAL=nvim
 export EDITOR=nvim
 
 # --- PATH ---
-export PATH="/opt/homebrew/bin:$PATH"
+# Initialize Homebrew (sets PATH, MANPATH, HOMEBREW_PREFIX, HOMEBREW_CELLAR, etc.)
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # --- Linux only ---
 # The following have no effect on macOS; kept here for portability
