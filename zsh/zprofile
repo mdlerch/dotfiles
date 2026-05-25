@@ -18,3 +18,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # --- Linux only ---
 # The following have no effect on macOS; kept here for portability
 
+
+
+# Added by Antigravity CLI installer
+export PATH="/Users/michaellerch/.local/bin:$PATH"
