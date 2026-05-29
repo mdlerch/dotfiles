@@ -95,6 +95,13 @@ export PATH="$HOME/.local/bin:$PATH"
 # Disable Ctrl+S flow control (which would otherwise freeze the terminal)
 stty stop undef
 
+# Convert mp4 to audio
+getAudio() {
+  local infile="$1"
+  local outfile="${infile%.*}.m4a"
+  ffmpeg -i "$infile" -vn -c:a copy "$outfile"
+}
 
 # Added by Antigravity CLI installer
 export PATH="/Users/michaellerch/.local/bin:$PATH"
+
