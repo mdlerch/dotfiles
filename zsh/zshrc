@@ -81,6 +81,14 @@ function tmux_win_name () {
 source ~/.zsh/alias.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# --- nvm ---
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+# --- pnpm ---
+export PNPM_HOME="$HOME/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+
 # --- PATH ---
 export PATH="$HOME/.npm-global/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
