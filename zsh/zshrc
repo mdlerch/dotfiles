@@ -79,7 +79,6 @@ function tmux_win_name () {
 
 # --- Sources ---
 source ~/.zsh/alias.zsh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # --- nvm ---
 export NVM_DIR="$HOME/.nvm"
